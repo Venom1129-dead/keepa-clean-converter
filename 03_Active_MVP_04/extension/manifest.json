@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Technical SEO & Schema Inspector",
+  "version": "1.0.0",
+  "description": "Zero-bloat on-page technical SEO, canonical, and Schema.org JSON-LD structured data inspector with 1-click client export.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Inspect Page SEO & Schema"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ]
+}

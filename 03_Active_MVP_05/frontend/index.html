@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freelancer Connects-ROI & Proposal Win-Rate Cockpit</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-container">
+      <div class="logo">
+        <span class="icon">⚡</span>
+        <h1>Connects-ROI & Win-Rate Cockpit</h1>
+      </div>
+      <div class="header-meta">
+        <span class="badge live-badge">100% In-Browser & Private</span>
+        <button id="btn-export-csv" class="btn-secondary">Export CSV</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <!-- TOP STATS BAR -->
+    <section class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-title">Win Rate</div>
+        <div class="stat-value" id="kpi-win-rate">0.0%</div>
+        <div class="stat-sub" id="kpi-win-ratio">0 won / 0 bids</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-title">Connects Burned</div>
+        <div class="stat-value text-red" id="kpi-connects-count">0</div>
+        <div class="stat-sub" id="kpi-connects-spend">$0.00 spent</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-title">Realized Net Revenue</div>
+        <div class="stat-value text-green" id="kpi-net-revenue">$0.00</div>
+        <div class="stat-sub" id="kpi-gross-revenue">$0.00 gross billings</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-title">Client Acquisition Cost (CAC)</div>
+        <div class="stat-value text-blue" id="kpi-cac">$0.00</div>
+        <div class="stat-sub">Spend per closed deal</div>
+      </div>
+    </section>
+
+    <!-- TWO COLUMN WORKSPACE -->
+    <div class="workspace-grid">
+      <!-- LEFT: QUICK BID EVALUATOR -->
+      <section class="panel card">
+        <div class="panel-header">
+          <h2>🎯 Quick Bid & Break-Even Calculator</h2>
+          <span class="subtitle">Evaluate a gig before burning Connects</span>
+        </div>
+        
+        <div class="form-group">
+          <label for="eval-contract-value">Expected Contract Gross ($ USD)</label>
+          <input type="number" id="eval-contract-value" value="500" min="5" step="10">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="eval-connects">Connects to Bid (Boost)</label>
+            <input type="number" id="eval-connects" value="50" min="0" step="5">
+          </div>
+          <div class="form-group">
+            <label for="eval-hours">Estimated Hours</label>
+            <input type="number" id="eval-hours" value="10" min="1" step="1">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="eval-connect-price">Connect Cost ($/ea)</label>
+            <input type="number" id="eval-connect-price" value="0.15" step="0.01">
+          </div>
+          <div class="form-group">
+            <label for="eval-fee-pct">Platform Fee (%)</label>
+            <input type="number" id="eval-fee-pct" value="15" step="1">
+          </div>
+        </div>
+
+        <div class="eval-results">
+          <div class="result-row">
+            <span>Connects Acquisition Cost:</span>
+            <strong id="eval-res-connect-cost" class="text-red">$7.50</strong>
+          </div>
+          <div class="result-row">
+            <span>Platform Fee (15%):</span>
+            <strong id="eval-res-platform-fee" class="text-red">$75.00</strong>
+          </div>
+          <div class="result-row">
+            <span>Estimated Net Payout:</span>
+            <strong id="eval-res-net-payout" class="text-green">$417.50</strong>
+          </div>
+          <div class="result-row">
+            <span>Effective Hourly Rate:</span>
+            <strong id="eval-res-hourly">$41.75 / hr</strong>
+          </div>
+          <div class="breakeven-banner">
+            Max Break-Even Connects: <span id="eval-res-breakeven">2833</span> connects
+          </div>
+        </div>
+      </section>
+
+      <!-- RIGHT: LOG A NEW PROPOSAL -->
+      <section class="panel card">
+        <div class="panel-header">
+          <h2>📝 Log Proposal / Bid</h2>
+          <span class="subtitle">Track bid outcomes to measure true win rates</span>
+        </div>
+
+        <form id="form-log-proposal">
+          <div class="form-group">
+            <label for="prop-title">Job Title / Prospect Name</label>
+            <input type="text" id="prop-title" placeholder="e.g. Full-Stack Next.js Landing Page" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="prop-value">Target Contract ($)</label>
+              <input type="number" id="prop-value" value="300" min="0" step="10">
+            </div>
+            <div class="form-group">
+              <label for="prop-connects">Connects Spent</label>
+              <input type="number" id="prop-connects" value="35" min="0" step="1">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="prop-status">Initial Status</label>
+              <select id="prop-status">
+                <option value="Submitted">Submitted (Waiting)</option>
+                <option value="Viewed">Viewed by Client</option>
+                <option value="Interviewed">Interviewed</option>
+                <option value="Won">Won / Hired 🏆</option>
+                <option value="Lost">Lost / Archived</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="prop-category">Category / Skill</label>
+              <input type="text" id="prop-category" placeholder="Web Dev, Copywriting, Design">
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary full-width">Add Proposal to Pipeline</button>
+        </form>
+      </section>
+    </div>
+
+    <!-- PROPOSAL PIPELINE TABLE -->
+    <section class="panel card full-width margin-top">
+      <div class="panel-header flex-between">
+        <div>
+          <h2>📊 Proposal Pipeline & Ledger</h2>
+          <span class="subtitle">Click status to update outcome. Data auto-saved in local browser storage.</span>
+        </div>
+        <button id="btn-clear-sample" class="btn-link">Reset to Default Sample Data</button>
+      </div>
+
+      <div class="table-container">
+        <table id="proposals-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Job Title / Lead</th>
+              <th>Category</th>
+              <th>Connects</th>
+              <th>Connect Cost</th>
+              <th>Contract Value</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="proposals-tbody">
+            <!-- Populated dynamically via app.js -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>Zero telemetry • 100% Client-Side LocalStorage • Built for solo freelancers & agency bidding teams</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

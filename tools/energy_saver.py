@@ -17,11 +17,23 @@ BROWSE_BIN = r"C:\Users\myven\.local\bin\browse.exe"
 
 def cleanup_browser_tabs():
     print("[*] Cleaning up idle agent browser tabs...")
+    # 1. Clean browse MCP relay tabs
     try:
         out = subprocess.check_output([BROWSE_BIN, "tabs", "cleanup"], text=True, stderr=subprocess.STDOUT)
-        print(f"[+] Tabs cleanup: {out.strip()}")
+        print(f"[+] Tabs cleanup (browse): {out.strip()}")
     except Exception as e:
         print(f"[-] Tabs cleanup error: {e}")
+    
+    # 2. Clean interactive Edge desktop tabs via UI Automation dispatch
+    try:
+        bat_path = r"C:\Users\myven\run_close_tabs.bat"
+        if os.path.exists(bat_path):
+            subprocess.run(["schtasks", "/create", "/tn", "AgentCloseTabs", "/tr", bat_path, "/sc", "once", "/st", "23:59", "/it", "/f"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            subprocess.run(["schtasks", "/run", "/tn", "AgentCloseTabs"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            subprocess.run(["schtasks", "/delete", "/tn", "AgentCloseTabs", "/f"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            print("[+] Interactive Edge desktop tab cleanup dispatched.")
+    except Exception as e:
+        print(f"[-] Interactive tab cleanup error: {e}")
 
 def get_battery_and_system_health():
     print("[*] Checking battery & system power status...")

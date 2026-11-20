@@ -12,12 +12,13 @@
 | Asset ID | Product Name | Target Price | Status | Artifacts / Links |
 |---|---|---|---|---|
 | **MVP_01** | Keepa CSV Clean Excel Converter | $14 | `VERIFIED_COMPLETE` | [Live Production Site](https://venom1129-dead.github.io/keepa-clean-converter/) • [Launch Assets](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/04_Launch_Queue/keepa_launch_assets.md) |
-| **MVP_02** | Shopify Supplier CSV Normalizer | $19 | `VERIFIED_COMPLETE` | [Frontend App](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/03_Active_MVP_02/frontend/) • [E2E Verifier](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/03_Active_MVP_02/verifier/verify_e2e.js) • [Proof Image](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/00_Brain/proofs/shopify_normalizer_proof.png) |
-| **MVP_03** | Notion 12-Week Sprint & Ops OS | $9 | `VERIFIED_COMPLETE` | [Template Export Bundle](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/03_Active_MVP_03/export/Notion_12_Week_Sprint_OS.md) • [Formula Tests](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/03_Active_MVP_03/verifier/test_formulas.py) |
+| **MVP_02** | Shopify Supplier CSV Normalizer | $19 | `VERIFIED_COMPLETE` | [Live Production Site](https://venom1129-dead.github.io/shopify-csv-normalizer/) • [Launch Assets](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/04_Launch_Queue/shopify_normalizer_launch_assets.md) |
+| **MVP_03** | Notion 12-Week Sprint & Ops OS | $9 | `VERIFIED_COMPLETE` | [Template Export Bundle](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/03_Active_MVP_03/export/Notion_12_Week_Sprint_OS.md) • [Launch Assets](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/04_Launch_Queue/notion_sprint_launch_assets.md) |
+| **MVP_04** | Technical SEO & Schema Extension | $12 | `VERIFIED_COMPLETE` | [Extension Package](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/03_Active_MVP_04/extension/) • [Verifier Tests](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/03_Active_MVP_04/verifier/test_audit.py) • [Launch Assets](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/04_Launch_Queue/seo_extension_launch_assets.md) |
+| **MVP_05** | Freelancer Connects-ROI & Win-Rate Cockpit | $9 | `VERIFIED_COMPLETE` | [Frontend App](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/03_Active_MVP_05/frontend/index.html) • [Formula Tests](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/03_Active_MVP_05/verifier/test_roi.py) • [Launch Assets](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/04_Launch_Queue/connects_tracker_launch_assets.md) |
 
 ---
 
 ## 3. Next Micro-Steps
-1. Set up Gumroad listings using the pre-written copy in `04_Launch_Queue/`.
-2. Post value-first launch threads on relevant subreddits (`r/FulfillmentByAmazon`, `r/shopify`, `r/Notion`).
-3. Advance to Asset #4 (Technical SEO & Schema Diff Chrome Extension, $12).
+1. Deploy Asset #5 to GitHub Pages for live client demonstration.
+2. Synchronize multi-platform distribution listings across Gumroad, Lemon Squeezy, Chrome Web Store, and Reddit outreach channels.

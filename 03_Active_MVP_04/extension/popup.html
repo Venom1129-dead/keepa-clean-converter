@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Technical SEO & Schema Inspector</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <div class="status-indicator"></div>
+      <h2>SEO & Schema Inspector</h2>
+    </div>
+    <span class="badge">MV3 Zero-Bloat</span>
+  </div>
+
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="meta">Head & Meta</button>
+    <button class="tab-btn" data-tab="headings">Headings</button>
+    <button class="tab-btn" data-tab="schema">Schema (JSON-LD)</button>
+    <button class="tab-btn" data-tab="export">Client Export</button>
+  </div>
+
+  <div class="content-panel" id="tab-meta">
+    <div class="card">
+      <div class="field-label">Page Title</div>
+      <div class="field-val" id="meta-title">Scanning...</div>
+      <div class="counter" id="title-counter">0 chars</div>
+    </div>
+    <div class="card">
+      <div class="field-label">Meta Description</div>
+      <div class="field-val" id="meta-desc">Scanning...</div>
+      <div class="counter" id="desc-counter">0 chars</div>
+    </div>
+    <div class="card grid-2">
+      <div>
+        <div class="field-label">Canonical URL</div>
+        <div class="field-val small" id="meta-canonical">Scanning...</div>
+      </div>
+      <div>
+        <div class="field-label">Robots Tag</div>
+        <div class="field-val small" id="meta-robots">Scanning...</div>
+      </div>
+    </div>
+    <div class="card" id="warnings-container">
+      <div class="field-label">Technical Issues Flagged</div>
+      <div id="warning-list" class="warning-box">None</div>
+    </div>
+  </div>
+
+  <div class="content-panel" id="tab-headings" style="display:none;">
+    <div class="card">
+      <div class="field-label">H1 Headings (<span id="h1-count">0</span>)</div>
+      <div id="h1-list" class="heading-list">Scanning...</div>
+    </div>
+    <div class="card">
+      <div class="field-label">H2 Headings (<span id="h2-count">0</span>)</div>
+      <div id="h2-list" class="heading-list">Scanning...</div>
+    </div>
+  </div>
+
+  <div class="content-panel" id="tab-schema" style="display:none;">
+    <div class="card">
+      <div class="field-label">Detected Structured Data (<span id="schema-count">0</span>)</div>
+      <div id="schema-list" class="schema-box">Scanning...</div>
+    </div>
+  </div>
+
+  <div class="content-panel" id="tab-export" style="display:none;">
+    <div class="card">
+      <div class="field-label">Client Deliverable Audit</div>
+      <p class="desc-text">Generate a clean, professional technical SEO audit report formatted for client handoffs, proposals, or Jira tickets.</p>
+      <div class="btn-group">
+        <button id="btn-export-md" class="btn primary">Export Markdown (.md)</button>
+        <button id="btn-export-csv" class="btn secondary">Export Summary CSV</button>
+      </div>
+    </div>
+    <div class="card pro-banner">
+      <div class="pro-header">Agency Pro License ($12)</div>
+      <p>Unlock custom agency branding, white-label PDF generation, and automated multi-URL batch audits.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Private & Local • 0 External APIs • Fast DOM Parse</span>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
