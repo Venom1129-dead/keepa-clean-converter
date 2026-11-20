@@ -176,5 +176,42 @@
       </table>
     </div>
   </div>
+  <!-- ASSET 6: VRAM CALCULATOR -->
+  <div class="section-card">
+    <div class="section-title">
+      <span>6. Local AI VRAM & Quantization Sizing Cockpit ($9) — Production Web Tool</span>
+      <span class="badge badge-clean">Verified Formulas</span>
+    </div>
+    <div class="diff-callout">
+      <strong>Core Fix:</strong> Eliminates CUDA Out-Of-Memory (OOM) crashes by calculating exact GQA KV Cache scaling (128k context = 16GB KV Cache!) and GPU tokens/second memory bandwidth speed.
+    </div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr><th>Model Architecture</th><th>Quant Level</th><th>Context Window</th><th>Weights VRAM</th><th>KV Cache VRAM</th><th>Total Required</th><th>Target Hardware Status</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Llama 3.1 8B</td>
+            <td>Q4_K_M (4.5 bpw)</td>
+            <td>8,192 tokens (8k)</td>
+            <td>4.21 GB</td>
+            <td>1.00 GB</td>
+            <td class="highlight-clean">6.01 GB</td>
+            <td class="highlight-clean">✓ Fits on RTX 3060 (12GB) • ~85.5 tok/s</td>
+          </tr>
+          <tr>
+            <td>Llama 3.1 8B</td>
+            <td>Q4_K_M (4.5 bpw)</td>
+            <td class="highlight-messed">131,072 tokens (128k)</td>
+            <td>4.21 GB</td>
+            <td class="highlight-messed">16.00 GB (Explosion!)</td>
+            <td class="highlight-messed">21.01 GB</td>
+            <td class="highlight-messed">✗ OOM on 12GB (Requires RTX 3090/4090 24GB)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </body>
 </html>

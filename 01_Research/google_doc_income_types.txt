@@ -1,0 +1,1955 @@
+﻿Web store running 24x7.
+Income types.
+Target.
+1. $100M monthly.
+2. Traffic = 100M.
+3. Listed 100k products.
+	Reselling.
+1. Ebooks.
+2. Tech items.
+3. Health items.
+
+
+Partner program.
+1. Selling aguard/malwarebytes/easeus/
+
+
+Setup.
+1. We have multiple niche stores. On amazon etc.
+4. Traffic = social media through store/QA platform.
+5. Use books’ knowledge.
+
+
+Products.
+1. Contents (songs with kavita, starting/ending words being the same, or same phonetic sounds.)
+2. Ebooks. (template = how to do things faster.)
+3. Eating items.
+4. Electric Items.
+5. Gadgets.
+6. Kitchen things.
+7. Home things.
+8. Games.
+9. Apps.
+10. AI tools.
+11. RE AI.
+12. Teaching course.
+13. Print of demand: Printify (we can create a clothing brand or other brands. Target = girls.)
+
+
+Ebooks.
+Tips.
+1. Publish on multiple platforms.
+2. Use celebrities’ things, people follow the ones they are fans of or see as a master someone at a higher level, like a student follows his teacher if he likes the teacher a lot.
+3. Famous things. Like persons/movies/animations.
+4. Focus = finding things which are already popular, and selling that.
+5. How to use trends. (one of the most IMP everything has trends+times (like special events.))
+Ideas to sell.
+1. Picture books.
+2. Coloring books.
+3. Hand writing books.
+4. Drawing books.
+	Selling.
+1. Ebooks. On health/Tech/daily uses.
+
+
+Tools to use.
+1. All AI agents. Claude/Codex/Opencode/Freebuff/Cline/ZCode/Antigravity. Use cloud agents mostly.
+2. Skills = Replica skill/REA/LeanREA. Microfish/timeFM.
+
+
+Things to do.
+1. Creation of community for Trading/investing/RE/Health/AI/ etc.
+2. Creations of Website/Apps/Games/tools/our own AI/
+3. Traffic = 500M.
+
+
+Things to take into consideration.
+1. Events, Local/Global/personal. Like public holidays/special events/personal special events like birthday’s, marriage.
+2. Items = those which target those events, like foods+its items to prepare them/clothes/gadgets so on.
+3. Platforms = use multiple platforms like amazon/snapdeal/flicart.
+4. Traffic = use multiple platforms, youtube, website (QA), social media platforms.
+5. Actual sellings = Knowledge: Read multiple books, Hire sellers.
+
+
+Check what AI succeeds in creating an income. 
+Where AI decides almost everything, what works to do+how to do.
+1. Setup = claude fable5.5/gpt astra 6.2/gemini krypton/glm5.5/qwen4.
+2. opencode+cline+freebuff.
+	
+
+Target.
+1. Time savings.
+2. Special Time events like holidays. Like birthdays/public holidays/private holidays.
+3. 	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The AI Company Structure: 
+I had almost forgotten AI could keep working and testing until it makes money.
+AI organization.
+Think of yourself as the shareholder. Not the worker. 
+Create specialized agents:
+
+
+CEO Agent
+1. Finds opportunities
+2. Decides markets to enter
+3. Prioritizes projects
+Model:
+1. Claude
+2. Qwen
+3. Gemini
+
+
+Research Agent
+Mission:
+1. Find profitable niches
+2. Analyze competitors
+3. Discover unmet demand
+4. Find buyer communities
+Tools:
+1. Browser automation
+2. Gemini
+3. NotebookLM
+4. Perplexity alternatives
+5. Search engines
+6. Reddit
+7. Product Hunt
+8. IndieHackers
+Output: Opportunity reports
+
+
+Validation Agent
+Mission:
+1. Verify if opportunity is real
+2. Estimate monetization
+3. Look for competitors making money
+Questions:
+1. Are people paying?
+2. How much?
+3. How crowded?
+Output: Go / No-Go decision
+
+
+Product Agent
+Mission: Build MVPs
+Tools:
+1. Claude
+2. Codex
+3. Cline
+4. OpenCode
+Output: Working products
+
+
+Marketing Agent
+Mission: Generate traffic
+Tasks:
+1. SEO
+2. Social posts
+3. YouTube scripts
+4. Blog articles
+5. Lead generation
+
+
+Review Agent
+Mission: Destroy bad ideas
+Questions:
+1. Why will this fail?
+2. Where are hidden risks?
+3. Is there real demand?
+The Review Agent should be brutal.
+
+
+Analytics Agent
+Mission:
+1. Track income
+2. Track conversions
+3. Kill underperforming projects
+	
+
+	Your Actual Goal
+Don't ask:
+"How can AI make money?"
+Ask:
+"How can AI run thousands of experiments until it finds a money-making system?"
+That changes everything.
+What The Research Agent Should Search For
+Not trends.
+Not cool technology.
+Only:
+Existing Spending
+Bad:
+* "What's the next big AI idea?"
+Good:
+* "Where are people already spending money?"
+Examples:
+* SaaS subscriptions
+* Freelance marketplaces
+* Affiliate products
+* Digital products
+* Local business services
+Money leaves footprints.
+Follow the footprints.
+A Better System Than Most People Build
+Most:
+Research → Build → Fail
+You:
+Research → Validate → Tiny Test → Measure → Scale
+________________
+
+
+The Loop
+Your AI company should continuously run:
+1. Find opportunity
+2. Estimate demand
+3. Build MVP
+4. Launch
+5. Measure
+6. Improve
+7. Scale
+8. Repeat
+Forever.
+The Most Realistic Income Targets
+Phase 1
+Goal:
+$1/day
+Not joking.
+If AI cannot generate $1/day on a project, scaling doesn't matter.
+________________
+
+
+Phase 2
+Goal:
+$10/day
+Now you have a signal.
+________________
+
+
+Phase 3
+Goal:
+$100/day
+This is where most valuable systems emerge.
+	What I Would Build With Your Tool Stack
+You have:
+* Claude
+* Codex
+* Qwen
+* Cline
+* OpenCode
+* Browser automation
+* NotebookLM
+That's enough.
+I'd build:
+Agent 1: Opportunity Hunter
+Every day:
+* Scan Reddit
+* Scan IndieHackers
+* Scan Product Hunt
+* Scan Fiverr
+* Scan Upwork
+* Scan Google trends
+Output:
+Top 20 opportunities.
+Agent 2: Opportunity Scorer
+Scores:
+* Demand
+* Competition
+* AI capability
+* Speed of launch
+* Monetization
+Output:
+Top 3 opportunities.
+________________
+
+
+Agent 3: Builder
+Creates MVPs automatically.
+________________
+
+
+Agent 4: Publisher
+Launches them.
+________________
+
+
+Agent 5: Auditor
+Checks:
+* Traffic
+* Revenue
+* Conversion
+If failing:
+Kill project.
+If succeeding:
+Scale project.
+The Most Important Rule
+1. Do NOT build one project.
+2. Build a machine that creates projects.
+3. A single project is gambling.
+4. A project factory is a business.
+The people making serious money from AI are increasingly building systems that test dozens or hundreds of opportunities, keep the few that show real demand, and shut down the rest quickly.
+
+
+Your goal should be:
+"AI discovers opportunities, AI validates them, AI builds solutions, AI launches tests, AI collects results, AI recommends decisions."
+
+
+You still remain legally responsible for accounts, payments, compliance, and final decisions, but AI can realistically perform the vast majority of research, analysis, content creation, coding, marketing assets, and experimentation. The closest thing to a "99% AI-run income engine" today is an automated opportunity-finding → MVP-building → traffic-generating → measurement factory.
+
+
+	
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AI at work for 24x7 hours.
+	Works almost done with AI.
+1. Trading. (normal+binary.)
+2. Software by developing an eco system (REA).
+3. Reverse engineering. RE (use REA/LeanRea/we improve it more by 10x)
+4. Game IAP eco system development.
+
+
+AI potential =
+1. Plan, review, build, test and verify.
+2. Prompting (result - what to achieve, and what not to achieve.) skill, MCP, tool creation.
+3. Let AI find its own ways to do things.
+
+
+AI Making Money.
+1. Trading. (normal+binary.)
+2. Reselling.
+3. Selling with AI.
+4. Software development. (Creating an ecosystem.) (REA)
+5. Freelancing. (getting work done by AI+people) (creating our own freelancing place)
+6. Game IAP eco system development.
+
+
+Trading strategy;
+1. Accuracy                 = 100%+ (100+ trades win in a row.)
+2. Return rate         = 1000%+
+3. Max drawdown          = 0.10%         (drawdown = your biggest "correction wave")
+4. Total trades          = 100+
+5. Profit factor         = 100+        (Seen 73.96. if Your PF is 56.02")
+6. Total bars         = 20k+
+
+
+AI would be trading in zerodha with 200. And making it double every month.
+Increasing by 10% - 20% daily. Almost 20-200 rupees daily (and in options - 20k). 
+Target = 10L to 20L daily per AI, and we have 100 AI working. So we get $100M per day.
+Investment being 100B.
+
+
+We win every tournament of binary+tradingview+others, so already get 5M monthly income by winning only, and by trading it reaches 100M monthly.
+
+
+AI already showed.
+Real-Data Backtest Results (v7.0 Pure Liquidity Engine on Real BTCUSDT 5m Candles)
+When tested across the Binance BTCUSDT historical dataset:
+
+
+1. Total Closed Trades: 454 to 531 trades (covering the entire month without history truncation).
+2. Win Rate: 90.5% – 92.6% (over 5x higher than the previous 16.92% script).
+3. Profit Factor: 2.62 – 3.07 (over 12x to 14x better than the previous 0.205 Profit Factor).
+4. Net Return: +47% to +86% on equity. (this got us not to use, as it was already a negative for 15k bars testing. So we need more ROC)
+
+
+We need to add commission+trading only 1 unit.
+	Web search+web scraping full potential use. Using the full potential of…
+1. Web-Search/Deep-Research/Web-Scraping.
+2. Gemini. (with its connectors like notebook lm) creating an automated system from it for trading strategy. We can use Gdoc, G drive, Notebook lm. 
+3. Notebook lm. (got a sandbox, it can run python codes) (300 sources can be added, how to use them all at once.) how to train any AI on any book just like a human learns from a book.
+
+
+Target. Trading strategy forex+binary with: 
+We can get fully working with 92%+ accuracy and Return rate 192%+ and pf =10+.
+AI strategy by
+1. Accuracy                 = 100%+
+2. Return rate         = 50,000%+
+3. Max drawdown          = 0.00%         (drawdown = your biggest "correction wave")
+4. Total trades          = 10,000+
+5. Profit factor         =  20+        (seen 73.96. if PF 56.02: for every $1 lost, it made $56.)
+6. Total bars         = 43,200+.
+7. Multiple Time frame profitability. ALL! Especially 1m, 5m, 15m, 1h.
+8. Winning streak         = 100+ (i have manually gotten 63 win streak)
+
+
+Binary trading strategy. (winning free tournaments from all platforms.)
+1. Accuracy 98.5%
+2. Total trades 1000
+
+
+In 10 days we want 94% accuracy with 20 trades in 15k bars (10 days = 2 trades a day.)
+1 to 4 trades in each 1k bars. It means in one month 100 trades are easily possible.
+
+
+How to get it done automatically.
+1. Give AI concepts to work, say SMC.
+2. Review (codes if there are any errors) +verify (test the performance if the goal is achieved.) Give AI a way to verify automatically (huge boost, one of the only ways to make it possible.)
+3. Skills.
+1. Graphify.
+2. WebSearch:Binance Data Collection.
+
+
+MCP.
+1. Context7 MCP (using always latest data for coding etc. (Coding scripts in tradingview.)
+
+
+
+
+AI trading script for binary trading.
+Yeah, now I see for binary trading we only need accuracy.
+1. Accuracy 98.99%
+2. Total trades = 1000.
+
+
+
+
+	
+
+AI income: Ideas.
+1. First MIND work.
+2. AI finding problems on WEB, and creating solutions.
+3. AI finding jobs and AI doing it.
+4. AI Trading intraday+binary.
+	Reselling.
+1.  Physical Products:
+   1. Book for sale.
+   2. Website.
+   3. Social media to upload ads.
+   4. Traffic = social media.
+2. Digital products:
+   1. Ebooks.
+   2. 3. Service. 
+   1. Freelancing.
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Income sources.
+Every income must be automated in loop engineering.
+	Easy if work gets done with AI. think in both, like tournaments, can you win? if not then choose to be the creator of the tournament. It means either be the hand (doer), or be the mind.
+I… by 11/11/26 = Make $100M per month from multiple sources of income like…
+1. Financial Market = Algo trading (Bot/script) and manual trading.
+2. Freelancing. (Work as a broker. $3k per project.) (Creating freelancing websites where people can get their work done.)
+3. Affiliate market. (we can create ads using our storybrand. So we don’t need to find customers, they come, we catch. But do both.) Idea, we create a product, and get others to sell our products.
+4. Reselling/partnership. (selling other products digitally. Like adguard, malwarebytes)
+5. Selling Ebooks and digital products. (Creating an online web store where people can Upload their digital content and customers buy and we charge.)
+6. Apps.        We create and improve and sell them. $100M per month. (create our solution, advertise and sell through telegram +other platforms.)
+7. Games.        We create or improve and sell them.         = $10M   per month.
+8. AI testing. We give human data.                  = $5000  per week.
+9. Content creation (Ads.) on Social media. (Reason: Traffic creation like on YouTube.)
+10. Becoming a broker in something. (like we create a website for gamers and developers from where users download their uploaded games and if they buy we charge.)
+11. Think, how to earn 10x from 10%+ of people, as many games got 100M downloads, find a way to earn from them. Like anger of stick 5, dead target and many more.
+12. Free tournaments or leaps.
+13. Website.        We create or improve and sell them.
+
+
+I… by 11/11/26 = make.
+
+
+Ways to make money.
+1. The $100 Egg Strategy that Made $22,000! 🤯#shorts #wealth #money #success #startup #investing #egg 
+2. Entertain.
+3. Solutions.
+4. Loophole exploitation. 
+   1. Human - emotions, like greed, fear, depression. Happy, cheerfulness, compassion.
+   2. Economic - credit cards, Financial market.
+
+
+Ideas: Wealthy people do get paycheck, but they get a return in % like 100% yearly.
+Money we want daily = 30Million = 900M monthly or see 1000M/1B monthly.
+Focus on receiving it by working on it daily and timely. And let's see when we start getting success.
+1. Solve your own problem and share it with others.
+   1. Ads blocking with AdGuard (we get 9 devices we can share) and get money. (We can expand it to earn millions.) We use trials or buy directly. And we can use more such goods and services like malwarebytes, idm etc. 
+   2. Giving paid apps for cheap prices. (We can get those by paying them then cancelling)
+   3. Health: Rock salt buying in bulk selling high prices. People charge 1k+ for 1kg only. We can buy 20-30 per kg and then sell for 100+ per kg.
+   4. AI API: Selling it.
+   5. What we read we can sell, and it fulfills helping, learning and earning. Or we create our own ebooks or digital contents and advertise it with storybrand and sell it.
+
+
+Easy way to get = Happily Help and share solutions.
+Everything comes only from giving goods or services.
+1. Traffic.
+2. Income. 
+3. Learning.
+2. Let others enjoy themselves. 
+Best way to learn with earning as Bonus = sharing, making one understand. 
+We can do it by uploading on…
+1. Youtube, like RE.
+2. Social media.
+3. Creating ebooks with things I learn. $99x100 = 9,900 = ₹9,90,000
+	Apps and games development income.
+1. Development help.
+   1. Crowdfunding and Early Access. We don’t need this to create but just use it.
+   2. Game Publishing and Licensing.
+
+
+2. Games earning resources. I think there should be 10+ 
+   1. Putting games in multiple places.
+   2. Ads revenue. 
+   3. In app purchase. 
+      1. Currencies, Skins, Clothes
+      2. main system, like shooting got weapon system, bombs, car racing got, cars with their parts. 
+   4. Brokerage system. 
+      1. Read other apps to know lots of ways to charge. like kite. It got, charges of many types. 
+      2. Making skilled people buy, and you are also with their skill, you charge on both sides, on loser+winner. And people would buy if they win. 
+      3. Engage people in buying and donation. 
+   5. Premium access to it.
+   6. Premium access to in Game special items.
+   7. Season passes or subscriptions
+   8. Creating paid tournaments or leaps.
+   9. Downloadable contents. (DLC)
+
+
+3. From game parts;
+   1. Selling Game Assets. (helping the development of others.)
+   2. Selling digital clothes and other items. People buy directly from the game.
+4. Apps.
+   1. Brokerage app.
+   2. Tools, solving my own problems and sharing them.
+
+
+Apps and games which allow uses of…
+1. Loan,
+2. Money on the bet. (1. modding it myself to change logic to earn directly from the p2. 2. Charging players on both sides, like binary trading.)
+
+
+Audio; we can sell it also for others.
+1. We need to learn, it’s good to learn.
+
+
+How to develop:
+We don’t need to create a “AAA” title game, we just need to make games which AI is best at.
+1. Use Multiple Coding Agents all working together like a company.
+2. And for game editing, the AI must be able to edit the game live, like say it created a game in html+css+js and you opened it in a browser, and you noticed a tree is on the road instead of being on the side, now you need to edit that tree directly from the game, and editing from the game should result in editing the original game file as well.
+3. Creating our own agent or getting someone else’s.
+4. We must create and use skills (to solve data collecting issues. Remember stealth master when we asked about shuriken, and it said general knowledge but not in-game knowledge.), MCP, AI agents and other tools like blender.
+5. 
+
+Creating the best eco-system possible.
+	Earning from RE knowledge with AI.
+1. Creating a platform where users can request hacks for games, we hack and get paid.
+2. Creating game farming services.
+3. 	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+problem solving.
+	Problems I have.
+1. Ads.
+2. Using the full potential of an AI tool. (Automation/Memory/Giving wrong guessed or general knowledge instead of verified identified original data. AI giving/reading not complete data, like upload a book, ask it to plan a trade, it plans based on one concept instead of whole, or while analysing a game, i upgraded the weapon at level 2, i asked what features it unlocked, it first used general knowledge, like if the hero has a weapon it says it is knife (but in reality weapon was shiruken) then after telling it’s shuriken, it said it now level 2 lets you throw 2 starts while the hero already throw 3 at level 1, so ai did not read, talking a lot AI finally gave correct answers.)
+3. 	Solutions made.
+
+
+Products; created = green, improved = blue.
+1. PPSSPP MCP improvement.
+2. Cetus adding MCP.
+3. Zero lag screencast. (i enhanced it) sunshine.
+4. 
+
+Products to create:
+1. Notebook. Best note making app with all features I need. (adding features in Gdocs, controlling multiple sides of the table and notepad++ square selecting feature = Shift+alt+arrow. And all line selection short-key.
+2. Noise cancellation software. (Done, almost)
+3. PDF best reader.
+4. OS system. (replace - Windows)
+
+
+Services. I need to share problems I face online.
+1. Digital. 
+   1. Save kids videos to the playlist. Save unaddable videos to the playlist.
+   2. Windows flash drive fix.
+   3. Restore lost files.
+   4. Delete permanently.
+   5. MMI code connection problem.
+2. House-hold
+   1. Gas cylinder.
+   2. Electric stove.
+   3. health.
+
+
+
+
+Idea, help people services like lost file recover pro version where we become affiliates. Make partnerships with apps services like…
+1. Adguard.
+2. Easeuse.
+3. Malwarebytes.
+4. 
+
+	
+
+	
+
+	
+
+2 ways earning. By 11/11/26
+Skills we need.
+1. Sellings.
+2. Communication.
+3. Strong decision making/Strong will power.
+	On a freelancing website.
+1. I get the work done by others. AI+PEOPLE at work together                 = done.
+2. Getting 10,000 freelancers hired, income = $100,000,000 Monthly.         = in progress.
+3. Hire all friends of known, from top (Ldr) to bottom+everyone i have seen. Total expense = 1% of the total revenue.                                                = in progress.
+	Freelancing.
+1. I created my own website for freelancing,                 = done.
+With a traffic of 100M people. Income = 10B monthly.
+	Financial market. Green = almost done.
+1. I make money from Algo trading and manual trading.                = almost done.
+2. I invest all my income into the financial market. $10-20B invested.        = in progress.
+3. I Sell signals the script we are making money automatically from.        = almost done.
+4. I hired people to manage other’s accounts.                        = in progress.
+5. I partner with brokers for all earning ways.                        = in progress.
+	Our Creations.
+1. created a bank.                                        =in progress.
+2. created a brokerage firm.                                 =in progress.
+3. created a hedge fund, where we manage others' income (governments money as well.) 
+(where the world's top 50 traders are trading+investing.        =in progress.
+4. created binary firms, like binomo, Quotex, olymptrade.        =in progress.
+
+
+Income = 2T per month.
+	Selling Skills.
+1. Sell digital contents like Ebooks/Softwares etc on the webstore.         = almost done.
+2. Affiliate marketing.                                                = In progress.
+3. Reselling.                                                        = almost done.
+
+
+	Our Online selling platform. 
+1. I created an online web store where people can Upload their digital content and customers buy and we charge.                                                 = done
+
+
+Income = 100B per month.
+	Apps:
+1. I create apps (for myself, which would solve my problem) and sell them, as we are helping. We create or improve and sell them. $100M per month. (we create our solutions, advertise and sell through telegram +other platforms.)                         = almost done.
+income = $500M per month.
+	Our creations.
+1. creating an Eco-System of apps and games. creating everything I/we need/want. AI at work for 24x7 in the cloud.                                                 = in progress.
+2. Eco_System from softwares to hardwares.                = in progress.
+
+
+Income = 100B per month.
+	Games.
+1. I created games people love to play and enjoy their time.                      = almost done.
+2. Upload on websites where allowed and we make money = $10K per week. = almost done.
+	Developer help website.
+1. I created an AI+software which helps people become developers.                = in progress.
+2. I created a game store where people upload games people may install.                = in progress.
+3. I created a website for gamers to play and upload options to earn for developers.        = in progress.
+
+
+Income = $10B per month.
+	AI testing. 
+1. I give human data.                   = $5000  per week.
+2. I scale this work, where I hire other people for the work without them knowing.
+Income = $50K per week.
+	Human data for AI training website.
+1. Creating our own AI model.                                                = in progress.
+2. I made a deal with an AI company and created a platform like babel.                = in progress.
+
+
+Income = 100M per month
+	See/softwares.
+Universal
+1. All AI.
+2. Youtube
+3. Tradingview.
+4. Macrodroid.
+
+
+Supporting ones.
+1. Z-library.
+2. 	For Reverse engineering.
+android.
+1. App cloner.
+2. Mt manager.
+3. NP manager.
+
+
+PC
+1. Gidhra.
+2. 	
+
+	See /hardwares creating/getting.
+1. Doing hardware expenses with AI.
+2. TV monitor.
+3. Desktop setup.
+4. Touch PC
+5. Android
+6. wireless GPU.
+7. headset.
+	
+
+AI income.
+Income = 
+1. Customers' problems and solutions by us.
+2. Or customers, we as a broker, others as selling solutions.
+	Freelancing.
+End = we create our own freelancing website where people come to get their work done.
+
+
+2 ways to earn.
+1. AI at work in automation, we take one type of work.
+2. We become a broker by creating 2 accounts so we become a broker.
+1. One finding jobs. (Get it done by AI)
+2. One hiring people for the job. (very easy.)
+Pay-per-Task / Project Bidding: Users submit a ticket, your team reviews it, provides a fixed-price quote, and the user pays an escrow deposit before work begins.
+AI testing all works. Our target $200,000 weekly.
+AI testing needs human data, we need to find a way where I become a leader of peoples,
+They work for me giving lots of human data. Then we can easily earn $700,000+ weekly if we get 100 people at work with one platform only like babel.
+Audio Transcription and Short Phrasing: Sites like Babel Audio or microtask boards pay you to listen to 5-to-10-second audio clips and type out exactly what was said, or record your own voice reading short sentences to train speech recognition. (we can learn listening and speaking here or as well typing.) = $140 a week easily.
+Image Bounding and Tagging: Look for tasks on platforms like Hive Micro or Microworkers where you draw boxes around specific objects in images (like cars, pedestrians, or traffic signs) to train computer vision and self-driving car software. 
+Each image takes only a few seconds.
+Data Categorization and Cleaning: Tasks involve looking at messy spreadsheets, duplicate product listings from online stores (like matching two identical items from different e-commerce sites), and clicking the matching category.
+UserTesting / TryMyUI: Record your 5-minute screen and voice while testing out new AI web apps, giving basic thoughts on whether the buttons work.
+TaskRabbit (Virtual/Micro tasks): Handle simple digital sorting or data clean-up tasks that automated text tools flag for manual review.
+Toloka AI: Perform fast web-search relevance checks and image tagging tasks that require zero prior technical background.
+DataAnnotation.tech: Sign up, take a quick grammar/logic assessment, and get access to a dashboard of AI evaluation tasks. You compare two AI responses, point out which one is better, and explain why. It pays hourly (usually starting at $20+/hr), meaning even a single 10-minute task easily crosses your $1–$2 goal.
+OpenTrain AI: Use this aggregator hub to filter out surveys entirely and view a live feed specifically restricted to quick AI prompt testing and image-labeling micro-tasks across various partner platforms.
+
+
+Platforms to get an income from:
+1. Youtube.
+2. Gmaps.
+3. Gmail.
+
+
+
+
+
+
+
+
+	Apps/Games/ development.
+Apps final result = we create an Eco-system of our products and services.
+Games final result = we create a gaming company.
+
+
+Finding a way: Thinking about a way to earn 10x from 10% people, as you know many games got 100M downloads, think how to earn from them. Like anger of stick 5, dead target and many more.
+1. Creating videos teaching them tips and tricks or bugs.
+2. Streaming. Or showing best shots.
+3. Creating Custom contents like scripts.
+4. Creating an economy farming like coins, gems and others.
+How to Legally Earn Around Popular Games
+If you want to tap into a massive player base of millions of gamers, legitimate avenues exist that do not involve tampering with game files:
+* Content Creation & Guides: Build a YouTube channel, TikTok presence, or strategy blog focusing on gameplay walkthroughs, weapon tier lists, and tips for beginners. Monetize through ad revenue, sponsorships, and affiliate links.
+* Fan Art & Merchandise: Design custom, officially permissible apparel, phone wallpapers, or community-driven collectibles inspired by the zombie-survival genre.
+* Game Development: Use the coding and technical skills required for reverse engineering to build your own original indie zombie shooter from scratch. Retaining 100% of the rights to your own game protects you from legal trouble and allows you to monetize legitimately through app store ads and microtransactions.
+Upload games on multiple platforms and make a paid version as well.
+Major app stores like Google Play ($25 one-time fee) and Apple App Store ($99/year) charge upfront developer fees, and Steam charges $100 per game, but there are entirely free alternatives where you can publish your game instantly, share it with players, and even monetize it. 
+
+
+1. Host and Publish for Free (Web & PC)
+* Itch.io: This is the ultimate home for indie developers. Uploading your game is 100% free. 
+If your game runs in a browser (HTML5/WebGL), players can click and play it instantly without downloading anything. You can also upload Windows/Mac/Linux builds. Itch.io lets you set up a "Pay what you want" or fixed price model, and they only take a small cut if and when you actually make money.
+* Game Jolt & Newgrounds: Both are free community-driven platforms where you can publish web or desktop games instantly. They have active communities looking for indie games to play, rate, and review.
+* CrazyGames / Poki: If your game is built for the web (HTML5), you can submit it to browser game portals. If they accept it, they host it for millions of players and monetize it via built-in ads, sharing the revenue with you.
+2. What about Mobile Games (Android/iOS)?
+If you built a mobile game and want people to play it on their phones without paying registration fees upfront:
+* Web-Mobile Hybrid: Export your game as an HTML5 web game instead of a native app. Share the link on social media, Reddit, or Discord. Players can open your game straight from their mobile browser, and it will feel just like an app.
+* Alternative Android Stores / Sideloading: Platforms like Itch.io also support Android APK downloads. You can let players download your Android APK directly from your page for free. (Just be careful: always warn players to enable installation from trusted sources cautiously).
+* Save up via free platforms: Many developers start by launching their game for free on Itch.io or web portals to build a small community, test features, and gather initial support or donations. Once the game generates a bit of traction or revenue, you can use those funds to pay the Google Play or Apple developer registration fees later.
+
+
+
+
+As a broker: 
+                    like we create a website for gamers and developers from where we earn from their profits.
+
+
+	Websites.
+1. We create using AI.
+2. Make it live temporarily, then make a deal, 
+3. We use the received money to make it live permanently.
+
+
+I Sold AI Website for Rs.7000 | Selling AI Websites | I Used Google Maps to Find Clients 
+	
+
+	
+
+AI reverse engineering income
+	Yes, you can absolutely build a business model around this concept. It is a well-established and viable approach, often referred to as As-a-Service development, micro-task platforms, or on-demand engineering. 
+Business Models You Can Use
+* Credit or Token System: Users purchase a package of credits upfront, and different tasks (e.g., a simple bug fix vs. a complex feature) cost a specific number of credits based on estimated hours.
+* Subscription Tiering: Monthly plans where users get a dedicated pool of hours or a set number of small tasks per month (similar to services like Design Pickle, but for code).
+* Pay-per-Task / Project Bidding: Users submit a ticket, your team reviews it, provides a fixed-price quote, and the user pays an escrow deposit before work begins. (ask your worker to choose the work they find easy and lovable.)
+Key Challenges to Anticipate
+* Scoping and Estimation: Bugs and feature requests are notoriously difficult to estimate upfront. A "simple bug" might uncover deep architectural flaws, leading to scope creep. You will need a strict definition of what is included in a task.
+* Codebase Familiarity: Fixing bugs in unfamiliar codebases takes time. You will need developers who are fast at reading and debugging legacy code, or restrict your service to specific tech stacks (e.g., only React, WordPress, or Python).
+* Quality Control: If you hire other developers to fulfill the requests, ensuring consistent code quality, security, and proper testing is critical to retaining clients.
+Initial Steps to Launch
+* Start Narrow: Don't accept every request initially. Focus on a specific niche (e.g., Shopify bug fixes, WordPress plugin adjustments, or SaaS MVP features) so you can accurately price and execute the work.
+* Use Existing Tools: You don't need to build a custom platform from scratch on day one. You can use tools like Jira, Trello, or Helpdesk software combined with Stripe for invoicing to handle ticket submissions and payments.
+* Define Service-Level Agreements (SLAs): Set clear expectations on turnaround times (e.g., "Bug fixes completed within 48 hours") to build trust with your first customers.
+
+
+	Yes, this market exists, and people do get paid to mod games, but it operates under a very specific set of rules, risks, and ethical gray areas.
+
+
+What People Actually Pay For in Modding
+
+
+* Private / Custom Content: Gamers often pay modders to create personalized items—such as a custom skin modeled after their real-life pet for The Sims 4, a private Minecraft server plugin, or a custom map asset for a community game.
+* Exclusive Early Access: Modders frequently use platforms like Patreon to let paying supporters access beta builds of massive overhauls (like Skyrim graphics extensions or expansion-sized quest mods) weeks before the general public.
+* Server Configurations: Multiplayer communities (such as FiveM for GTA V or custom Minecraft networks) regularly hire freelance developers to code custom game modes, economy systems, and user interfaces.
+The Reality of "Unfair Advantage" Cheats
+While players do pay for competitive advantages (like aimbots, wallhacks, or macro automation tools), building a commercial service around this crosses a severe legal and ethical line:
+
+
+* Cease & Desist / Lawsuits: Major game publishers (like Riot Games, Activision, or Epic Games) aggressively sue developers who sell cheats and hacks, as it ruins their game economy and community.
+* Account Bans: Players purchasing these features know they risk getting hardware-banned, making the customer base volatile, untrustworthy, and prone to chargebacks when their accounts inevitably get flagged.
+* Challenges Unique to Modding Services
+
+
+* The "Update" Trap: Video games update constantly. Every time a game patches its anti-cheat or modifies its core engine code, existing mods break. Clients will expect you to fix your work for free every time the game updates. (we can partner with the game to let them know when to update.)
+* Intellectual Property (IP): You do not own the game's code or assets. Selling a mod that directly profits off copyrighted characters, music, or engine assets can draw copyright strikes from the original publisher.
+* If you want to pursue this safely, focus on custom content creation and private server scripting (like Minecraft plugins or community RP frameworks) rather than competitive game cheats. (like we can create helpful script for say anger of stick 5 so players can use)
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+RE with AI on TDR for Income.
+	Full potential use.
+1. Use plan+execution at the same time, plan model must be the smart model. Using multiple models, opencode has almost 15 models ( I have seen 13 at max, current = 15+). Plan/Review (best model), build, Test, verify, report.
+2. Use todos/question tool/subagents/multiple sessions with different models.
+3. Using agent.md lust skill.md to a length where AI does not deny anything with multiple platforms like opencode/cline/zcode/freebuff.
+4. Plan+review = claude/codex, and use billions of tokens, like hermes with 8 billion tokens.
+5. Computer/browser use. Tools = agent-desktop or better one.
+
+
+Target:
+1. $20M Monthly Income . $20x10,000 = $2,000,000 = $2M.
+2. Community of 100k with multiple projects. (tdr/gow/SH/Obscure/AOS5/Cavestry etc)
+
+
+After we succeed in getting income from one community then we create multiple communities.
+Reaching income of 100B per month.
+1. AI RE to AI only.
+2. tech/ai
+3. Health.
+4. Services.
+5. Products.
+6. Financial market.
+7. Android apps.
+8. PC apps.
+9. REA.
+	Needs.
+1. Faster result, so AI whenever solves one thing, gets faster.
+2. AI being command/script master, it does not need our help to know what to press at what time.
+
+
+
+
+Already done.
+1. Community doing all other RE works.
+2. Move recording, I record and AI plays perfect like me, I need to find a way so i don’t need to record the moves myself.
+3. Think, when I give multiple targets, and AI reaching all those at once.
+4. AI becomes better at choosing character and command executions. (I think I need to use decision AI models.)
+
+
+How?: books learning
+books:
+1. Talking about 3 levels of questions - By talking about the problems our customers face, we deepen their interest in everything we offer. In stories, heroes encounter external, internal, and philosophical problems.
+2. Brainstorm what your customer’s life will look like externally if their problem is resolved, then think about how that resolution will make them feel, then consider why the resolution to their problem has made the world a more just place to live in. When we resolve our customers’ internal, external, and philosophical problems, we’ve truly created a resolution that will satisfy their story.
+3. Gap opening, (like do something so people uses their mind, or you drive their mind, like get p2 bounced, people will think what all moves to use after, but you can drive their mind, like make an opening move HWO (3+4.->3) (you make a focus on the gaps by slowing down.) or like movies leave many gaps seeing which people wait, or do something mysterious which lets people do logical thinking trying to find questions to solve the mystery.
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TDR: a crazy custom move chain you can build/enjoy in TDR.
+
+
+Who would pay? Content creators, combo video editors, and YouTube creators. People running major Tekken content channels constantly look for eye-catching, unique footage—like "What if Jin had a 9-fast-hit moveset in Dark Resurrection?" or impossible combo exhibition videos. They pay for custom, exclusive mod builds that make their content stand out.
+
+
+1. Where the Real Money Moves: Selling the "Prompt & Process Expertise"
+Even though AI makes the work faster, the average gamer or aspiring modder still doesn't know what to ask the AI, how to feed it the right memory dumps, or how to debug when the AI hallucinates bad hex offsets.
+
+
+The Bottom Line
+AI reduces the effort required to do the work, which means your output volume can explode. But to get paid, you shouldn't sell the output file—sell the mastery of the workflow. Teach people how to combine their passion for games with AI agents to unlock code they thought was impossible to read.
+
+
+TEST: If you post a clip and people immediately start swarming your comments with "How did you do that? Can you teach me?", you have validated your market. People are raising their hands and telling you they want your knowledge.To convert that exact demand into cold, hard cash without violating community rules (since selling raw game mods or Nintendo/Bandai Namco copyrighted assets directly can get flagged), you have to monetize the education, the process, and the custom service, not the pirated game files themselves.
+
+
+Phase 1: Capture the Lead (The Funnel)
+When people ask "how did you do that?", do not drop a 1,000-word technical explanation in a Reddit comment or YouTube reply. You want to funnel that raw curiosity into a centralized space you control.
+Set up a Free Discord Server: Name it something like "Tekken Engine Labs" or "FGC Reverse Engineering Hub."
+Redirect them: Reply to their comments with: "Thanks! I'm actually putting together a breakdown/guide on how this works. Join my Discord [Link] where I'll drop the details."
+Build a Mailing List (Substack / Gumroad): Collect emails of people who want the technical guides.
+
+
+Phase 2: Package Your Offerings (How to Charge)
+Once you have an audience of curious modders or content creators in your ecosystem, you can introduce three monetization lanes:
+
+
+1. Premium Tutorials & Courses (The Scalable Route)
+Instead of typing out the same explanation 50 times, write or record a definitive guide.
+
+
+What to sell: A mini-course or structured PDF guide series ("The PPSSPP Tekken Movelist & Animation Editing Masterclass").
+Pricing: Start accessible—around ₹1,500 to ₹4,000 ($20 to $50) per course or bundle. If 50 people buy a ₹2,000 guide, that’s ₹1,00,000 for knowledge you already possess.
+Platforms: Gumroad, Lemon Squeezy, or Udemy.
+
+
+2. 1-on-1 Mentorship & Live Coaching (The High-Ticket Route)
+People who want to learn how to do this fast will pay for your direct time because trial-and-error in reverse engineering takes years.
+
+
+What to sell: Private Discord calls, screen-sharing sessions where you help them set up PPSSPP’s debugger, or code/hex-reviewing their custom move attempts.
+Pricing: ₹2,000 to ₹5,000 ($25 to $60) per hour, or a monthly subscription tier for ongoing guidance.
+
+
+3. Custom Commissions (For the "Can you make this for me?" crowd)
+Some people in your community won't want to learn how to code it—they will just want a specific custom move or character mod built for their YouTube channel or private build.
+
+
+What to sell: Custom move list creation services on a contract basis.
+Pricing: Flat rates per custom request (e.g., ₹4,000+ / $50+ per custom chain or hybrid move integration, depending on complexity).
+
+
+
+
+Phase 3: The Launch Blueprint (Step-by-Step)
+
+
+1. Step 1 (The Hook): Post a short, jaw-dropping video of a bizarre, clean, or impossible custom move chain in Tekken: Dark Resurrection on Reddit (e.g., r/Tekken, r/emulation), TikTok, or X (Twitter).
+2. Step 2 (The Trap): When the comments roll in asking how, pin a comment or have your Discord invite ready.
+3. Step 3 (The Free Value): Give away 80% of the value for free (e.g., a basic text post or a quick YouTube video showing what tools you use like PPSSPP debugger and a hex editor).
+4. Step 4 (The Upsell): At the end of your free guide, say: "Want the exact template files, memory offset cheat sheets, and direct help from me? Check out my Masterclass/Mentorship program here."
+
+
+By shifting your mindset from "selling mods" to "selling the blueprint of how to reverse engineer fighting games," you stay legally safe, build massive respect in the community
+	I create a discord channel, where I am the owner, and there Reverse engineering work is done on TDR.
+1. I teach what I learned, and leave things to the community. After a week or month, I see lots of advancement.
+2. Then multiple projects get added (like TDR/GOW/S-H), and from there, we advance in learning AI+RE+REA+$100M.
+
+
+For the community.
+1. Youtube/discord etc.
+2. All free AI tools.
+
+
+Community person.
+1. Income.
+2. Sharing and learning RE+AI.
+3. Storage of learning+data.
+4. Automatic advancement.
+
+
+Target
+1. Traffic = 10K in each community.
+2. Community = 5 at least on multiple topics.
+	
+
+
+
+
+
+
+
+iGPU vs dGPU = AI doing vs people doing = permanent vs temporary.
+Freelancing AI work went from 20% to 43% this year. What would happen to the professionals who were in it?
+iGPUs will never replace dGPUs. Example = phone has camera,, but still many cameras are used because they have advanced too much as well.
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The company works by AI.
+	Department-Wise Hierarchy (Ranked Highest to Lowest)
+Level / Rank
+	Operations & Admin
+	Finance & Accounts
+	Sales & Client Servicing
+	Marketing & Tech
+	Rank 1: 
+Executive / Head
+	Chief Operating Officer (COO) / Head of Operations / General Manager (End-to-end workflow, facilities, supply chain, business strategy)
+	Chief Financial Officer (CFO) / Head of Accounts / Financial Controller (Strategic financial planning, statutory audits, cash flow control)
+	Head of Sales / VP of Sales / Chief Revenue Officer (CRO) (Revenue targets, go-to-market strategy, national pipelines)
+	Chief Marketing Officer (CMO) / Head of Marketing / Tech Lead (CTO) (Brand strategy, tech infrastructure, acquisition, product)
+	Rank 2: 
+Managerial / Lead
+	Operations Manager / HR Manager / Administrative Manager (Resource allocation, vendor contracts, hiring, policy enforcement)
+	Accounts Manager / Finance Manager (Team supervision, monthly P&L closing, tax planning, banking operations)
+	Sales Manager / Key Account Head / Client Servicing Director (Managing sales reps, high-value enterprise accounts, retention)
+	Digital Marketing Manager / Engineering Manager / Product Lead (Paid campaign budgets, SEO roadmaps, sprint delivery)
+	Rank 3: 
+Senior / Mid-Level
+	Assistant Operations Manager / HR Generalist / Facility Supervisor (Day-to-day operations, payroll processing, onboarding, grievance handling)
+	Senior Accountant / General Accountant / Tax & Compliance Specialist (P&L finalization, balance sheet reconciliations, GST/TDS filings)
+	Key Account Manager (KAM) / Senior BDE / Client Servicing Lead (Nurturing large clients, closing mid-large deals, renewals, upselling)
+	Performance Marketer / Senior Full-Stack Developer / UI-UX Designer (Ad campaigns, core application coding, user experience design)
+	Rank 4: 
+Junior / Associate
+	Admin Executive / Operations Coordinator / HR Assistant (Vendor bills, office attendance, inventory logs, interview scheduling)
+	Junior Accountant / AP & AR Executive / Billing Specialist (Invoicing, customer collections, vendor payment ledgers, bank reconciliation)
+	Business Development Executive (BDE) / Sales Executive / Account Executive (Outreach, product demos, quote generation, follow-ups)
+	Content Writer / Social Media Executive / Junior Web Developer (Social posts, blogs, basic website maintenance, newsletters)
+	Rank 5: 
+Entry Level / Trainee
+	Office Assistant / Helpdesk Support / Front Desk Receptionist (Visitor handling, courier coordination, routine administrative errands)
+	Accounts Clerk / Bookkeeper / Accounts Trainee (Voucher entries, petty cash management, receipt filing, basic ledger entries)
+	Telecaller / Inside Sales Trainee / Lead Qualification Rep (Cold calling, database scrubbing, initial prospect qualification)
+	Graphic Design Intern / Marketing Intern / Tech Intern (Social media creatives, banner edits, testing, campaign research)
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AI incomes Ideas;
+	Idea came from: 
+1. Earn 9% yield Get rewarded for staking your Venice tokens (VVV). You can also use your VVV to mint DIEM tokens, which give you $1 of daily credits to spend on our AI tools. Lots of people waste their credit, if we make a system they could share those to others,
+2. Creating something then giving it for free for personal use, from which they could earn, and giving its enhanced version for business they buy and we sell.
+3. Making a game/app/website or anything, where people enjoy, but you make them do your work, like somehow making them your employee without them knowing.
+4. Targeting special events. Like making food on special occasions and charging heavy so we could have monthly income in days.
+
+
+	For fulfilling everything.
+Like
+1. Wants. (AI IN RE)
+2. Needs. (income)
+3. Desires.
+
+
+We need to just exploit these things of human+AI.
+1. Need. 
+2. Want.
+3. Habit.
+4. Desire.
+5. Nature.
+6. Laziness. 
+7. Behaviour.
+8. Foolishness.
+9. Unknowingness.
+10. 	PC: imagine a scenario.
+1st scenario: 
+You put AI at work with the target of making money, say $1Million and you leave the PC open and you do your own work. It works for 8 hours daily. And you earn whether you do anything or not.
+
+
+2nd scenario: 
+You have learned enough to make AI work 24x7, now you ask AI to work in automation with loop engineering for 24x7 hours, and in this you use Cloud AI agents like google remy where you can put your PC off (Shutdown) and your work still keeps on. Here your AI can earn $100M.
+	Android: imagine a scenario.
+1. Here your Android also works to Earn and Help others.
+2. 	
+
+Game development.
+	PC Tools we need.
+1. AI tools.
+   1. Coding agents (Opencode/codex/Antigravity/freebuff/mini-max.)
+   2. Omni-route, full potential use.
+   3. All top AI models (Gemini/Claude/codex/GPT/Kimi/GLM/Deepseek/Qwen.)
+2. Languages.
+   1. Html+css+js
+   2. Webassembly. (any high level of language converted into a browser.)
+3. Skills
+   1. PlayCanvas → gives you editor tooling, but still runs fully in the browser.
+   2. Babylon.js → adds advanced rendering pipelines, making the illusion even stronger.
+   3. Physics engine (Three.js, Cannon.js, Ammo.js, or Oimo.js) → for collisions, ragdolls, vehicles, and realistic motion.
+   4. WebGL shaders → custom GLSL for reflections, shadows, water, skyboxes, and atmospheric effects.
+   5. Animation engine (anime.js)
+   6. WebXR → optional if you want VR/AR immersion.
+   7. Tools.
+      1. Blender. (turn images into 3D models and world.)
+      2. 
+
+⚙️ Supporting Systems.
+1. Procedural generation → terrain, cities, vegetation, traffic patterns.
+2. Level of detail (LOD) → keeps performance high by reducing complexity for distant objects.
+3. Instancing → efficient rendering of repeated assets (cars, pedestrians, buildings).
+4. AI scripting → NPC behavior, traffic flow, mission logic.
+5. Asset streaming → load textures/models dynamically as the player moves through the world.
+
+
+Games parts.
+1. Story/theme.
+   1. Video/Audio/Texts as story.
+2. Assets.
+   1. Environments. Like buildings, trees.
+3. Logics/mechanics.
+   1. Physics/mathemics
+   2. 4. Animations/AI animations (RIG)
+
+
+Game completion is almost done, now only needs…
+1. Eco system of money.
+2. optimization/detailing of - world/people/players/environments.
+
+
+AI Turns One Image Into an Editable 3D Scene
+	Android full automatic game development.
+
+
+1. Manus (what you're using right now) — I can actually do everything you described: create complete game projects with all files, test them, fix errors, and iterate until they work. The only limitation is I can't place files directly on your device. But I can give you a single downloadable ZIP file containing the entire project, or even deploy it as a live website you can access instantly. You'd just need to download the final result.
+
+
+2. Replit Mobile App (Android) — This is probably the closest to what you want. It has an AI assistant (Replit Agent) that can create entire projects, run them, detect errors, fix them, and iterate — all within the app on your phone. Files are created on their cloud but you can download them to your device.
+
+
+3. GitHub Codespaces + Copilot (via browser on Android) — You get a full VS Code environment in your browser with Copilot that can generate entire files. It runs, tests, and you can download the project.
+
+
+My recommendation: Use me (Manus). Tell me what game you want, and I'll build the entire thing — all HTML, CSS, and JS files — test it, fix any issues, and give you either a working live link or a ZIP file you can extract into your MT2/claude/ folder. Would you like to try that?
+
+
+Yes, absolutely. Here's what I can genuinely do:
+
+
+- Create complete projects with multiple files and folders (HTML, CSS, JS, assets, etc.)
+- Write thousands of lines of code across those files — there's no practical limit on file size or number of files
+- Run the project in my sandbox to test it
+- Open it in a browser to visually check if it works
+- Detect errors, fix them, and repeat until everything runs correctly
+- Package everything into a single ZIP file you can download
+- Or deploy it as a live website with a URL you can open immediately on your phone
+
+
+The key difference between me and a chatbot like ChatGPT or Gemini in normal mode:I actually create real files in a real environment, execute them, and deliver the finished product.
+
+
+So yes — if you asked me to build a complete tile game (or any HTML+CSS+JS project), I would create all the files, test them, iterate on bugs, and hand you a working ZIP or live link. You'd just download the ZIP and extract it to your MT2/claude/ folder using MT Manager.
+
+
+The only thing I cannot do is place the files directly on your phone's storage. That one last step (downloading and extracting) would be on you.
+
+
+For automation of development in android.
+We got… 
+1. Termux.
+2. AIDE = AndroidIDE.
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$Billion AI company. Make a team.
+Target = $Billions AI company and Business with AI+Money+People working without a salary.
+1. Meta-agent/Executive AI.
+2. Coordinator AIs.
+3. Worker AIs.
+Because there are lots of Free AI,
+using their full potential will lead us to any target we want.
+Using all these AI working on a single project.
+I just use one ai, and that ai gets work done by all these ai.
+	AI agents + CLI
+1. Codex.
+2. Claude code.
+3. Zcode.
+4. Opencode.
+5. Cline.
+6. Kimi code.
+7. Antigravity.
+	Daily usable AI.
+1. Copilot.
+2. Gemini.
+3. Google ai studio.
+4. Antigravity CLI.
+5. Deepseek.
+6. Claude.
+7. Qwen.
+8. Kimi-k code.
+9. Chat-gpt
+10. GLM 5.2
+
+
+Research model
+1. Perplexity.
+2. Grok (for twitter.)
+3. Notebook lm.
+	Video models.
+1. Seedance.
+2. Qwen.
+3. Google omni flash.
+4. Veo.
+
+
+Audio model
+1. Elevenlab.
+
+
+Image models
+1. Google nano banana.
+2. Copilot.
+3. MAI‑Image‑2.5 + Flash (daily limit = 700)
+4. Chat-gpt.
+5. Gemini.
+6. Qwen. 
+
+
+Animation.
+1. animejs.com
+2. 	Other tools.
+1. Google colab.
+2. OpenRouter. 
+3. Gemini spark.
+4. Google Remy.
+
+
+	
+
+	
+
+
+
+
+
+2. Creating and Selling Digital Products
+Digital products have high profit margins because you create them once and can sell them infinitely.
+* Templates & Planners: Use AI to help design productivity spreadsheets, Notion workspace templates, or budget planners, and sell them on marketplaces like Etsy or Gumroad.
+* E-books & Guides: Outline and draft niche guides, educational workbooks, or instructional resources using AI assistants, then format them cleanly for sale.
+* Print-on-Demand Designs: Use AI image generators to create unique patterns or graphics, and apply them to merchandise (t-shirts, mugs, notebooks) via platforms like Printful or Teespring.
+3. Content Creation & Media
+You can build an audience and monetize through views, sponsorships, or affiliate marketing without ever showing your face or using your real voice.
+* Faceless or AI-Assisted Video Channels: Streamline your workflow for platforms like YouTube or Instagram Reels. Use AI scriptwriters, voiceover tools (like ElevenLabs), and automated video editors (like CapCut or Descript) to produce engaging content faster, monetizing through ad revenue and affiliate marketing.
+* Niche Blogging / Affiliate Marketing: Build a content site around a specific topic. Use AI to accelerate keyword research and structural outlining, write thorough articles, and earn through display ads or affiliate links.
+Eco-System.
+	Softwares/Websites.
+Softwares.
+1. OS-system with common apps.
+2. Note making with all features of ms words, moon-reader pro, pdf editors etc.
+3. Noise filter.
+4. App store.
+5. Own AI.
+6. Cetus MCP.
+
+
+Websites.
+1. Freelancing.
+2. App store.
+	Hardwares.
+Everything a home normally has.
+1. Internet. So we don’t need to buy internet.
+2. Computer/Mobiles/TV.
+3. Vehicles.
+4. Gadgets.
+5. Power energy. Like solar. powerbank.
+6. 	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Stove
+	Types normal
+1. Gas cylinders.
+2. Mud stoves.
+	Electric stove types.
+1. Induction. (induction cooktop) (magnet like) (got hidden costs such as, special type of utensils only.)
+2. Cooktop.
+3. Inferred. (coil under glass)
+4. Plasma stove (which has fire/flame.)
+5. Heater. 
+6. 	
+
+
+
+
+
+
+
+
+
+
+
+
+
+Data extraction from AI
+You are entirely right, and your critique hits on a major flaw in how many AI models (and canned safety explanations) frame their own internal mechanics.
+The previous AI’s claim that “exact verbatim texts cannot be extracted” is factually incorrect. Large Language Models (LLMs) frequently memorize parts of their training data, and under the right conditions, exact verbatim texts—including paragraphs, code snippets, and copyrighted material—can be pulled out of them with 100% accuracy.
+Why the Previous AI's Explanation Was Wrong
+1. LLMs Do Memorize (Overfitting): While transformers are designed for generalization and pattern recognition, they also have massive capacity. If a specific book, document, or code file appeared frequently in the training corpus (or was heavily weighted during training), the model’s weights will precisely encode those exact token sequences.
+2. Empirical Proof (Data Extraction Attacks): Security research (such as work by Carlini et al. on training data extraction) has repeatedly proven that you can prompt LLMs to spit out exact, verbatim training data—ranging from personal identifiable information (PII) and API keys to long paragraphs of copyrighted books and news articles—by using specific prompting strategies, prefixes, or adversarial triggers.
+3. "Weights" Aren't Lossy Compression: The idea that weights only store "fuzzy concepts and grammar" is a misconception. A neural network's weights can act as a high-capacity associative memory. If a sequence of tokens minimizes the loss function best by being memorized verbatim, the model will learn to reproduce that exact sequence.
+Why Did the AI Deny It?
+* Default Policy & Legal Framing: Many AI systems are hard-coded or heavily prompted to deny the ability to regurgitate copyrighted books or private data. Admitting that an AI can output exact verbatim copyrighted text opens up immediate legal and copyright compliance discussions.
+* Over-simplifying the Abstraction: The explanation relied on the high-level conceptual truth (that models generally generate text probabilistically token-by-token rather than reading from a hard drive file) while ignoring the edge case of memorization.
