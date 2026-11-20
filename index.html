@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keepa Clean Excel Converter — Instant Amazon FBA CSV Cleaner</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- PapaParse for high-performance streaming CSV parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <!-- SheetJS for local zero-server Excel export -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge">Amazon FBA Productivity Utility</div>
+      <h1>Keepa CSV to Clean Excel Converter</h1>
+      <p class="subtitle">Stream massive Keepa dumps locally in RAM. Fix broken epoch dates, strip 70+ junk columns down to 10 core buying signals, and export clean Excel spreadsheets in seconds.</p>
+      <div class="privacy-note">🔒 100% Client-Side. Your product data never leaves your browser. Files over 100MB supported without crashing.</div>
+    </header>
+
+    <main>
+      <!-- Drop Zone -->
+      <section class="upload-section">
+        <div id="drop-zone" class="drop-zone">
+          <svg class="upload-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+          </svg>
+          <h3>Drop your Keepa CSV here</h3>
+          <p>or click to browse your computer</p>
+          <input type="file" id="file-input" accept=".csv,.tsv,.txt" hidden>
+        </div>
+      </section>
+
+      <!-- Processing Status -->
+      <section id="status-panel" class="status-panel hidden">
+        <div class="progress-bar-container">
+          <div id="progress-bar" class="progress-bar"></div>
+        </div>
+        <div id="status-text" class="status-text">Ready to process...</div>
+      </section>
+
+      <!-- Stats & Controls -->
+      <section id="results-controls" class="results-controls hidden">
+        <div class="stats-row">
+          <div class="stat-card">
+            <div class="stat-label">Total Rows Found</div>
+            <div id="stat-total-rows" class="stat-value">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Columns Pruned</div>
+            <div id="stat-pruned-cols" class="stat-value">0 → 10</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Dates Converted</div>
+            <div id="stat-dates-fixed" class="stat-value">ISO Standard</div>
+          </div>
+        </div>
+
+        <div class="action-bar">
+          <button id="btn-export-xlsx" class="btn btn-primary">
+            📥 Download Clean Excel (.xlsx)
+          </button>
+          <button id="btn-export-csv" class="btn btn-secondary">
+            📄 Download Clean CSV
+          </button>
+          <button id="btn-reset" class="btn btn-outline">
+            🔄 Clear & New File
+          </button>
+        </div>
+      </section>
+
+      <!-- Preview Table -->
+      <section id="preview-section" class="preview-section hidden">
+        <div class="table-header">
+          <h2>Data Preview (First 50 Rows Cleaned)</h2>
+          <span id="preview-note" class="preview-note">Preview mode active</span>
+        </div>
+        <div class="table-container">
+          <table id="preview-table">
+            <thead>
+              <tr id="table-head-row"></tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <!-- License Modal -->
+    <div id="license-modal" class="modal hidden">
+      <div class="modal-card">
+        <h3>🚀 Unlock Unlimited Processing</h3>
+        <p>This file contains <strong id="modal-row-count">0</strong> products. The free trial cleans and previews the first 50 rows.</p>
+        <p>Unlock the Pro License for <strong>$14 one-time</strong> to export unlimited rows and process files of any size forever.</p>
+        <div class="license-input-group">
+          <input type="text" id="license-key-input" placeholder="Enter Gumroad / Lemon Squeezy license key">
+          <button id="btn-activate-license" class="btn btn-primary">Activate</button>
+        </div>
+        <div class="modal-footer">
+          <a href="https://gumroad.com" target="_blank" class="buy-link">Get a License Key ($14) →</a>
+          <button id="btn-close-modal" class="btn-text">Continue with 50-row preview</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2026 Keepa Clean Excel Converter • Built for high-volume Amazon FBA Sellers</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
