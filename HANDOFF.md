@@ -1,37 +1,23 @@
 # HANDOFF.md — Live Baton & Multi-Agent Relay
 
 ## 1. System Status & Role Lock
-- **CURRENT_TASK:** Income Asset #2 (Shopify CSV Normalizer) Implementation & Gumroad Traffic
+- **CURRENT_TASK:** Asset Pipeline Monetization & Multi-Asset Deployment
 - **OPERATING_MODE:** Antigravity (ORCHESTRATION & SPEC) -> Cline (WORKER EXECUTION) -> Claude (VERIFIER AUDIT)
 - **INFRASTRUCTURE:** Git (v2.44.0), gh (v2.46.0), Node v22, Python 3.13, Edge Playwright CDP Bridge
-- **MVP #1 STATUS:** VERIFIED_COMPLETE (Live in Production: https://venom1129-dead.github.io/keepa-clean-converter/)
-- **MVP #2 STATUS:** ACTIVE_SPEC_LOCKED (`02_Review/build_spec_mvp2.md`, Queue Task: `aii-mwpc5ycn-e7b022`)
+- **REPOSITORY:** https://github.com/Venom1129-dead/keepa-clean-converter (Pushed up to `82d13ed`)
 
 ---
 
-## 2. Multi-Agent Activity Matrix (Deterministic State)
-| Agent | Role | Current State | Active PID / Task |
-|---|---|---|---|
-| **Antigravity** | Orchestration & Plan Mode | `ACTIVE_EXECUTING` | PID 16944 |
-| **Cline** | Code Implementation Worker | `IDLE` | PID 3492 / 12676 (Assigned: `aii-mwpc5ycn-e7b022`) |
-| **Claude** | CEO & Brutal Verifier | `IDLE` | PID 10380 / 14940 (Reviewer: `aii-mwpc5ycn-e7b022`) |
-| **Codex** | Intelligence & Automation | `IDLE` | PID 13248 |
-| **OpenCode** | Browser & Tool Daemon | `IDLE` | PID 10788 / 13088 |
+## 2. Completed Digital Income Assets Portfolio
+| Asset ID | Product Name | Target Price | Status | Artifacts / Links |
+|---|---|---|---|---|
+| **MVP_01** | Keepa CSV Clean Excel Converter | $14 | `VERIFIED_COMPLETE` | [Live Production Site](https://venom1129-dead.github.io/keepa-clean-converter/) • [Launch Assets](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/04_Launch_Queue/keepa_launch_assets.md) |
+| **MVP_02** | Shopify Supplier CSV Normalizer | $19 | `VERIFIED_COMPLETE` | [Frontend App](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/03_Active_MVP_02/frontend/) • [E2E Verifier](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/03_Active_MVP_02/verifier/verify_e2e.js) • [Proof Image](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/00_Brain/proofs/shopify_normalizer_proof.png) |
+| **MVP_03** | Notion 12-Week Sprint & Ops OS | $9 | `VERIFIED_COMPLETE` | [Template Export Bundle](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/03_Active_MVP_03/export/Notion_12_Week_Sprint_OS.md) • [Formula Tests](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/03_Active_MVP_03/verifier/test_formulas.py) |
 
 ---
 
-## 3. Completed Checkpoints (DO NOT REDO)
-- [x] Initialized Git repository on branch `main` and pushed to GitHub.
-- [x] Authenticated GitHub CLI permanently as `Venom1129-dead`.
-- [x] Deployed MVP #1 frontend to public GitHub Pages site (HTTP 200 verified).
-- [x] Verified interactive Edge browser display (`WinSta0\Default`) via `tools/open_interactive_edge.py`.
-- [x] Formulated detailed architecture spec for MVP #2 in `02_Review/build_spec_mvp2.md`.
-- [x] Dispatched Task #2 (`aii-mwpc5ycn-e7b022`) to multi-agent orchestrator queue in `C:\AIIncome`.
-
----
-
-## 4. Exact Next Micro-Step (Pick Up Here)
-1. Implement MVP #2 client-side frontend files in `03_Active_MVP_02/frontend/` (`index.html`, `styles.css`, `app.js`).
-2. Implement offline test suite in `03_Active_MVP_02/verifier/` (`sample_supplier_feed.csv`, `test_mapper.py`, `verify_e2e.js`).
-3. Run deterministic verification tests (Exit Code 0 required before any commit).
-4. Launch Gumroad checkout for MVP #1 ($14) using `04_Launch_Queue/keepa_launch_assets.md`.
+## 3. Next Micro-Steps
+1. Set up Gumroad listings using the pre-written copy in `04_Launch_Queue/`.
+2. Post value-first launch threads on relevant subreddits (`r/FulfillmentByAmazon`, `r/shopify`, `r/Notion`).
+3. Advance to Asset #4 (Technical SEO & Schema Diff Chrome Extension, $12).
