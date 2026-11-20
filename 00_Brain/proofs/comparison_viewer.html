@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Data Integrity Audit: 3 Live Digital Income Assets</title>
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card-bg: #131b2e;
+      --border: #1f2d4d;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --red: #f87171;
+      --red-bg: rgba(239, 68, 68, 0.15);
+      --green: #34d399;
+      --green-bg: rgba(16, 185, 129, 0.15);
+      --accent: #60a5fa;
+      --purple: #a855f7;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background: var(--bg); color: var(--text); padding: 2rem; line-height: 1.5; }
+    .header { text-align: center; margin-bottom: 2.5rem; }
+    h1 { font-size: 2.2rem; color: #fff; margin-bottom: 0.5rem; }
+    p.sub { color: var(--muted); font-size: 1rem; }
+    .section-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 2.5rem; }
+    .section-title { font-size: 1.35rem; color: var(--accent); margin-bottom: 1rem; display: flex; align-items: center; justify-content: space-between; }
+    .badge { font-size: 0.75rem; text-transform: uppercase; padding: 0.25rem 0.6rem; border-radius: 9999px; font-weight: 700; }
+    .badge-messed { background: var(--red-bg); color: var(--red); border: 1px solid var(--red); }
+    .badge-clean { background: var(--green-bg); color: var(--green); border: 1px solid var(--green); }
+    .table-container { overflow-x: auto; margin-top: 0.75rem; border: 1px solid var(--border); border-radius: 8px; margin-bottom: 1.5rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.82rem; text-align: left; }
+    th { background: #1c2742; padding: 0.6rem 0.8rem; color: var(--muted); font-weight: 600; white-space: nowrap; border-bottom: 1px solid var(--border); }
+    td { padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05); white-space: nowrap; }
+    .highlight-messed { color: var(--red); font-weight: 700; background: rgba(239, 68, 68, 0.08); }
+    .highlight-clean { color: var(--green); font-weight: 700; background: rgba(16, 185, 129, 0.08); }
+    .diff-callout { background: rgba(96, 165, 250, 0.1); border-left: 4px solid var(--accent); padding: 0.8rem 1rem; border-radius: 4px; font-size: 0.9rem; margin-bottom: 1rem; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>All 3 Income Assets: Raw Input vs. Clean Production Output</h1>
+    <p class="sub">Verified directly against real-world messy data fixtures and native formula outputs.</p>
+  </div>
+
+  <!-- ASSET 1: KEEPA CONVERTER -->
+  <div class="section-card">
+    <div class="section-title">
+      <span>1. Keepa CSV Converter ($14) — Production Web App</span>
+      <span class="badge badge-clean">Verified Output</span>
+    </div>
+    <div class="diff-callout">
+      <strong>Core Fix:</strong> Converts broken Keepa epoch timestamps (<code>7050000</code>) to ISO dates (<code>2024-05-27</code>) and strips 70+ junk columns.
+    </div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr><th>ASIN</th><th>Product Title</th><th>Raw Price</th><th>Sales Rank</th><th>Raw Keepa Epoch</th><th>Clean Output Price</th><th>Clean ISO Date</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>B08N5WRWNW</td><td>Wireless Noise Cancelling Earbuds</td><td class="highlight-messed">2999</td><td>1250</td><td class="highlight-messed">7050000</td><td class="highlight-clean">$29.99</td><td class="highlight-clean">2024-05-27</td></tr>
+          <tr><td>B07XJ8C8F5</td><td>Stainless Steel Garlic Press</td><td class="highlight-messed">1495</td><td>450</td><td class="highlight-messed">7051200</td><td class="highlight-clean">$14.95</td><td class="highlight-clean">2024-05-28</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ASSET 2: SHOPIFY NORMALIZER -->
+  <div class="section-card">
+    <div class="section-title">
+      <span>2. Shopify Supplier CSV Normalizer ($19) — Production Web App</span>
+      <span class="badge badge-clean">Verified Output</span>
+    </div>
+    <div class="diff-callout">
+      <strong>Core Fix:</strong> Inconsistent vendor columns mapped to 24-column Shopify import schema. Lbs converted to grams (<code>1.2 lbs → 544g</code>). Clean handles auto-slugged.
+    </div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr><th>vendor_sku</th><th>product_title</th><th>Raw Weight</th><th>Auto-Slugged Shopify Handle</th><th>Normalized Grams</th><th>Shopify Status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>SKU-9921</td><td>Nordic Ceramic Coffee Mug - Matte Black</td><td class="highlight-messed">1.2 lbs</td><td class="highlight-clean">nordic-ceramic-coffee-mug-matte-black</td><td class="highlight-clean">544</td><td class="highlight-clean">active (TRUE)</td></tr>
+          <tr><td>SKU-4410</td><td>Minimalist Bamboo Pour-Over Stand</td><td class="highlight-messed">2.5 lbs</td><td class="highlight-clean">minimalist-bamboo-pour-over-stand</td><td class="highlight-clean">1134</td><td class="highlight-clean">active (TRUE)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ASSET 3: NOTION SPRINT OS -->
+  <div class="section-card">
+    <div class="section-title">
+      <span>3. Notion 12-Week Sprint & Operations OS ($9) — Template System</span>
+      <span class="badge badge-clean">Verified Formulas</span>
+    </div>
+    <div class="diff-callout">
+      <strong>Core Fix:</strong> Replaces bloated $50 templates and paid Notion AI credits with zero-cost native Notion 2.0 formulas for automatic progress scoring.
+    </div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr><th>Quarterly Goal</th><th>Weekly Lead Tactic</th><th>Target</th><th>Done</th><th>Score %</th><th>Discipline Benchmark</th><th>Unicode Progress Meter</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Goal 1: Launch 3 Micro-SaaS ($10k MRR)</td><td>Build MVP #1 Keepa Converter</td><td>5</td><td>5</td><td class="highlight-clean">100.0%</td><td class="highlight-clean">🟢 🏆 On Track</td><td class="highlight-clean">▓▓▓▓▓▓▓▓ 100%</td></tr>
+          <tr><td>Goal 1: Launch 3 Micro-SaaS ($10k MRR)</td><td>Build Shopify CSV Normalizer</td><td>5</td><td>5</td><td class="highlight-clean">100.0%</td><td class="highlight-clean">🟢 🏆 On Track</td><td class="highlight-clean">▓▓▓▓▓▓▓▓ 100%</td></tr>
+          <tr><td>Goal 1: Launch 3 Micro-SaaS ($10k MRR)</td><td>50 Reddit Value DMs</td><td>8</td><td>7</td><td class="highlight-clean">87.5%</td><td class="highlight-clean">🟢 🏆 On Track</td><td class="highlight-clean">▓▓▓▓▓▓▓░ 88%</td></tr>
+          <tr><td>Goal 2: 1,000 Waitlist Signups</td><td>Write 5 Twitter / X Case Studies</td><td>5</td><td>2</td><td class="highlight-messed">40.0%</td><td class="highlight-messed">🔴 ⚠️ Lagging</td><td class="highlight-messed">▓▓▓░░░░░ 40%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

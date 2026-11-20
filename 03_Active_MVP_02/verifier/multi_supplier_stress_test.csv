@@ -1,0 +1,6 @@
+source_feed,vendor_sku,product_title,wholesale_cost,retail_msrp,in_stock_qty,item_weight_lbs,supplier_image,brand_name,notes
+Faire,F-101,Artisan Soy Candle (Vanilla & Oak)™!,8.00,24.00,50,0.8 lbs,https://faire.com/img1.jpg,Lumiere,Standard Faire format
+AliExpress,AE-8899,<p>USB-C Fast Charging Hub <b>7-in-1</b></p>,11.20,32.99,230,16 oz,https://ae.com/hub.png,TechLink,HTML in title and oz weight
+Doba,DB-5544,Ergonomic Memory Foam Lumbar Cushion @Home & Office,14.50,45.00,15,2.4,https://doba.com/cushion.jpg,ComfortPlus,Special chars in title
+Chaos_Edge_Case,CH-001,"  Multi-Piece Drill Bit Set // 1/4"" Hex Shank -- Heavy Duty  ",19.99,,0,3.5 lbs,https://vendor.com/drill.jpg,,Missing MSRP and zero stock
+Chaos_Edge_Case,CH-002,Stainless Steel Insulated Tumbler - 20oz,6.50,22.00,-5,0.75,https://vendor.com/tumbler.jpg,Hydra,Negative inventory edge case
