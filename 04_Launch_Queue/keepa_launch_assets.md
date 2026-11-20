@@ -31,6 +31,6 @@ If you do high-volume product sourcing with Keepa CSV exports, you know how anno
 
 I built a lightweight, privacy-first tool that runs 100% in your browser (no servers, no data uploads, Web Worker streaming so Chrome doesn't freeze even on huge files). It auto-converts the dates to ISO format and strips the CSV down to a clean 10-column Excel sheet.
 
-You can preview the first 50 rows for free here: [Link]
+You can preview the first 50 rows for free here: https://venom1129-dead.github.io/keepa-clean-converter/
 
 Hope it saves you some hours in Excel this week! Feedback welcome.
