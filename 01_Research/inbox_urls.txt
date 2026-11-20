@@ -1,0 +1,4 @@
+# Paste one URL per line here (YouTube videos, GitHub repos, Reddit threads, articles)
+# Then run: python tools/harvest.py
+https://www.youtube.com/@BuildWithAI14
+https://www.youtube.com/@WtfAI-v5

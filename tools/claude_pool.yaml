@@ -1,0 +1,29 @@
+# LiteLLM Configuration: Claude-Only High-Quality Failover Pool
+# Start with: litellm --config tools/claude_pool.yaml --port 4000
+
+model_list:
+  # Primary: OpenRouter Claude Sonnet
+  - model_name: claude-architect
+    litellm_params:
+      model: openrouter/anthropic/claude-sonnet-4.6
+      api_base: https://openrouter.ai/api/v1
+      api_key: os.environ/OPENROUTER_API_KEY
+
+  # Secondary: Anthropic direct API (if free credits available)
+  - model_name: claude-architect
+    litellm_params:
+      model: anthropic/claude-3-5-sonnet-20241022
+      api_key: os.environ/ANTHROPIC_API_KEY
+
+  # Tertiary: Third-party promo gateway / provider bridge
+  - model_name: claude-architect
+    litellm_params:
+      model: openai/claude-opus-5.5
+      api_base: https://YOUR_THIRD_PARTY_ENDPOINT/v1
+      api_key: os.environ/THIRD_PARTY_CLAUDE_KEY
+
+router_settings:
+  routing_strategy: simple-shuffle
+  num_retries: 3
+  retry_after: 2
+  cooldown_time: 300 # 5-minute cooldown for rate-limited providers
