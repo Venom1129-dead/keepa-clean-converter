@@ -21,12 +21,13 @@ All agents share the **Memory Vault** in `00_Brain/memory/` (mirrored from OpenC
 - `errors/`: Stuck states, error logs, and watchdog notes.
 
 ## Strict Verification-First Rule (NO PHANTOM PROGRESS)
-1. **Never claim work is "in progress" without active proof:**
-   - An open window or idle process (`cline-app.exe`) does NOT mean work has started.
+1. **Never claim work is "in progress" or "open" without active proof:**
+   - An open window or idle process (`cline-app.exe`, `msedge.exe`) does NOT mean work has started or a window is visible.
+   - A shell launcher (`Start-Process`) returning Exit Code 0 does NOT mean a browser rendered a webpage for the user. Always verify with screenshot or active tab inspect before claiming visual state.
    - A task file in a folder does NOT mean an agent is executing it.
 2. **Deterministic State Definitions (Always cite one of these 4):**
    - `IDLE`: No agent is executing code right now.
    - `ACTIVE_EXECUTING`: An agent is currently running a command with a live PID or active stream.
    - `VERIFIED_COMPLETE`: Code is written and has passed a deterministic test script (Exit Code 0).
    - `FAILED / BLOCKED`: A command failed or human action is required.
-3. **Evidence Requirement:** Every status report must list the exact files on disk and test outputs, not assumptions.
+3. **Evidence Requirement:** Every status report must list the exact files on disk, test outputs, or screenshot evidence, not assumptions.

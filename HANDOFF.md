@@ -1,28 +1,26 @@
 # HANDOFF.md — Live Baton & Multi-Agent Relay
 
 ## 1. System Status & Role Lock
-- **CURRENT_TASK:** Public Deployment & $14 Gumroad Listing for Keepa Converter
-- **OPERATING_MODE:** Antigravity (PLAN MODE & VERIFICATION) -> Ready for Public Launch
-- **VERIFIER STATUS:** ALL E2E TESTS VERIFIED (Exit Code 0)
-- **STATUS:** READY_FOR_PUBLIC_DEPLOYMENT
+- **CURRENT_TASK:** Push to GitHub & Activate GitHub Pages
+- **OPERATING_MODE:** Antigravity (ORCHESTRATION & SPEC) -> Git CLI (READY)
+- **INFRASTRUCTURE:** Git (v2.44.0) & GitHub CLI (v2.46.0) INSTALLED PERMANENTLY
+- **LOCAL_REPO:** Initialized & Committed (`c6a066d`, branch `main`)
+- **VERIFIER STATUS:** ALL TESTS VERIFIED (Exit Code 0)
+- **STATUS:** READY_FOR_REMOTE_PUSH
 
 ---
 
 ## 2. Completed Checkpoints (DO NOT REDO)
-- [x] Scanned OpenCode Memory Vault (`00_Brain/memory/findings/`).
-- [x] Researched 5 live buyer pain points on Reddit (`01_Research/batch_01_opportunities.md`).
-- [x] Built complete client-side application (`03_Active_MVP/frontend/index.html`, `styles.css`, `app.js`).
-- [x] **Deterministic Verifier Checks:**
-  - `node -c app.js` ➔ **PASSED (Exit 0)**
-  - `python test_converter.py` ➔ **PASSED (Exit 0)**
-  - `node verify_e2e.js` ➔ **PASSED (Exit 0, sample CSV converted into clean 10-column output with 2024 ISO dates)**
-- [x] Energy Saver Protocol documented (`00_Brain/memory/playbooks/energy_and_token_saver.md`).
-- [x] Failover Switch configured (`FAILOVER.bat` + `START.bat`).
-- [x] Automated Payment Watcher created (`tools/check_sales.py`).
+- [x] Installed portable Git (`git.exe` v2.44.0) to `AppData\Local\Programs\Git`.
+- [x] Installed GitHub CLI (`gh.exe` v2.46.0) to `AppData\Local\Programs\gh`.
+- [x] Added Git and gh to permanent Windows User PATH.
+- [x] Configured Git user: Prakash Sahani (`myvenom1129@gmail.com`).
+- [x] Initialized Git repository and created initial commit `c6a066d` (28 files, branch `main`).
+- [x] Rigorously verified Keepa engine: syntax, epoch math, and E2E simulation all passed with Exit Code 0.
 
 ---
 
 ## 3. Exact Next Micro-Step (Pick Up Here)
-1. Deploy `03_Active_MVP/frontend/` to the web (via Netlify Drop or GitHub Pages in 60 seconds).
-2. Create $14 product on Gumroad using `04_Launch_Queue/keepa_launch_assets.md`.
-3. Post the free preview link to `r/FulfillmentByAmazon`.
+1. Run `gh auth login` in terminal to link your GitHub account.
+2. Run `gh repo create keepa-clean-converter --public --source=. --push` to push and publish the live site.
+3. While that connects, proceed immediately to Opportunity #2 (Shopify CSV normalizer) so zero time is wasted.
