@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <linearGradient id="silverBarbed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#cbd5e1"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+  </defs>
+  <!-- Shackle -->
+  <path d="M 180 200 L 180 120 C 180 60 320 60 320 120 L 320 200" stroke="url(#silverBarbed)" stroke-width="22" fill="none" stroke-linecap="round"/>
+  <!-- Heart Lock Body -->
+  <path d="M 250 210 C 210 160 120 170 120 250 C 120 330 250 410 250 410 C 250 410 380 330 380 250 C 380 170 290 160 250 210 Z" fill="#1e1b4b" stroke="#f43f5e" stroke-width="8"/>
+  <!-- Keyhole -->
+  <circle cx="250" cy="265" r="14" fill="#f43f5e"/>
+  <polygon points="244,270 256,270 260,305 240,305" fill="#f43f5e"/>
+  <!-- Wrapped Barbed Wire -->
+  <path d="M 100 240 Q 250 310 400 240 M 110 320 Q 250 390 390 310" stroke="url(#silverBarbed)" stroke-width="6" fill="none"/>
+  <!-- Barbs -->
+  <polygon points="170,260 185,275 160,270" fill="#ffffff"/>
+  <polygon points="320,260 335,275 310,270" fill="#ffffff"/>
+  <polygon points="240,340 255,355 230,350" fill="#ffffff"/>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <linearGradient id="starGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+  </defs>
+  <!-- 4 Primary Points -->
+  <polygon points="250,20 265,220 480,250 265,280 250,480 235,280 20,250 235,220" fill="url(#starGrad)" stroke="#ffffff" stroke-width="2"/>
+  <!-- 4 Secondary Points -->
+  <polygon points="100,100 230,230 100,400 230,270 400,400 270,270 400,100 270,230" fill="#a855f7" opacity="0.8"/>
+  <!-- Cybersigil Thorn Rings -->
+  <circle cx="250" cy="250" r="100" stroke="#38bdf8" stroke-width="3" fill="none" stroke-dasharray="15, 12, 5, 12"/>
+  <circle cx="250" cy="250" r="40" stroke="#f43f5e" stroke-width="2" fill="none"/>
+  <circle cx="250" cy="250" r="12" fill="#ffffff"/>
+</svg>

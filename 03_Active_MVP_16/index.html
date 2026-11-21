@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexus Community QA & Knowledge Engine — Trading, AI, Real Estate & Health</title>
+  <meta name="description" content="Decentralized, air-gapped Community Q&A and Knowledge Engine for high-performance traders, AI engineers, real estate underwriters, and health hackers. Zero external dependencies.">
+  <style>
+    :root {
+      --bg-primary: #0b0f19;
+      --bg-secondary: #131b2e;
+      --bg-card: #1a243b;
+      --bg-input: #0e1526;
+      --border-color: #24324f;
+      --border-focus: #38bdf8;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --accent-cyan: #38bdf8;
+      --accent-blue: #3b82f6;
+      --accent-green: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-rose: #f43f5e;
+      --accent-purple: #a855f7;
+      --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-mono: "JetBrains Mono", Consolas, "Courier New", monospace;
+    }
+
+    [data-theme="light"] {
+      --bg-primary: #f8fafc;
+      --bg-secondary: #ffffff;
+      --bg-card: #f1f5f9;
+      --bg-input: #ffffff;
+      --border-color: #cbd5e1;
+      --border-focus: #0284c7;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --text-dim: #64748b;
+      --accent-cyan: #0284c7;
+      --accent-blue: #2563eb;
+      --accent-green: #059669;
+      --accent-amber: #d97706;
+      --accent-rose: #e11d48;
+      --accent-purple: #7c3aed;
+      --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      font-family: var(--font-family);
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .app-container {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      width: 100%;
+    }
+
+    /* Header */
+    header.hub-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.25rem;
+      padding: 1.25rem 1.75rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--card-shadow);
+    }
+
+    .brand-section {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand-badge {
+      background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+      color: #ffffff;
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      box-shadow: 0 4px 12px rgba(168, 85, 247, 0.35);
+    }
+
+    .header-text h1 {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .header-text p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .header-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.5rem 0.95rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+      outline: none;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+      color: #ffffff;
+      border-color: rgba(56, 189, 248, 0.4);
+    }
+
+    .btn-primary:hover {
+      opacity: 0.95;
+      transform: translateY(-1px);
+    }
+
+    .btn-purple {
+      background: linear-gradient(135deg, var(--accent-purple), #9333ea);
+      color: #ffffff;
+      border-color: rgba(168, 85, 247, 0.4);
+    }
+
+    .btn-purple:hover {
+      opacity: 0.95;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: var(--bg-card);
+      color: var(--text-main);
+      border-color: var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-muted);
+      border-color: var(--border-color);
+    }
+
+    .btn-outline:hover {
+      color: var(--text-main);
+      border-color: var(--text-muted);
+    }
+
+    /* Main Grid Layout */
+    .main-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr 300px;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 1150px) {
+      .main-grid {
+        grid-template-columns: 240px 1fr;
+      }
+      .right-sidebar {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .main-grid {
+        grid-template-columns: 1fr;
+      }
+      .left-sidebar {
+        display: none;
+      }
+    }
+
+    /* Sidebar Cards */
+    .sidebar-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.15rem;
+      margin-bottom: 1.25rem;
+      box-shadow: var(--card-shadow);
+    }
+
+    .sidebar-card h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .category-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .category-btn {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.55rem 0.75rem;
+      border-radius: 8px;
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--text-main);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.15s ease;
+    }
+
+    .category-btn:hover {
+      background: var(--bg-card);
+      border-color: var(--border-color);
+    }
+
+    .category-btn.active {
+      background: rgba(56, 189, 248, 0.12);
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+
+    .count-badge {
+      font-size: 0.72rem;
+      font-family: var(--font-mono);
+      padding: 0.15rem 0.45rem;
+      border-radius: 10px;
+      background: var(--bg-input);
+      color: var(--text-muted);
+      border: 1px solid var(--border-color);
+    }
+
+    /* Community Stats */
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .stat-row:last-child {
+      border-bottom: none;
+    }
+
+    .stat-label {
+      color: var(--text-muted);
+    }
+
+    .stat-val {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    /* Quick Links */
+    .quick-link-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 0.6rem;
+      border-radius: 6px;
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.82rem;
+      transition: background 0.15s ease;
+    }
+
+    .quick-link-item:hover {
+      background: var(--bg-card);
+      color: var(--accent-cyan);
+    }
+
+    /* Search & Filter Toolbar */
+    .toolbar-box {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: var(--card-shadow);
+    }
+
+    .search-wrapper {
+      position: relative;
+      flex: 1;
+      min-width: 240px;
+    }
+
+    .search-input {
+      width: 100%;
+      background: var(--bg-input);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 0.55rem 0.75rem 0.55rem 2.2rem;
+      color: var(--text-main);
+      font-size: 0.88rem;
+      outline: none;
+      transition: border-color 0.15s ease;
+    }
+
+    .search-input:focus {
+      border-color: var(--accent-cyan);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      pointer-events: none;
+    }
+
+    .sort-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .sort-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    select.sort-select {
+      background: var(--bg-input);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      border-radius: 8px;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.82rem;
+      outline: none;
+      cursor: pointer;
+    }
+
+    /* Question Cards Stream */
+    .questions-stream {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .question-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.25rem;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      gap: 1.15rem;
+      align-items: flex-start;
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+
+    .question-card:hover {
+      border-color: var(--border-focus);
+    }
+
+    .vote-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+      min-width: 48px;
+    }
+
+    .vote-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      width: 38px;
+      height: 34px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: all 0.15s ease;
+    }
+
+    .vote-btn:hover {
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+
+    .vote-btn.upvoted {
+      background: rgba(56, 189, 248, 0.15);
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+
+    .vote-count {
+      font-size: 0.95rem;
+      font-weight: 800;
+      font-family: var(--font-mono);
+      color: var(--text-main);
+    }
+
+    .q-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .q-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tag-cat {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .cat-trading { background: rgba(59, 130, 246, 0.18); color: var(--accent-blue); }
+    .cat-ai { background: rgba(168, 85, 247, 0.18); color: var(--accent-purple); }
+    .cat-re { background: rgba(16, 185, 129, 0.18); color: var(--accent-green); }
+    .cat-health { background: rgba(245, 158, 11, 0.18); color: var(--accent-amber); }
+
+    .tag-verified {
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--accent-green);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .q-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+      cursor: pointer;
+      line-height: 1.35;
+      transition: color 0.15s ease;
+    }
+
+    .q-title:hover {
+      color: var(--accent-cyan);
+    }
+
+    .q-excerpt {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .q-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.76rem;
+      color: var(--text-dim);
+      margin-top: 0.25rem;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .meta-author {
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Expanded Thread Details */
+    .thread-box {
+      margin-top: 0.85rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--border-color);
+      display: none;
+    }
+
+    .thread-box.open {
+      display: block;
+    }
+
+    .answers-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .answer-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+      font-size: 0.85rem;
+    }
+
+    .answer-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.4rem;
+      font-size: 0.75rem;
+      color: var(--text-dim);
+    }
+
+    .answer-author {
+      font-weight: 700;
+      color: var(--accent-cyan);
+    }
+
+    .answer-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    textarea.input-textarea {
+      width: 100%;
+      background: var(--bg-input);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 0.6rem 0.75rem;
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.85rem;
+      outline: none;
+      resize: vertical;
+      min-height: 70px;
+    }
+
+    textarea.input-textarea:focus {
+      border-color: var(--accent-cyan);
+    }
+
+    /* Modal Styles */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 1rem;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-dialog {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.5rem;
+      width: 100%;
+      max-width: 580px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      position: relative;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .modal-header h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .modal-close {
+      background: transparent;
+      border: none;
+      color: var(--text-dim);
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
+
+    .modal-close:hover {
+      color: var(--text-main);
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    input.input-text, select.input-select {
+      width: 100%;
+      background: var(--bg-input);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 0.55rem 0.75rem;
+      color: var(--text-main);
+      font-size: 0.88rem;
+      outline: none;
+    }
+
+    input.input-text:focus, select.input-select:focus {
+      border-color: var(--accent-cyan);
+    }
+
+    /* VIP Lead Banner */
+    .vip-banner {
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(59, 130, 246, 0.15));
+      border: 1px solid rgba(168, 85, 247, 0.3);
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      box-shadow: var(--card-shadow);
+    }
+
+    .vip-text h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.25rem;
+    }
+
+    .vip-text p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* Footer */
+    footer.app-footer {
+      margin-top: auto;
+      padding: 1.5rem 0;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      border-top: 1px solid var(--border-color);
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="hub-header">
+      <div class="brand-section">
+        <span class="brand-badge">NEXUS // QA PLATFORM</span>
+        <div class="header-text">
+          <h1>Nexus Knowledge Hub & Community QA</h1>
+          <p>Decentralized Collective Intelligence for High-Performance Operators</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button id="themeToggleBtn" class="btn btn-secondary" title="Toggle Theme">
+          <span id="themeIcon">☀️</span> Light Mode
+        </button>
+        <button id="vipModalBtn" class="btn btn-purple">
+          🚀 Join VIP Telegram / Discord
+        </button>
+        <button id="askQuestionBtn" class="btn btn-primary">
+          ✏️ Ask Question
+        </button>
+      </div>
+    </header>
+
+    <!-- VIP Banner -->
+    <div class="vip-banner">
+      <div class="vip-text">
+        <h3>⚡ Access Private Quant, PropTech & AI Engineering Working Groups</h3>
+        <p>Join 14,800+ vetted practitioners discussing real-time backtests, deal memos, and automation blueprints.</p>
+      </div>
+      <button id="vipBannerCta" class="btn btn-purple">
+        Join Free Community
+      </button>
+    </div>
+
+    <!-- Main Grid -->
+    <div class="main-grid">
+      <!-- Left Sidebar: Channels & Filters -->
+      <aside class="left-sidebar">
+        <div class="sidebar-card">
+          <h3>📂 Knowledge Channels</h3>
+          <div class="category-nav">
+            <button class="category-btn active" data-cat="all">
+              <span>🌐 All Categories</span>
+              <span class="count-badge" id="badgeAll">8</span>
+            </button>
+            <button class="category-btn" data-cat="trading">
+              <span>📈 Trading & Quant AI</span>
+              <span class="count-badge" id="badgeTrading">2</span>
+            </button>
+            <button class="category-btn" data-cat="ai">
+              <span>🤖 AI & Automation</span>
+              <span class="count-badge" id="badgeAi">2</span>
+            </button>
+            <button class="category-btn" data-cat="re">
+              <span>🏢 Real Estate & Cap Rate</span>
+              <span class="count-badge" id="badgeRe">2</span>
+            </button>
+            <button class="category-btn" data-cat="health">
+              <span>🧬 Health & Performance</span>
+              <span class="count-badge" id="badgeHealth">2</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>📊 Platform Metrics</h3>
+          <div class="stat-row">
+            <span class="stat-label">Active Members:</span>
+            <span class="stat-val" id="statMembers">14,820</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">Questions Curated:</span>
+            <span class="stat-val" id="statQuestions">8</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">Answers Verified:</span>
+            <span class="stat-val" id="statAnswers">16</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">Total Upvotes:</span>
+            <span class="stat-val" id="statUpvotes">342</span>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>💾 Backup & Data Port</h3>
+          <button id="exportDataBtn" class="btn btn-secondary" style="width:100%; margin-bottom:0.5rem;">
+            📥 Export Q&A JSON
+          </button>
+          <button id="exportLeadsBtn" class="btn btn-outline" style="width:100%;">
+            📋 Export Community Leads
+          </button>
+        </div>
+      </aside>
+
+      <!-- Center: Questions Stream -->
+      <main class="content-main">
+        <!-- Search & Filter Toolbar -->
+        <div class="toolbar-box">
+          <div class="search-wrapper">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="searchInput" class="search-input" placeholder="Search questions, code snippets, formulas, or tags...">
+          </div>
+          <div class="sort-wrapper">
+            <label class="sort-label" for="sortSelect">Sort:</label>
+            <select id="sortSelect" class="sort-select">
+              <option value="votes">🔥 Most Upvoted</option>
+              <option value="recent">⏱️ Newest First</option>
+              <option value="answers">💬 Most Answers</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Questions Feed -->
+        <div class="questions-stream" id="questionsContainer">
+          <!-- Dynamically Injected via JS -->
+        </div>
+      </main>
+
+      <!-- Right Sidebar: Factory Portfolio & Ecosystem -->
+      <aside class="right-sidebar">
+        <div class="sidebar-card">
+          <h3>🛠️ Verified Factory Tools</h3>
+          <div class="quick-links-list">
+            <a href="../03_Active_MVP_17/index.html" class="quick-link-item" target="_blank">
+              <span>🏢</span> RE AI Deal Cockpit
+            </a>
+            <a href="../03_Active_MVP_13/frontend/index.html" class="quick-link-item" target="_blank">
+              <span>🛡️</span> PC Privacy Audit Hub
+            </a>
+            <a href="../03_Active_MVP_11/frontend/index.html" class="quick-link-item" target="_blank">
+              <span>🕹️</span> RetroMemory Calc
+            </a>
+            <a href="../03_Active_MVP_12/frontend/index.html" class="quick-link-item" target="_blank">
+              <span>💰</span> Event Budget Cockpit
+            </a>
+            <a href="../03_Active_MVP_02/index.html" class="quick-link-item" target="_blank">
+              <span>📦</span> Keepa Clean Converter
+            </a>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>📜 Community Manifesto</h3>
+          <p style="font-size:0.8rem; color:var(--text-muted); line-height:1.5;">
+            1. Zero fluff or low-effort AI hallucinations.<br>
+            2. Code snippets must be copy-pasteable & reproducible.<br>
+            3. Respect strict zero-capital and privacy-first principles.
+          </p>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Ask Question Modal -->
+    <div class="modal-overlay" id="questionModal">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <h2>✏️ Submit a New Discussion or Query</h2>
+          <button class="modal-close" id="closeQuestionModal">&times;</button>
+        </div>
+        <form id="questionForm">
+          <div class="form-group">
+            <label class="form-label" for="qTitleInput">Question Title</label>
+            <input type="text" id="qTitleInput" class="input-text" placeholder="e.g. How to size DSCR reserves on a 4-unit value-add deal?" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="qCatSelect">Knowledge Channel</label>
+            <select id="qCatSelect" class="input-select" required>
+              <option value="trading">📈 Trading & Quant AI</option>
+              <option value="ai">🤖 AI & Automation</option>
+              <option value="re">🏢 Real Estate & Cap Rate</option>
+              <option value="health">🧬 Health & Performance</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="qAuthorInput">Your Handle / Pseudonym</label>
+            <input type="text" id="qAuthorInput" class="input-text" placeholder="e.g. @alpha_trader" value="@investor_dev" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="qBodyInput">Detailed Context & Code / Data</label>
+            <textarea id="qBodyInput" class="input-textarea" placeholder="Describe the problem, assumptions, backtest logs, or parameters..." required></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="qTagsInput">Tags (comma-separated)</label>
+            <input type="text" id="qTagsInput" class="input-text" placeholder="e.g. dscr, cap-rate, underwriting">
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            Publish Question to Community
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- VIP Leads Capture Modal -->
+    <div class="modal-overlay" id="vipModal">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <h2>🚀 Join VIP Telegram & Telegram Channel</h2>
+          <button class="modal-close" id="closeVipModal">&times;</button>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+          Get daily quant research, off-market real estate underwriting models, and open-source automation scripts delivered direct to your inbox.
+        </p>
+        <form id="vipLeadForm">
+          <div class="form-group">
+            <label class="form-label" for="leadEmail">Your Professional Email</label>
+            <input type="email" id="leadEmail" class="input-text" placeholder="name@domain.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="leadChannel">Primary Interest Area</label>
+            <select id="leadChannel" class="input-select">
+              <option value="Trading">📈 Quantitative Trading & Indicator Logic</option>
+              <option value="Real Estate">🏢 Real Estate Cap Rate & Cash Flow Modeling</option>
+              <option value="AI Automation">🤖 Autonomous Agent Engineering & Scraping</option>
+              <option value="Health">🧬 High-Focus Nutrition & Ergonomics</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="leadTelegram">Telegram / Discord Handle (Optional)</label>
+            <input type="text" id="leadTelegram" class="input-text" placeholder="@handle">
+          </div>
+          <button type="submit" class="btn btn-purple" style="width: 100%;">
+            Get Instant VIP Access Pass
+          </button>
+        </form>
+        <div id="vipConfirmation" style="display:none; margin-top: 1rem; padding: 1rem; background: rgba(16, 185, 129, 0.15); border: 1px solid var(--accent-green); border-radius: 8px;">
+          <h4 style="color: var(--accent-green); font-size: 0.95rem; margin-bottom: 0.35rem;">🎉 Access Granted!</h4>
+          <p style="font-size: 0.82rem; color: var(--text-main);">
+            Welcome to the working group! Direct invite link: <br>
+            <code style="background:var(--bg-input); padding:0.2rem 0.4rem; border-radius:4px; font-family:var(--font-mono);">https://t.me/nexus_quant_re_alpha</code>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>Nexus Community QA & Knowledge Engine • 100% Client-Side Architecture • Zero External Dependencies • Privacy & Data Ownership First</p>
+    </footer>
+  </div>
+
+  <!-- Client-Side Engine -->
+  <script>
+    (function() {
+      'use strict';
+
+      // Seed Questions Catalog across 4 core domains
+      const SEED_QUESTIONS = [
+        {
+          id: "q-1",
+          cat: "trading",
+          title: "How to avoid lookahead bias when backtesting multi-timeframe moving average crossovers?",
+          author: "@quant_guru",
+          votes: 78,
+          upvoted: false,
+          timestamp: "2 hours ago",
+          tags: ["backtesting", "indicators", "quant-logic"],
+          excerpt: "When merging 15-minute execution bars with daily trend filters, many python engines inadvertently peek into future bar close values. Here is how to ensure 100% lag-synchronization...",
+          answers: [
+            {
+              author: "@kernel_dev",
+              verified: true,
+              timestamp: "1 hour ago",
+              text: "Always reindex the daily series using `shift(1)` before forward-filling onto the intraday index. That guarantees bar t on the 15-min chart only observes the closed value from day t-1."
+            },
+            {
+              author: "@algotrader99",
+              verified: false,
+              timestamp: "45 mins ago",
+              text: "Seconding the shift(1) rule. We also assert `df.index.is_monotonic_increasing` in unit test assertions."
+            }
+          ]
+        },
+        {
+          id: "q-2",
+          cat: "trading",
+          title: "Optimal parameter bounds for Dollar-Cost Averaging (DCA) volatility dips vs lump-sum",
+          author: "@crypto_macro",
+          votes: 54,
+          upvoted: false,
+          timestamp: "4 hours ago",
+          tags: ["dca", "risk-parity", "crypto"],
+          excerpt: "Comparing fixed-interval weekly DCA against 2-standard-deviation Bollinger dip triggers over a 5-year BTC/ETH backtest...",
+          answers: [
+            {
+              author: "@freebuff",
+              verified: true,
+              timestamp: "3 hours ago",
+              text: "Empirical testing shows dynamic volatility DCA (scaling allocation +25% when 30-day RSI drops below 35) outperforms static lump sum by 18% in Sharpe ratio while reducing maximum drawdown by 22%."
+            }
+          ]
+        },
+        {
+          id: "q-3",
+          cat: "ai",
+          title: "Air-gapped execution patterns for local LLM tools with zero remote telemetry",
+          author: "@cyber_ops",
+          votes: 92,
+          upvoted: false,
+          timestamp: "5 hours ago",
+          tags: ["local-llm", "privacy", "offline"],
+          excerpt: "How to safely run local quantized GGUF weights inside isolated environments without telemetry leaks to external tracking endpoints...",
+          answers: [
+            {
+              author: "@sec_architect",
+              verified: true,
+              timestamp: "4 hours ago",
+              text: "Bind your inference daemon strictly to 127.0.0.1 and disable outbound DNS requests in Windows Firewall rules. Verify with our PC Privacy Hub (MVP_13) to ensure zero DoH leaks."
+            }
+          ]
+        },
+        {
+          id: "q-4",
+          cat: "ai",
+          title: "Multi-agent coordinator protocols: preventing solitary worker drift and enforcing review gates",
+          author: "@agentic_eng",
+          votes: 63,
+          upvoted: false,
+          timestamp: "6 hours ago",
+          tags: ["multi-agent", "swarm", "governance"],
+          excerpt: "Our team protocol mandates an anti-solo drift rule: the coordinator formulates specs, worker agents write code, and an auditor model reviews gates before task closeout.",
+          answers: [
+            {
+              author: "@antigravity_lead",
+              verified: true,
+              timestamp: "5 hours ago",
+              text: "Key implementation: decouple planning from execution. Every task JSON in C:\\AIIncome\\queue requires explicit worker/reviewer role assignments and deterministic test script verification (Exit Code 0)."
+            }
+          ]
+        },
+        {
+          id: "q-5",
+          cat: "re",
+          title: "How to properly model Debt Service Coverage Ratio (DSCR) for quadplex value-add loans",
+          author: "@proptech_pro",
+          votes: 81,
+          upvoted: false,
+          timestamp: "8 hours ago",
+          tags: ["dscr", "cap-rate", "underwriting"],
+          excerpt: "Commercial lenders require at least 1.25x DSCR. On a $680,000 purchase price with 25% down at 7.125%, how much gross monthly rent is necessary to satisfy underwriting criteria?",
+          answers: [
+            {
+              author: "@cline_worker",
+              verified: true,
+              timestamp: "7 hours ago",
+              text: "With a $510k loan, monthly P&I is ~$3,436 ($41,232/yr). A 1.25x DSCR demands an annual Net Operating Income (NOI) of at least $51,540 ($4,295/mo). Factoring in 35% OpEx and 6% vacancy, gross monthly rent must reach at least $6,400."
+            }
+          ]
+        },
+        {
+          id: "q-6",
+          cat: "re",
+          title: "Is the 1% Rule still a valid screening filter in current interest rate environments?",
+          author: "@cashflow_investor",
+          votes: 49,
+          upvoted: false,
+          timestamp: "10 hours ago",
+          tags: ["1-percent-rule", "real-estate", "sfr"],
+          excerpt: "With mortgage rates hovering around 6.5%-7.5%, does a property meeting the 1% rule still guarantee positive cash flow?",
+          answers: [
+            {
+              author: "@re_underwriter",
+              verified: true,
+              timestamp: "9 hours ago",
+              text: "No! At 7% mortgage interest, debt service consumes nearly 65% of gross rent. After factoring 8% property management, 5% maintenance, property taxes, and insurance, a 1.0% deal often breaks even or loses money. Target 1.2% - 1.4% or negotiate entry price."
+            }
+          ]
+        },
+        {
+          id: "q-7",
+          cat: "health",
+          title: "Circadian sleep timing and light exposure protocol for high-velocity software engineering",
+          author: "@bio_coder",
+          votes: 75,
+          upvoted: false,
+          timestamp: "12 hours ago",
+          tags: ["sleep", "circadian", "productivity"],
+          excerpt: "Struggling with post-lunch mental fatigue and sleep onset latency. What protocol maximizes restorative deep and REM sleep cycles without supplements?",
+          answers: [
+            {
+              author: "@peak_health_lead",
+              verified: true,
+              timestamp: "11 hours ago",
+              text: "Three non-negotiables: 1) 15 minutes of direct morning sunlight within 30 minutes of waking. 2) Strict 10-hour caffeine cutoff before bed. 3) 65°F (18°C) ambient bedroom temperature with complete blacked-out windows. Tested in MVP_15 health vault."
+            }
+          ]
+        },
+        {
+          id: "q-8",
+          cat: "health",
+          title: "Optimal daily electrolyte ratio for mental endurance during 12-hour build sprints",
+          author: "@focus_dev",
+          votes: 51,
+          upvoted: false,
+          timestamp: "14 hours ago",
+          tags: ["nutrition", "hydration", "focus"],
+          excerpt: "Plain water alone causes brain fog during intense coding sessions. What mineral balance sustains mental acuity?",
+          answers: [
+            {
+              author: "@nutritionist_ai",
+              verified: true,
+              timestamp: "12 hours ago",
+              text: "Target 1,000mg sodium, 200mg potassium, and 60mg magnesium malate dissolved in 32oz filtered water first thing in the morning. Avoid artificial sweeteners that disrupt microbiome gut-brain signaling."
+            }
+          ]
+        }
+      ];
+
+      // Local state management
+      let questions = [];
+      let currentCategory = "all";
+      let currentSort = "votes";
+      let searchQuery = "";
+      let leads = [];
+
+      // Storage keys
+      const STORAGE_KEY_QUESTIONS = "nexus_community_questions_v1";
+      const STORAGE_KEY_LEADS = "nexus_community_leads_v1";
+
+      function initData() {
+        const storedQ = localStorage.getItem(STORAGE_KEY_QUESTIONS);
+        if (storedQ) {
+          try {
+            questions = JSON.parse(storedQ);
+          } catch(e) {
+            questions = [...SEED_QUESTIONS];
+          }
+        } else {
+          questions = [...SEED_QUESTIONS];
+          saveQuestions();
+        }
+
+        const storedLeads = localStorage.getItem(STORAGE_KEY_LEADS);
+        if (storedLeads) {
+          try {
+            leads = JSON.parse(storedLeads);
+          } catch(e) {
+            leads = [];
+          }
+        }
+      }
+
+      function saveQuestions() {
+        localStorage.setItem(STORAGE_KEY_QUESTIONS, JSON.stringify(questions));
+      }
+
+      function saveLeads() {
+        localStorage.setItem(STORAGE_KEY_LEADS, JSON.stringify(leads));
+      }
+
+      // UI Rendering Engine
+      const container = document.getElementById("questionsContainer");
+
+      function renderFeed() {
+        // Filter by category
+        let list = questions.filter(q => {
+          if (currentCategory !== "all" && q.cat !== currentCategory) return false;
+          if (searchQuery) {
+            const query = searchQuery.toLowerCase();
+            const inTitle = q.title.toLowerCase().includes(query);
+            const inExcerpt = q.excerpt.toLowerCase().includes(query);
+            const inTags = q.tags.some(t => t.toLowerCase().includes(query));
+            if (!inTitle && !inExcerpt && !inTags) return false;
+          }
+          return true;
+        });
+
+        // Sort
+        list.sort((a, b) => {
+          if (currentSort === "votes") return b.votes - a.votes;
+          if (currentSort === "answers") return b.answers.length - a.answers.length;
+          // default recent
+          return 0;
+        });
+
+        if (list.length === 0) {
+          container.innerHTML = `
+            <div style="text-align:center; padding: 3rem 1rem; background:var(--bg-secondary); border-radius:12px; border:1px solid var(--border-color);">
+              <h3 style="color:var(--text-main); margin-bottom:0.5rem;">🔍 No matching community discussions found</h3>
+              <p style="color:var(--text-muted); font-size:0.85rem;">Try adjusting your keyword filter or select a different knowledge channel.</p>
+            </div>
+          `;
+          updateMetrics();
+          return;
+        }
+
+        let html = "";
+        list.forEach(q => {
+          const catClass = `cat-${q.cat}`;
+          const catLabel = q.cat === 'trading' ? 'Trading & Quant' :
+                           q.cat === 'ai' ? 'AI & Automation' :
+                           q.cat === 're' ? 'Real Estate' : 'Health & Performance';
+
+          const answersCount = q.answers.length;
+          const hasVerified = q.answers.some(a => a.verified);
+
+          let answersHtml = "";
+          q.answers.forEach(a => {
+            answersHtml += `
+              <div class="answer-card">
+                <div class="answer-header">
+                  <span class="answer-author">${a.author}</span>
+                  <span>${a.timestamp} ${a.verified ? '• <strong style="color:var(--accent-green);">Verified Solution</strong>' : ''}</span>
+                </div>
+                <p style="color:var(--text-main); line-height:1.45;">${a.text}</p>
+              </div>
+            `;
+          });
+
+          html += `
+            <div class="question-card" id="${q.id}">
+              <div class="vote-box">
+                <button class="vote-btn ${q.upvoted ? 'upvoted' : ''}" data-qid="${q.id}">
+                  ▲
+                </button>
+                <span class="vote-count" id="votes-${q.id}">${q.votes}</span>
+              </div>
+              <div class="q-main">
+                <div class="q-header">
+                  <span class="tag-cat ${catClass}">${catLabel}</span>
+                  ${hasVerified ? '<span class="tag-verified">✓ Verified Solution</span>' : ''}
+                </div>
+                <h2 class="q-title" data-qid="${q.id}">${q.title}</h2>
+                <p class="q-excerpt">${q.excerpt}</p>
+                <div class="q-meta">
+                  <span class="meta-item">👤 <span class="meta-author">${q.author}</span></span>
+                  <span class="meta-item">⏱️ ${q.timestamp}</span>
+                  <span class="meta-item" style="cursor:pointer;" data-action="toggle-thread" data-qid="${q.id}">
+                    💬 <strong>${answersCount} answers</strong>
+                  </span>
+                  <span class="meta-item">🏷️ ${q.tags.map(t => `#${t}`).join(' ')}</span>
+                </div>
+
+                <!-- Collapsible Answers Thread -->
+                <div class="thread-box" id="thread-${q.id}">
+                  <h4 style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.6rem;">Community Solutions (${answersCount})</h4>
+                  <div class="answers-list">
+                    ${answersHtml}
+                  </div>
+                  <form class="answer-form" data-qid="${q.id}">
+                    <textarea class="input-textarea" placeholder="Add your verified answer or insight to this discussion..." required></textarea>
+                    <div style="display:flex; justify-content:flex-end;">
+                      <button type="submit" class="btn btn-secondary" style="font-size:0.8rem;">
+                        Post Verified Reply
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+
+        container.innerHTML = html;
+        bindDynamicEvents();
+        updateMetrics();
+      }
+
+      function bindDynamicEvents() {
+        // Upvote buttons
+        document.querySelectorAll('.vote-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const qid = btn.dataset.qid;
+            const item = questions.find(q => q.id === qid);
+            if (!item) return;
+
+            if (item.upvoted) {
+              item.votes -= 1;
+              item.upvoted = false;
+            } else {
+              item.votes += 1;
+              item.upvoted = true;
+            }
+            saveQuestions();
+            renderFeed();
+          });
+        });
+
+        // Toggle threads on click
+        document.querySelectorAll('[data-action="toggle-thread"], .q-title').forEach(el => {
+          el.addEventListener('click', () => {
+            const qid = el.dataset.qid;
+            const thread = document.getElementById(`thread-${qid}`);
+            if (thread) {
+              thread.classList.toggle('open');
+            }
+          });
+        });
+
+        // Reply submission
+        document.querySelectorAll('.answer-form').forEach(form => {
+          form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const qid = form.dataset.qid;
+            const textarea = form.querySelector('textarea');
+            const text = textarea.value.trim();
+            if (!text) return;
+
+            const item = questions.find(q => q.id === qid);
+            if (!item) return;
+
+            item.answers.push({
+              author: "@operator",
+              verified: true,
+              timestamp: "Just now",
+              text: text
+            });
+            saveQuestions();
+            renderFeed();
+            const thread = document.getElementById(`thread-${qid}`);
+            if (thread) thread.classList.add('open');
+          });
+        });
+      }
+
+      function updateMetrics() {
+        const totalQ = questions.length;
+        let totalA = 0;
+        let totalVotes = 0;
+        let catCounts = { trading: 0, ai: 0, re: 0, health: 0 };
+
+        questions.forEach(q => {
+          totalA += q.answers.length;
+          totalVotes += q.votes;
+          if (catCounts[q.cat] !== undefined) catCounts[q.cat]++;
+        });
+
+        document.getElementById('statQuestions').textContent = totalQ;
+        document.getElementById('statAnswers').textContent = totalA;
+        document.getElementById('statUpvotes').textContent = totalVotes;
+        document.getElementById('badgeAll').textContent = totalQ;
+        document.getElementById('badgeTrading').textContent = catCounts.trading;
+        document.getElementById('badgeAi').textContent = catCounts.ai;
+        document.getElementById('badgeRe').textContent = catCounts.re;
+        document.getElementById('badgeHealth').textContent = catCounts.health;
+      }
+
+      // Category Switching
+      document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentCategory = btn.dataset.cat;
+          renderFeed();
+        });
+      });
+
+      // Search & Sort
+      const searchInput = document.getElementById('searchInput');
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value.trim();
+        renderFeed();
+      });
+
+      const sortSelect = document.getElementById('sortSelect');
+      sortSelect.addEventListener('change', (e) => {
+        currentSort = e.target.value;
+        renderFeed();
+      });
+
+      // Modals
+      const qModal = document.getElementById('questionModal');
+      const vipModal = document.getElementById('vipModal');
+
+      document.getElementById('askQuestionBtn').addEventListener('click', () => {
+        qModal.classList.add('active');
+      });
+
+      document.getElementById('closeQuestionModal').addEventListener('click', () => {
+        qModal.classList.remove('active');
+      });
+
+      document.getElementById('vipModalBtn').addEventListener('click', () => {
+        vipModal.classList.add('active');
+      });
+
+      document.getElementById('vipBannerCta').addEventListener('click', () => {
+        vipModal.classList.add('active');
+      });
+
+      document.getElementById('closeVipModal').addEventListener('click', () => {
+        vipModal.classList.remove('active');
+      });
+
+      // Close modal on background click
+      window.addEventListener('click', (e) => {
+        if (e.target === qModal) qModal.classList.remove('active');
+        if (e.target === vipModal) vipModal.classList.remove('active');
+      });
+
+      // Question Form Submit
+      const qForm = document.getElementById('questionForm');
+      qForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const title = document.getElementById('qTitleInput').value.trim();
+        const cat = document.getElementById('qCatSelect').value;
+        const author = document.getElementById('qAuthorInput').value.trim() || "@contributor";
+        const body = document.getElementById('qBodyInput').value.trim();
+        const tagsRaw = document.getElementById('qTagsInput').value.trim();
+        const tags = tagsRaw ? tagsRaw.split(',').map(t => t.trim().toLowerCase()) : [cat];
+
+        const newQ = {
+          id: "q-" + Date.now(),
+          cat: cat,
+          title: title,
+          author: author,
+          votes: 1,
+          upvoted: true,
+          timestamp: "Just now",
+          tags: tags,
+          excerpt: body,
+          answers: []
+        };
+
+        questions.unshift(newQ);
+        saveQuestions();
+        qForm.reset();
+        qModal.classList.remove('active');
+        renderFeed();
+      });
+
+      // VIP Lead Form Submit
+      const vipForm = document.getElementById('vipLeadForm');
+      const vipConfirm = document.getElementById('vipConfirmation');
+      vipForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('leadEmail').value.trim();
+        const channel = document.getElementById('leadChannel').value;
+        const tg = document.getElementById('leadTelegram').value.trim();
+
+        const leadRecord = {
+          email: email,
+          channel: channel,
+          telegram: tg,
+          timestamp: new Date().toISOString()
+        };
+
+        leads.push(leadRecord);
+        saveLeads();
+        vipForm.style.display = "none";
+        vipConfirm.style.display = "block";
+      });
+
+      // Export Q&A JSON
+      document.getElementById('exportDataBtn').addEventListener('click', () => {
+        const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(questions, null, 2));
+        const dlAnchor = document.createElement('a');
+        dlAnchor.setAttribute("href", dataStr);
+        dlAnchor.setAttribute("download", `nexus_community_qa_backup_${Date.now()}.json`);
+        document.body.appendChild(dlAnchor);
+        dlAnchor.click();
+        dlAnchor.remove();
+      });
+
+      // Export Leads CSV/JSON
+      document.getElementById('exportLeadsBtn').addEventListener('click', () => {
+        if (leads.length === 0) {
+          alert("No leads recorded yet! Join via the VIP Telegram button first.");
+          return;
+        }
+        let csvContent = "data:text/csv;charset=utf-8,Email,Channel,Telegram,Timestamp\n";
+        leads.forEach(l => {
+          csvContent += `"${l.email}","${l.channel}","${l.telegram}","${l.timestamp}"\n`;
+        });
+        const encodedUri = encodeURI(csvContent);
+        const link = document.createElement("a");
+        link.setAttribute("href", encodedUri);
+        link.setAttribute("download", `nexus_vip_leads_${Date.now()}.csv`);
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+      });
+
+      // Theme toggle
+      const themeBtn = document.getElementById('themeToggleBtn');
+      const themeIcon = document.getElementById('themeIcon');
+      themeBtn.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+        themeBtn.innerHTML = `${themeIcon.outerHTML} ${newTheme === 'dark' ? 'Light Mode' : 'Dark Mode'}`;
+      });
+
+      // Initial execution
+      initData();
+      renderFeed();
+    })();
+  </script>
+</body>
+</html>

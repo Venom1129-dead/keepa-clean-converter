@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <linearGradient id="crownGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+  </defs>
+  <!-- Princess Tiara / Crown with Circuits -->
+  <polygon points="150,160 170,110 210,140 250,80 290,140 330,110 350,160" fill="url(#crownGrad)" stroke="#ffffff" stroke-width="4"/>
+  <circle cx="250" cy="80" r="10" fill="#38bdf8"/>
+  <circle cx="170" cy="110" r="7" fill="#ec4899"/>
+  <circle cx="330" cy="110" r="7" fill="#ec4899"/>
+  <!-- Translucent Alert Card -->
+  <rect x="60" y="190" width="380" height="220" rx="20" fill="#1e1b4b" stroke="#38bdf8" stroke-width="4"/>
+  <!-- Title -->
+  <text x="250" y="245" font-family="sans-serif" font-size="24" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="2">NULL POINTER</text>
+  <text x="250" y="285" font-family="sans-serif" font-size="34" font-weight="900" fill="#f472b6" text-anchor="middle" letter-spacing="4">PRINCESS</text>
+  <!-- Sub-bar -->
+  <rect x="100" y="315" width="300" height="3" fill="#38bdf8"/>
+  <text x="250" y="355" font-family="monospace" font-size="15" fill="#a7f3d0" text-anchor="middle">&lt;0x00000000 : EXCEPTION_CUTE&gt;</text>
+  <text x="250" y="385" font-family="monospace" font-size="13" fill="#cbd5e1" text-anchor="middle">STATUS: UNCAUGHT_CRUSH</text>
+</svg>

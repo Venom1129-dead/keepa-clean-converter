@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <linearGradient id="gradButter" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="35%" stop-color="#f472b6"/>
+      <stop offset="70%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+  </defs>
+  <!-- Left Forewing -->
+  <path d="M 245 230 C 180 110 80 80 40 140 C 10 190 60 260 160 260 C 210 260 235 245 245 230 Z" fill="url(#gradButter)" stroke="#ffffff" stroke-width="2"/>
+  <!-- Left Hindwing -->
+  <path d="M 240 250 C 180 260 90 280 80 350 C 70 410 160 440 200 370 C 220 330 235 280 240 250 Z" fill="url(#gradButter)" stroke="#ffffff" stroke-width="2"/>
+  <!-- Right Forewing -->
+  <path d="M 255 230 C 320 110 420 80 460 140 C 490 190 440 260 340 260 C 290 260 265 245 255 230 Z" fill="url(#gradButter)" stroke="#ffffff" stroke-width="2"/>
+  <!-- Right Hindwing -->
+  <path d="M 260 250 C 320 260 410 280 420 350 C 430 410 340 440 300 370 C 280 330 265 280 260 250 Z" fill="url(#gradButter)" stroke="#ffffff" stroke-width="2"/>
+  <!-- Body and Antennae -->
+  <ellipse cx="250" cy="270" rx="8" ry="50" fill="#ffffff"/>
+  <path d="M 248 220 Q 210 170 190 150 M 252 220 Q 290 170 310 150" stroke="#f472b6" stroke-width="3" fill="none"/>
+  <circle cx="188" cy="148" r="4" fill="#ffffff"/>
+  <circle cx="312" cy="148" r="4" fill="#ffffff"/>
+  <!-- Cyber star sparkles -->
+  <polygon points="120,180 123,190 133,193 123,196 120,206 117,196 107,193 117,190" fill="#ffffff"/>
+  <polygon points="380,180 383,190 393,193 383,196 380,206 377,196 367,193 377,190" fill="#ffffff"/>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <!-- Floppy Casing -->
+  <path d="M 100 80 L 360 80 L 400 120 L 400 420 L 100 420 Z" fill="#f472b6" stroke="#ffffff" stroke-width="8"/>
+  <!-- Metal Shutter -->
+  <rect x="160" y="80" width="180" height="130" fill="#cbd5e1" stroke="#475569" stroke-width="4"/>
+  <rect x="200" y="105" width="45" height="80" rx="6" fill="#0f172a"/>
+  <!-- Floppy Label Paper -->
+  <rect x="130" y="240" width="240" height="150" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="3"/>
+  <!-- Kawaii Blushing Face -->
+  <circle cx="200" cy="290" r="12" fill="#0f172a"/>
+  <circle cx="300" cy="290" r="12" fill="#0f172a"/>
+  <!-- Eye highlights -->
+  <circle cx="196" cy="286" r="4" fill="#ffffff"/>
+  <circle cx="296" cy="286" r="4" fill="#ffffff"/>
+  <!-- Blushes -->
+  <ellipse cx="180" cy="310" rx="12" ry="6" fill="#f43f5e" opacity="0.6"/>
+  <ellipse cx="320" cy="310" rx="12" ry="6" fill="#f43f5e" opacity="0.6"/>
+  <!-- Cute Mouth -->
+  <path d="M 235 305 Q 250 320 265 305" stroke="#0f172a" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <!-- Label Text -->
+  <text x="250" y="365" font-family="monospace" font-size="15" font-weight="bold" fill="#db2777" text-anchor="middle">BACKUP_SOUL_1.44MB</text>
+</svg>

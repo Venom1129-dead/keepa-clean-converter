@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <linearGradient id="steamGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#f43f5e" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <!-- Rising Steam Swirls as circuit lines -->
+  <path d="M 210 170 Q 180 120 220 70 M 250 170 Q 280 110 240 60 M 290 170 Q 270 120 310 70" stroke="url(#steamGrad)" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <!-- Coffee Mug -->
+  <path d="M 150 190 L 350 190 L 330 380 C 330 420 170 420 170 380 Z" fill="#1e293b" stroke="#ffffff" stroke-width="6"/>
+  <!-- Mug Handle -->
+  <path d="M 345 220 C 420 220 420 340 335 340" stroke="#ffffff" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <path d="M 345 220 C 400 220 400 340 335 340" stroke="#0f172a" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <!-- Front Emblem / Linux prompt -->
+  <rect x="180" y="240" width="140" height="100" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/>
+  <text x="195" y="275" font-family="monospace" font-size="18" font-weight="bold" fill="#ec4899">sudo</text>
+  <text x="195" y="300" font-family="monospace" font-size="15" fill="#f1f5f9">make me</text>
+  <text x="195" y="325" font-family="monospace" font-size="15" font-weight="bold" fill="#38bdf8">coffee();</text>
+</svg>

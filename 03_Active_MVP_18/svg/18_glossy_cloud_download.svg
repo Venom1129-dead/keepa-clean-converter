@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <radialGradient id="cloudAero" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#bae6fd"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </radialGradient>
+  </defs>
+  <!-- Glossy 3D Water Droplet Cloud -->
+  <path d="M 180 320 C 120 320 90 260 140 220 C 130 160 210 130 250 170 C 290 120 380 140 370 210 C 420 240 400 320 340 320 Z" fill="url(#cloudAero)" stroke="#ffffff" stroke-width="5"/>
+  <!-- Glowing Neon Down Arrow -->
+  <polygon points="250,220 280,220 280,270 320,270 250,350 180,270 220,270 220,220" fill="#ffffff" stroke="#0284c7" stroke-width="4"/>
+  <!-- Aero water droplets -->
+  <circle cx="180" cy="370" r="10" fill="#38bdf8"/>
+  <circle cx="250" cy="400" r="12" fill="#38bdf8"/>
+  <circle cx="320" cy="370" r="8" fill="#38bdf8"/>
+</svg>

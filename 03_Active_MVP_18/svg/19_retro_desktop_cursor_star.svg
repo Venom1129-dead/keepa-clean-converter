@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <linearGradient id="cursorGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="60%" stop-color="#c084fc"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+  <!-- Large Retro Translucent Mouse Pointer -->
+  <polygon points="120,60 120,380 200,300 270,440 320,410 250,270 360,270" fill="url(#cursorGrad)" stroke="#0f172a" stroke-width="12" stroke-linejoin="round"/>
+  <!-- Inner Highlight -->
+  <polygon points="135,100 135,320 195,260 255,380 275,370 215,250 300,250" fill="#ffffff" opacity="0.6"/>
+  <!-- Trail of Sparkle Stars -->
+  <polygon points="380,80 385,100 405,105 385,110 380,130 375,110 355,105 375,100" fill="#fde047"/>
+  <polygon points="420,180 423,195 438,198 423,201 420,216 417,201 402,198 417,195" fill="#f43f5e"/>
+  <polygon points="340,340 344,355 359,358 344,361 340,376 336,361 321,358 336,355" fill="#38bdf8"/>
+</svg>

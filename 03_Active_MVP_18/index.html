@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kawaii Cyber-Tech Merch Studio — Printify Apparel Mockup & SVG Vector Engine</title>
+  <meta name="description" content="Interactive vector asset previewer and apparel mockup studio for Gen Z / Girls in Tech, Cyber-Y2K, and Frutiger Aero apparel. 100% client-side with zero external dependencies.">
+  <style>
+    :root {
+      --bg-primary: #0a0e17;
+      --bg-secondary: #121827;
+      --bg-card: #1a2238;
+      --bg-input: #0e1424;
+      --border-color: #232f4d;
+      --border-focus: #38bdf8;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --accent-pink: #f43f5e;
+      --accent-purple: #c084fc;
+      --accent-cyan: #38bdf8;
+      --accent-green: #10b981;
+      --accent-yellow: #fde047;
+      --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-mono: "JetBrains Mono", Consolas, "Courier New", monospace;
+    }
+
+    [data-theme="light"] {
+      --bg-primary: #f8fafc;
+      --bg-secondary: #ffffff;
+      --bg-card: #f1f5f9;
+      --bg-input: #ffffff;
+      --border-color: #cbd5e1;
+      --border-focus: #0284c7;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --text-dim: #64748b;
+      --accent-pink: #e11d48;
+      --accent-purple: #9333ea;
+      --accent-cyan: #0284c7;
+      --accent-green: #059669;
+      --accent-yellow: #ca8a04;
+      --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      font-family: var(--font-family);
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .app-container {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      width: 100%;
+    }
+
+    /* Header */
+    header.studio-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.25rem;
+      padding: 1.25rem 1.75rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--card-shadow);
+    }
+
+    .brand-section {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand-badge {
+      background: linear-gradient(135deg, var(--accent-pink), var(--accent-purple));
+      color: #ffffff;
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      box-shadow: 0 4px 12px rgba(244, 63, 94, 0.35);
+    }
+
+    .header-text h1 {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .header-text p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .header-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.5rem 0.95rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+      outline: none;
+      font-family: inherit;
+    }
+
+    .btn-pink {
+      background: linear-gradient(135deg, var(--accent-pink), #e11d48);
+      color: #ffffff;
+      border-color: rgba(244, 63, 94, 0.4);
+    }
+
+    .btn-pink:hover {
+      opacity: 0.95;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: var(--bg-card);
+      color: var(--text-main);
+      border-color: var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-muted);
+      border-color: var(--border-color);
+    }
+
+    .btn-outline:hover {
+      color: var(--text-main);
+      border-color: var(--text-muted);
+    }
+
+    /* Main Studio Grid */
+    .studio-layout {
+      display: grid;
+      grid-template-columns: 1fr 500px;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 1100px) {
+      .studio-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Left Gallery Column */
+    .gallery-col {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    /* Filter Bar */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      align-items: center;
+      box-shadow: var(--card-shadow);
+    }
+
+    .filter-btn {
+      background: var(--bg-input);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+      padding: 0.4rem 0.85rem;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--accent-pink);
+      color: var(--accent-pink);
+    }
+
+    .filter-btn.active {
+      background: rgba(244, 63, 94, 0.15);
+      border-color: var(--accent-pink);
+      color: var(--accent-pink);
+    }
+
+    /* SVG Cards Grid */
+    .svg-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+
+    .svg-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 0.85rem;
+      box-shadow: var(--card-shadow);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .svg-card:hover {
+      border-color: var(--accent-pink);
+      transform: translateY(-2px);
+    }
+
+    .svg-card.selected {
+      border-color: var(--accent-pink);
+      background: rgba(244, 63, 94, 0.08);
+      box-shadow: 0 0 0 2px rgba(244, 63, 94, 0.4);
+    }
+
+    .svg-preview-box {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background: #090d16;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.6rem;
+      margin-bottom: 0.6rem;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+    }
+
+    .svg-preview-box svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .svg-card-name {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--text-main);
+      text-align: center;
+      line-height: 1.25;
+      margin-bottom: 0.25rem;
+      word-break: break-word;
+    }
+
+    .svg-card-cat {
+      font-size: 0.68rem;
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    /* Right Mockup Studio Column */
+    .studio-panel {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      position: sticky;
+      top: 1.5rem;
+    }
+
+    .panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.75rem;
+    }
+
+    .panel-header h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* Interactive Garment Canvas */
+    .mockup-canvas-wrapper {
+      width: 100%;
+      height: 400px;
+      background: #060911;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .garment-silhouette {
+      position: relative;
+      width: 320px;
+      height: 360px;
+      transition: all 0.3s ease;
+    }
+
+    .garment-svg {
+      width: 100%;
+      height: 100%;
+      fill: var(--garment-color, #1a1a1a);
+      stroke: rgba(255, 255, 255, 0.15);
+      stroke-width: 1.5;
+      filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.6));
+    }
+
+    .print-graphic-layer {
+      position: absolute;
+      top: 25%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 110px;
+      height: 110px;
+      pointer-events: none;
+      transition: all 0.2s ease;
+    }
+
+    .print-graphic-layer svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      filter: drop-shadow(0 2px 5px rgba(0,0,0,0.4));
+    }
+
+    /* Controls */
+    .control-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .control-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .control-label span.val {
+      font-family: var(--font-mono);
+      color: var(--accent-pink);
+    }
+
+    .swatches {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .color-swatch {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 2px solid var(--border-color);
+      cursor: pointer;
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+
+    .color-swatch:hover {
+      transform: scale(1.1);
+    }
+
+    .color-swatch.active {
+      border-color: var(--accent-pink);
+      transform: scale(1.15);
+      box-shadow: 0 0 0 2px rgba(244, 63, 94, 0.5);
+    }
+
+    select.studio-select, input[type="range"] {
+      width: 100%;
+      background: var(--bg-input);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 0.5rem 0.75rem;
+      color: var(--text-main);
+      font-size: 0.85rem;
+      outline: none;
+    }
+
+    input[type="range"] {
+      padding: 0;
+      accent-color: var(--accent-pink);
+    }
+
+    /* Merch Specs Box */
+    .specs-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 0.85rem;
+      font-size: 0.8rem;
+    }
+
+    .spec-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.35rem;
+    }
+
+    .spec-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .spec-item .label {
+      color: var(--text-muted);
+    }
+
+    .spec-item .value {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      color: var(--accent-green);
+    }
+
+    /* Footer */
+    footer.app-footer {
+      margin-top: auto;
+      padding: 1.5rem 0;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      border-top: 1px solid var(--border-color);
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="studio-header">
+      <div class="brand-section">
+        <span class="brand-badge">PRINTIFY // DTG ENGINE</span>
+        <div class="header-text">
+          <h1>Kawaii Cyber-Tech Merch Studio</h1>
+          <p>Production Vector Asset Library & Interactive Apparel Mockup Studio</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button id="themeToggleBtn" class="btn btn-secondary">
+          <span id="themeIcon">☀️</span> Light Mode
+        </button>
+        <button id="copySeoBtn" class="btn btn-secondary">
+          🏷️ Copy 13-Tag SEO Matrix
+        </button>
+        <button id="downloadSvgBtn" class="btn btn-pink">
+          📥 Download Selected SVG
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Studio Layout -->
+    <div class="studio-layout">
+      <!-- Left: SVG Catalog Grid -->
+      <div class="gallery-col">
+        <!-- Filter Toolbar -->
+        <div class="filter-bar">
+          <span style="font-size:0.8rem; font-weight:700; color:var(--text-muted); text-transform:uppercase; margin-right:0.5rem;">Collection:</span>
+          <button class="filter-btn active" data-cat="all">All Designs (20)</button>
+          <button class="filter-btn" data-cat="y2k">Cyber-Y2K & Sigilism (7)</button>
+          <button class="filter-btn" data-cat="hacker">Kawaii Hacker & STEM (7)</button>
+          <button class="filter-btn" data-cat="aero">Frutiger Aero & Webcore (6)</button>
+        </div>
+
+        <!-- 20 SVG Cards Container -->
+        <div class="svg-grid" id="svgGrid">
+          <!-- Injected dynamically via script -->
+        </div>
+      </div>
+
+      <!-- Right: Interactive Live Mockup Studio -->
+      <div class="studio-panel">
+        <div class="panel-header">
+          <h2>👕 Apparel Mockup Studio</h2>
+          <span style="font-size:0.75rem; font-family:var(--font-mono); color:var(--accent-pink);" id="activeDesignName">01_cybersigil_winged_heart</span>
+        </div>
+
+        <!-- Live Garment Preview Canvas -->
+        <div class="mockup-canvas-wrapper">
+          <div class="garment-silhouette" id="garmentContainer">
+            <!-- Vector T-Shirt Outline -->
+            <svg class="garment-svg" viewBox="0 0 320 360" id="garmentSvg">
+              <!-- Crewneck / T-Shirt Path -->
+              <path id="tshirtPath" d="M 100 40 L 40 90 L 80 140 L 105 120 L 105 340 L 215 340 L 215 120 L 240 140 L 280 90 L 220 40 C 200 65 120 65 100 40 Z"/>
+              <!-- Collar curve -->
+              <path d="M 100 40 Q 160 75 220 40" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="3"/>
+            </svg>
+
+            <!-- Graphic Print Overlay -->
+            <div class="print-graphic-layer" id="printGraphic">
+              <!-- Injected SVG -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Garment Model Selector -->
+        <div class="control-row">
+          <label class="control-label" for="garmentModel">Blank Garment Model</label>
+          <select id="garmentModel" class="studio-select">
+            <option value="cc1717">Comfort Colors 1717 (Oversized Streetwear Tee)</option>
+            <option value="bc6681">Bella + Canvas 6681 (Women's Cropped Baby Tee)</option>
+            <option value="g18000">Gildan 18000 (Oversized Hacker Crewneck Sweatshirt)</option>
+          </select>
+        </div>
+
+        <!-- Garment Color Swatches -->
+        <div class="control-row">
+          <label class="control-label">Garment Fabric Color</label>
+          <div class="swatches" id="colorSwatches">
+            <div class="color-swatch active" data-color="#1a1a1a" style="background:#1a1a1a;" title="Pepper / Washed Black"></div>
+            <div class="color-swatch" data-color="#f5f5f0" style="background:#f5f5f0;" title="Ivory / Off-White"></div>
+            <div class="color-swatch" data-color="#fbcfe8" style="background:#fbcfe8;" title="Baby Pink"></div>
+            <div class="color-swatch" data-color="#e9d5ff" style="background:#e9d5ff;" title="Orchid / Lavender"></div>
+            <div class="color-swatch" data-color="#e7e5e4" style="background:#e7e5e4;" title="Sand / Oatmeal"></div>
+            <div class="color-swatch" data-color="#0284c7" style="background:#0284c7;" title="Cyan / Aero Sky"></div>
+          </div>
+        </div>
+
+        <!-- Scale & Placement Sliders -->
+        <div class="control-row">
+          <label class="control-label">
+            <span>Graphic Print Scale</span>
+            <span class="val" id="scaleVal">100%</span>
+          </label>
+          <input type="range" id="scaleSlider" min="50" max="150" value="100">
+        </div>
+
+        <div class="control-row">
+          <label class="control-label">
+            <span>Vertical Print Placement</span>
+            <span class="val" id="posVal">35%</span>
+          </label>
+          <input type="range" id="posSlider" min="15" max="65" value="35">
+        </div>
+
+        <!-- Unit Economics Summary -->
+        <div class="specs-box">
+          <div class="spec-item">
+            <span class="label">Print Provider:</span>
+            <span class="value" id="specProvider">Monster Digital (USA)</span>
+          </div>
+          <div class="spec-item">
+            <span class="label">Printify Base Cost:</span>
+            <span class="value" id="specCost">$11.20</span>
+          </div>
+          <div class="spec-item">
+            <span class="label">Suggested Retail Price:</span>
+            <span class="value" id="specRetail">$32.00</span>
+          </div>
+          <div class="spec-item">
+            <span class="label">Estimated Net Margin:</span>
+            <span class="value" id="specMargin">+$15.27 / unit (47.7%)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>Kawaii Cyber-Tech Vector Merch Studio • Autonomous AI Income Factory #18 • 100% Client-Side Engine • Zero External CDNs</p>
+    </footer>
+  </div>
+
+  <!-- Client-Side Engine -->
+  <script>
+    (function() {
+      'use strict';
+
+      // 20 Vector Catalog Manifest
+      const SVG_CATALOG = [
+        { id: "01_cybersigil_winged_heart", name: "Cybersigil Winged Heart", cat: "y2k", file: "svg/01_cybersigil_winged_heart.svg" },
+        { id: "02_y2k_tribal_cyber_cross", name: "Y2K Tribal Cyber Cross", cat: "y2k", file: "svg/02_y2k_tribal_cyber_cross.svg" },
+        { id: "03_liquid_chrome_butterfly", name: "Liquid Chrome Butterfly", cat: "y2k", file: "svg/03_liquid_chrome_butterfly.svg" },
+        { id: "04_mecha_halo_angel", name: "Mecha Halo Angel Core", cat: "y2k", file: "svg/04_mecha_halo_angel.svg" },
+        { id: "05_barbed_wire_heart_lock", name: "Barbed Wire Heart Padlock", cat: "y2k", file: "svg/05_barbed_wire_heart_lock.svg" },
+        { id: "06_cybersigil_starburst", name: "Cybersigil Flare Starburst", cat: "y2k", file: "svg/06_cybersigil_starburst.svg" },
+        { id: "07_biomech_spine_vector", name: "Biomech Cyber Spine", cat: "y2k", file: "svg/07_biomech_spine_vector.svg" },
+
+        { id: "08_kawaii_terminal_cat", name: "Kawaii Terminal Cat", cat: "hacker", file: "svg/08_kawaii_terminal_cat.svg" },
+        { id: "09_null_pointer_princess", name: "Null Pointer Princess Tiara", cat: "hacker", file: "svg/09_null_pointer_princess.svg" },
+        { id: "10_git_commit_and_chill", name: "Git Commit & Chill Sakura", cat: "hacker", file: "svg/10_git_commit_and_chill.svg" },
+        { id: "11_sudo_make_me_coffee", name: "Sudo Make Me Coffee", cat: "hacker", file: "svg/11_sudo_make_me_coffee.svg" },
+        { id: "12_kawaii_floppy_diskette", name: "1.44MB Kawaii Floppy Soul", cat: "hacker", file: "svg/12_kawaii_floppy_diskette.svg" },
+        { id: "13_hacker_girl_skull_bow", name: "Hacker Girl Skull & Cyber Bow", cat: "hacker", file: "svg/13_hacker_girl_skull_bow.svg" },
+        { id: "14_circuit_botanical_rose", name: "Botanical Circuit Board Rose", cat: "hacker", file: "svg/14_circuit_botanical_rose.svg" },
+
+        { id: "15_frutiger_aero_bubble_fish", name: "Frutiger Aero Water Bubble Fish", cat: "aero", file: "svg/15_frutiger_aero_bubble_fish.svg" },
+        { id: "16_crt_error_404_heart", name: "CRT Error 404 Heart", cat: "aero", file: "svg/16_crt_error_404_heart.svg" },
+        { id: "17_glassmorphic_music_player", name: "Aero Glass MP3 Player", cat: "aero", file: "svg/17_glassmorphic_music_player.svg" },
+        { id: "18_glossy_cloud_download", name: "Glossy Cloud Neon Download", cat: "aero", file: "svg/18_glossy_cloud_download.svg" },
+        { id: "19_retro_desktop_cursor_star", name: "3D Desktop Cursor Sparkles", cat: "aero", file: "svg/19_retro_desktop_cursor_star.svg" },
+        { id: "20_fatal_exception_too_cute", name: "Fatal Exception: Too Cute", cat: "aero", file: "svg/20_fatal_exception_too_cute.svg" }
+      ];
+
+      // State
+      let selectedSvgId = SVG_CATALOG[0].id;
+      let currentFilter = "all";
+      let garmentColor = "#1a1a1a";
+      let scale = 100;
+      let pos = 35;
+
+      const garmentSpecs = {
+        cc1717: { provider: "Monster Digital (USA)", cost: "$11.20", retail: "$32.00", margin: "+$15.27 / unit (47.7%)" },
+        bc6681: { provider: "Monster Digital (USA)", cost: "$9.20", retail: "$28.00", margin: "+$14.80 / unit (52.8%)" },
+        g18000: { provider: "SwiftPOD (USA)", cost: "$11.50", retail: "$42.00", margin: "+$22.50 / unit (53.5%)" }
+      };
+
+      const gridEl = document.getElementById('svgGrid');
+      const activeDesignNameEl = document.getElementById('activeDesignName');
+      const printGraphicEl = document.getElementById('printGraphic');
+      const garmentContainer = document.getElementById('garmentContainer');
+      const scaleSlider = document.getElementById('scaleSlider');
+      const posSlider = document.getElementById('posSlider');
+      const scaleVal = document.getElementById('scaleVal');
+      const posVal = document.getElementById('posVal');
+      const garmentModelSelect = document.getElementById('garmentModel');
+
+      // Populate Grid
+      function renderGrid() {
+        let html = '';
+        SVG_CATALOG.forEach(item => {
+          if (currentFilter !== 'all' && item.cat !== currentFilter) return;
+          const isSelected = item.id === selectedSvgId;
+          html += `
+            <div class="svg-card ${isSelected ? 'selected' : ''}" data-id="${item.id}">
+              <div class="svg-preview-box">
+                <img src="${item.file}" alt="${item.name}" style="width:100%; height:100%; object-fit:contain;" />
+              </div>
+              <div class="svg-card-name">${item.name}</div>
+              <div class="svg-card-cat">${item.cat}</div>
+            </div>
+          `;
+        });
+        gridEl.innerHTML = html;
+
+        // Card click events
+        document.querySelectorAll('.svg-card').forEach(card => {
+          card.addEventListener('click', () => {
+            selectedSvgId = card.dataset.id;
+            updateStudio();
+            renderGrid();
+          });
+        });
+      }
+
+      function updateStudio() {
+        const item = SVG_CATALOG.find(i => i.id === selectedSvgId) || SVG_CATALOG[0];
+        activeDesignNameEl.textContent = item.name;
+
+        // Load preview into mockup layer
+        printGraphicEl.innerHTML = `<img src="${item.file}" style="width:100%; height:100%; object-fit:contain;" />`;
+        applyMockupStyles();
+      }
+
+      function applyMockupStyles() {
+        garmentContainer.style.setProperty('--garment-color', garmentColor);
+        printGraphicEl.style.width = `${110 * (scale / 100)}px`;
+        printGraphicEl.style.height = `${110 * (scale / 100)}px`;
+        printGraphicEl.style.top = `${pos}%`;
+      }
+
+      // Sliders
+      scaleSlider.addEventListener('input', (e) => {
+        scale = e.target.value;
+        scaleVal.textContent = scale + '%';
+        applyMockupStyles();
+      });
+
+      posSlider.addEventListener('input', (e) => {
+        pos = e.target.value;
+        posVal.textContent = pos + '%';
+        applyMockupStyles();
+      });
+
+      // Swatches
+      document.querySelectorAll('.color-swatch').forEach(swatch => {
+        swatch.addEventListener('click', () => {
+          document.querySelectorAll('.color-swatch').forEach(s => s.classList.remove('active'));
+          swatch.classList.add('active');
+          garmentColor = swatch.dataset.color;
+          applyMockupStyles();
+        });
+      });
+
+      // Garment Model Change
+      garmentModelSelect.addEventListener('change', (e) => {
+        const val = e.target.value;
+        const spec = garmentSpecs[val] || garmentSpecs.cc1717;
+        document.getElementById('specProvider').textContent = spec.provider;
+        document.getElementById('specCost').textContent = spec.cost;
+        document.getElementById('specRetail').textContent = spec.retail;
+        document.getElementById('specMargin').textContent = spec.margin;
+      });
+
+      // Filters
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentFilter = btn.dataset.cat;
+          renderGrid();
+        });
+      });
+
+      // Copy 13-Tag SEO Matrix
+      document.getElementById('copySeoBtn').addEventListener('click', () => {
+        const tags = "Cyber Y2K Shirt, Tech Girl Aesthetic, Cybersigilism Top, Webcore Graphic Tee, Hacker Girl Hoodie, Baby Tee Y2K, Futuristic Streetwear, Women In Tech Gift, Coder Girl Shirt, Frutiger Aero Top, Pixel Art Aesthetic, Grunge Cyberpunk Tee, Developer Apparel";
+        navigator.clipboard.writeText(tags).then(() => {
+          const btn = document.getElementById('copySeoBtn');
+          const old = btn.textContent;
+          btn.textContent = "✅ Copied 13 Tags!";
+          setTimeout(() => btn.textContent = old, 2000);
+        });
+      });
+
+      // Download Selected SVG
+      document.getElementById('downloadSvgBtn').addEventListener('click', () => {
+        const item = SVG_CATALOG.find(i => i.id === selectedSvgId) || SVG_CATALOG[0];
+        const a = document.createElement('a');
+        a.href = item.file;
+        a.download = `${item.id}.svg`;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+      });
+
+      // Theme toggle
+      const themeBtn = document.getElementById('themeToggleBtn');
+      const themeIcon = document.getElementById('themeIcon');
+      themeBtn.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+        themeBtn.innerHTML = `${themeIcon.outerHTML} ${newTheme === 'dark' ? 'Light Mode' : 'Dark Mode'}`;
+      });
+
+      // Initialize
+      renderGrid();
+      updateStudio();
+    })();
+  </script>
+</body>
+</html>

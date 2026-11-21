@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <linearGradient id="mechaGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+  </defs>
+  <!-- Futuristic segmented halo -->
+  <ellipse cx="250" cy="130" rx="140" ry="32" stroke="url(#mechaGold)" stroke-width="6" fill="none" stroke-dasharray="25, 10, 15, 10"/>
+  <ellipse cx="250" cy="130" rx="110" ry="24" stroke="#38bdf8" stroke-width="2" fill="none"/>
+  <!-- Central Cyber Eye / Core -->
+  <path d="M 170 230 Q 250 160 330 230 Q 250 300 170 230 Z" fill="#0f172a" stroke="#38bdf8" stroke-width="4"/>
+  <circle cx="250" cy="230" r="30" fill="url(#mechaGold)"/>
+  <circle cx="250" cy="230" r="12" fill="#0f172a"/>
+  <!-- Radiating mechanical feather blades -->
+  <g fill="#e2e8f0" stroke="#0284c7" stroke-width="2">
+    <polygon points="150,220 50,280 80,310 160,260"/>
+    <polygon points="130,260 40,340 70,370 150,300"/>
+    <polygon points="350,220 450,280 420,310 340,260"/>
+    <polygon points="370,260 460,340 430,370 350,300"/>
+  </g>
+</svg>

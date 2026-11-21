@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <linearGradient id="bowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f43f5e"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  <!-- Stylized Cute Skull -->
+  <path d="M 160 250 C 160 150 340 150 340 250 C 340 290 310 320 295 335 L 295 380 L 205 380 L 205 335 C 190 320 160 290 160 250 Z" fill="#ffffff" stroke="#0f172a" stroke-width="8"/>
+  <!-- Heart-shaped Eye Sockets -->
+  <path d="M 215 240 C 200 220 180 225 180 245 C 180 265 215 285 215 285 C 215 285 250 265 250 245 C 250 225 230 220 215 240 Z" fill="#0f172a"/>
+  <path d="M 285 240 C 270 220 250 225 250 245 C 250 265 285 285 285 285 C 285 285 320 265 320 245 C 320 225 300 220 285 240 Z" fill="#0f172a"/>
+  <!-- Teeth -->
+  <line x1="225" y1="350" x2="225" y2="380" stroke="#0f172a" stroke-width="6"/>
+  <line x1="250" y1="350" x2="250" y2="380" stroke="#0f172a" stroke-width="6"/>
+  <line x1="275" y1="350" x2="275" y2="380" stroke="#0f172a" stroke-width="6"/>
+  <!-- Giant Cyber Ribbon Bow on Head -->
+  <!-- Left Wing of Bow -->
+  <polygon points="250,150 140,80 130,190" fill="url(#bowGrad)" stroke="#ffffff" stroke-width="5"/>
+  <!-- Right Wing of Bow -->
+  <polygon points="250,150 360,80 370,190" fill="url(#bowGrad)" stroke="#ffffff" stroke-width="5"/>
+  <!-- Center Knot -->
+  <circle cx="250" cy="145" r="22" fill="#38bdf8" stroke="#ffffff" stroke-width="4"/>
+</svg>
