@@ -1,0 +1,117 @@
+{
+  "factory_name": "Autonomous AI Income & Trading Factory",
+  "version": "2.0.0",
+  "generated_at": "2026-11-21T17:57:00Z",
+  "payment_readiness": "PREPARED_FOR_PAYPAL_AND_BANK_HOOKUP",
+  "zero_bank_monetization_modes": [
+    "PAY_WHAT_YOU_WANT_ZERO_PLUS (Captures Customer Email & Optional Tips)",
+    "DIRECT_CRYPTO_WEB3_PAYMENTS (Zero KYC, Direct Wallet Settlement)",
+    "PARTNER_AFFILIATE_REVENUE_SHARE (AdGuard, Malwarebytes, Cloudflare)"
+  ],
+  "products": [
+    {
+      "id": "MVP_01",
+      "name": "Keepa Clean Excel Instant Converter",
+      "category": "Amazon FBA Tools",
+      "live_url": "https://venom1129-dead.github.io/keepa-clean-converter/",
+      "price_tiers": { "free_tier": 0.0, "commercial_license": 14.0 },
+      "launch_assets": "04_Launch_Queue/keepa_launch_assets.md"
+    },
+    {
+      "id": "MVP_02",
+      "name": "Shopify Supplier CSV Normalizer",
+      "category": "E-commerce & Dropshipping",
+      "live_url": "https://venom1129-dead.github.io/shopify-csv-normalizer/",
+      "price_tiers": { "free_tier": 0.0, "commercial_license": 19.0 },
+      "launch_assets": "04_Launch_Queue/shopify_normalizer_launch_assets.md"
+    },
+    {
+      "id": "MVP_03",
+      "name": "Notion 12-Week Sprint & Operations OS",
+      "category": "Productivity & Solopreneur OS",
+      "live_url": "03_Active_MVP_03/export/Notion_12_Week_Sprint_OS.md",
+      "price_tiers": { "free_tier": 0.0, "pro_template": 9.0 },
+      "launch_assets": "04_Launch_Queue/notion_sprint_launch_assets.md"
+    },
+    {
+      "id": "MVP_04",
+      "name": "On-Page Technical SEO & Schema Diff Inspector",
+      "category": "Chrome Extensions",
+      "live_url": "03_Active_MVP_04/Technical_SEO_Schema_Inspector_v1.0.0.zip",
+      "price_tiers": { "free_tier": 0.0, "pro_developer_zip": 12.0 },
+      "launch_assets": "04_Launch_Queue/seo_extension_launch_assets.md"
+    },
+    {
+      "id": "MVP_05",
+      "name": "Freelancer Connects-ROI & Win-Rate Cockpit",
+      "category": "Freelance & Upwork Tools",
+      "live_url": "https://venom1129-dead.github.io/connects-roi-cockpit/",
+      "price_tiers": { "free_tier": 0.0, "lifetime_pro": 9.0 },
+      "launch_assets": "04_Launch_Queue/connects_tracker_launch_assets.md"
+    },
+    {
+      "id": "MVP_06",
+      "name": "Local AI VRAM & Quantization Sizing Cockpit",
+      "category": "AI Infrastructure & LocalLLaMA",
+      "live_url": "https://venom1129-dead.github.io/local-ai-vram-calculator/",
+      "price_tiers": { "free_tier": 0.0, "pro_suite": 9.0 },
+      "launch_assets": "04_Launch_Queue/vram_calculator_launch_assets.md"
+    },
+    {
+      "id": "MVP_07",
+      "name": "DCA Position Sizer & Profit-Taking Ladder",
+      "category": "Crypto & Portfolio Risk",
+      "live_url": "https://venom1129-dead.github.io/dca-profit-calculator/",
+      "price_tiers": { "free_tier": 0.0, "trader_pro": 9.0 },
+      "launch_assets": "04_Launch_Queue/dca_calculator_launch_assets.md"
+    },
+    {
+      "id": "MVP_08",
+      "name": "How To Do Things Faster With AI Solopreneur Vault",
+      "category": "Digital Books & Knowledge Vaults",
+      "live_url": "https://venom1129-dead.github.io/how-to-do-things-faster/",
+      "price_tiers": { "free_tier": 0.0, "complete_vault_zip": 9.0 },
+      "launch_assets": "04_Launch_Queue/how_to_do_things_faster_ebook_launch_assets.md"
+    },
+    {
+      "id": "MVP_09",
+      "name": "CyberDash 2099 Hypercasual Canvas Runner",
+      "category": "Games & HTML5 Canvas",
+      "live_url": "https://venom1129-dead.github.io/cyberdash-game/",
+      "price_tiers": { "free_to_play": 0.0, "source_code_license": 9.0 },
+      "launch_assets": "04_Launch_Queue/cyberdash_game_launch_assets.md"
+    },
+    {
+      "id": "MVP_10",
+      "name": "50 Minimalist Cyberpunk & Tech Badge Vector SVG Pack",
+      "category": "Print on Demand (POD) & Apparel",
+      "live_url": "03_Active_MVP_10/Cyberpunk_Tech_Badges_50_Pack.zip",
+      "price_tiers": { "free_sample": 0.0, "commercial_print_bundle": 9.0 },
+      "launch_assets": "04_Launch_Queue/svg_badges_launch_assets.md"
+    },
+    {
+      "id": "MVP_11",
+      "name": "RetroMemory Hex & CWCheat Address Calculator",
+      "category": "Reverse Engineering & Modding Tools",
+      "live_url": "https://venom1129-dead.github.io/retro-memory-calc/",
+      "price_tiers": { "free_tier": 0.0, "modder_pro_vault": 9.0 },
+      "launch_assets": "04_Launch_Queue/re_memory_calc_launch_assets.md"
+    },
+    {
+      "id": "MVP_12",
+      "name": "Holiday & Special Event Budget / Expense Splitter",
+      "category": "Personal Finance & Events",
+      "live_url": "https://venom1129-dead.github.io/event-budget-splitter/",
+      "price_tiers": { "free_tier": 0.0, "event_planner_os": 9.0 },
+      "launch_assets": "04_Launch_Queue/event_budget_launch_assets.md"
+    },
+    {
+      "id": "MVP_13",
+      "name": "PC Hardening & Privacy Audit Hub",
+      "category": "Cybersecurity & Partner Programs",
+      "live_url": "https://venom1129-dead.github.io/pc-privacy-audit/",
+      "price_tiers": { "free_tier": 0.0, "partner_revenue_share": "AFFILIATE" },
+      "launch_assets": "04_Launch_Queue/pc_privacy_audit_launch_assets.md"
+    }
+  ]
+}

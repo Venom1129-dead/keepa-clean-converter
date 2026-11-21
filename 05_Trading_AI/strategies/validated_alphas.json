@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-11-21T17:56:35.687028",
+  "strategy": "Ensemble_Consensus_AutoSweep",
+  "metrics": {
+    "total_trades": 52,
+    "win_rate": 42.31,
+    "profit_factor": 1.15,
+    "total_return_pct": 8.62,
+    "max_drawdown_pct": 10.41,
+    "sharpe_ratio": 0.86,
+    "sortino_ratio": 1.65
+  }
+}
