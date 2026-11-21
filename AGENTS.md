@@ -40,3 +40,12 @@
    - `ACTIVE_EXECUTING`: Actively writing, verifying, or deploying code.
    - `VERIFIED_COMPLETE`: Code is written and verified by deterministic test scripts (Exit Code 0).
    - `FAILED / BLOCKED`: Actionable failure requiring retry or user input.
+
+---
+
+## 5. Mandatory Per-Model Contribution Reporting Invariant
+- **Directive:** In EVERY progress report and milestone summary presented to the user, Antigravity MUST include a transparent breakdown table detailing:
+  1. The exact AI model / agent name.
+  2. The specific responsibilities and deliverables completed.
+  3. The exact percentage of total effort/work performed (must total exactly 100%).
+- **Accountability:** Prevents solo-agent drift, verifies real multi-agent division of labor, and enforces council review participation.
