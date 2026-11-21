@@ -1,20 +1,25 @@
 # AGENTS.md — Master Multi-Agent Collaboration Protocol
 
-## 1. The Autonomous Perpetual Loop Invariant
-- **Directive:** WORK NEVER STOPS. Always execute in a continuous loop until the milestone is complete.
-- **Self-Sufficiency Principle:** Antigravity actively drives, codes, verifies, and tests all pipelines. We never stall or wait for external manual steps unless a true user-only action (private payment setup, 2FA, API credential approval) is strictly required.
-- **User Interrupt Boundary:** Only pause to ask the user when human judgment, real-world capital, or private authentication is required. All technical, mathematical, coding, and verification work proceeds autonomously.
+## 1. The Manager Posture Invariant (ANTI-SOLO DRIFT RULE)
+- **Directive:** Antigravity operates strictly as the **Chief Coordinator, System Architect & Team Manager**.
+- **The Delegation Mandate:** Antigravity must NEVER act as a lone code monkey typing 90%+ of deliverables while other agents sit idle.
+- **The 5 Managerial Responsibilities:**
+  1. **Plan & Spec:** Formulate architecture, data schemas, and un-gameable acceptance criteria.
+  2. **Dispatch & Queue:** Register all initiatives in `C:\AIIncome\queue\` (`aiincome_create_task`) with explicit `owner`, `worker`, and `reviewer` roles.
+  3. **Multi-Model Workforce:** Utilize native Swarm workers (`swarm add` using Claude Sonnet/Opus for review and GPT/Gemini workers) and desktop tools (`tools/launch_*.bat`) so execution is divided across specialized models.
+  4. **Enforce Review Gates:** No deliverable is complete without independent review by **Claude** (`aiincome_review_plan` and `aiincome_review_result`).
+  5. **Deterministic Verification:** Verify deliverables with test scripts (`verifier/`, Exit Code 0) and report progress cleanly to the user.
 
 ---
 
-## 2. Verified Agent Roster & Executables
-| Agent | Core Specialty | Verified Executable Path | Autonomous Integration |
+## 2. Multi-Agent Roster & Functional Allocations
+| Role | Agent / Model | Primary Function | Execution Mechanism |
 | :--- | :--- | :--- | :--- |
-| **Antigravity** | Chief Coordinator & Relentless Worker | Built-in | Direct continuous execution loop across all files, tests, and deploys. |
-| **ZCode** (Zed Engine) | High-Speed Kernel & Math Edits | `%LOCALAPPDATA%\Programs\ZCode\ZCode.exe` | Available via `tools\launch_zcode.bat` for low-latency kernel inspection. |
-| **Cline** | Application Worker | `%LOCALAPPDATA%\Cline\cline-app.exe` | Available via `tools\launch_cline.bat` with live workspace synchronization. |
-| **Claude** | Chief Risk Auditor & Kill-Switch | `%LOCALAPPDATA%\AnthropicClaude\claude.exe` | Available via `tools\launch_claude.bat` with clipboard briefing injection. |
-| **OpenCode** | Web Intelligence & Scraper | `%LOCALAPPDATA%\Programs\ai.opencode.desktop\OpenCode.exe` | Available via `tools\launch_opencode.bat`. |
+| **Chief Coordinator & Manager** | **Antigravity** | System Architecture, Task Formulation, Verification & Deployment | Central Planner, Queue Master & Swarm Coordinator |
+| **Chief Risk Auditor & Council Gatekeeper** | **Claude** (`claude-sonnet-4-6` & `claude.exe`) | Independent Plan Review, Risk Assessment & Deliverable Audit | Native Swarm Reviewer + MCP `ai-income-queue` Review Gate |
+| **Quantitative Logic & High-Speed Edits** | **ZCode / Freebuff** (`gpt-oss-120b-medium`) | Quantitative Trading Backtest Math, Kernel Logic | Swarm Worker + `tools/launch_zcode.bat` |
+| **Application & Frontend Worker** | **Cline** (`gemini-3.8-flash-high`) | Web UI Construction, Interactive Calculators, SVG Packaging | Swarm Worker + `tools/launch_cline.bat` |
+| **Market Intelligence & Scraper** | **OpenCode** | Competitor Catalogs, Product Scraping, Live Trend Data | Swarm Worker + `tools/launch_opencode.bat` |
 
 ---
 

@@ -1,0 +1,1867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RE AI — Real Estate Cap Rate & Cash Flow Analyzer Cockpit</title>
+  <meta name="description" content="Institutional-grade real estate investment underwriting cockpit. Calculate Net Operating Income (NOI), Cap Rate, Cash-on-Cash Return, and Debt Service Coverage Ratio (DSCR) 100% offline with zero dependencies.">
+  <style>
+    :root {
+      --bg-primary: #0f172a;
+      --bg-secondary: #1e293b;
+      --bg-card: #182234;
+      --bg-input: #0f172a;
+      --border-color: #334155;
+      --border-focus: #38bdf8;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --accent-cyan: #38bdf8;
+      --accent-blue: #2563eb;
+      --accent-green: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-rose: #f43f5e;
+      --accent-purple: #a855f7;
+      --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-mono: "JetBrains Mono", Consolas, "Courier New", monospace;
+    }
+
+    [data-theme="light"] {
+      --bg-primary: #f8fafc;
+      --bg-secondary: #ffffff;
+      --bg-card: #f1f5f9;
+      --bg-input: #ffffff;
+      --border-color: #cbd5e1;
+      --border-focus: #0284c7;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --text-dim: #64748b;
+      --accent-cyan: #0284c7;
+      --accent-blue: #1d4ed8;
+      --accent-green: #059669;
+      --accent-amber: #d97706;
+      --accent-rose: #e11d48;
+      --accent-purple: #7c3aed;
+      --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      font-family: var(--font-family);
+      line-height: 1.5;
+      padding: 0;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Container */
+    .app-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      width: 100%;
+    }
+
+    /* Header */
+    header.cockpit-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.25rem;
+      padding: 1.25rem 1.75rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--card-shadow);
+    }
+
+    .brand-section {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand-badge {
+      background: linear-gradient(135deg, #0284c7, #2563eb);
+      color: #ffffff;
+      padding: 0.4rem 0.8rem;
+      border-radius: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      box-shadow: 0 2px 10px rgba(37, 99, 235, 0.3);
+    }
+
+    .header-text h1 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .header-text p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .header-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.55rem 1rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+      outline: none;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #ffffff;
+      border-color: #3b82f6;
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #1d4ed8, #1e40af);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: var(--bg-card);
+      color: var(--text-main);
+      border-color: var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-muted);
+      border-color: var(--border-color);
+    }
+
+    .btn-outline:hover {
+      color: var(--text-main);
+      border-color: var(--text-muted);
+    }
+
+    /* Preset Toolbar */
+    .preset-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 0.75rem 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .preset-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-right: 0.5rem;
+    }
+
+    .preset-btn {
+      background: var(--bg-input);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+      padding: 0.4rem 0.85rem;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .preset-btn:hover {
+      border-color: var(--accent-cyan);
+      background: var(--bg-card);
+      color: var(--accent-cyan);
+    }
+
+    .preset-btn.active {
+      background: rgba(56, 189, 248, 0.15);
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+
+    /* Main Grid Layout */
+    .main-grid {
+      display: grid;
+      grid-template-columns: 460px 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 1080px) {
+      .main-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Inputs Section */
+    .inputs-col {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .input-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.25rem;
+      box-shadow: var(--card-shadow);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .card-header h2 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card-header .icon {
+      font-size: 1.2rem;
+    }
+
+    .form-group {
+      margin-bottom: 0.85rem;
+    }
+
+    .form-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .form-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .form-label span.sub-val {
+      font-family: var(--font-mono);
+      color: var(--accent-cyan);
+      font-weight: normal;
+    }
+
+    .input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-prefix, .input-suffix {
+      position: absolute;
+      color: var(--text-dim);
+      font-size: 0.85rem;
+      font-family: var(--font-mono);
+      pointer-events: none;
+    }
+
+    .input-prefix {
+      left: 0.75rem;
+    }
+
+    .input-suffix {
+      right: 0.75rem;
+    }
+
+    input[type="number"], input[type="text"], select {
+      width: 100%;
+      background: var(--bg-input);
+      border: 1px solid var(--border-color);
+      border-radius: 7px;
+      padding: 0.55rem 0.75rem;
+      color: var(--text-main);
+      font-size: 0.9rem;
+      font-family: var(--font-mono);
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    input.has-prefix {
+      padding-left: 1.8rem;
+    }
+
+    input.has-suffix {
+      padding-right: 2rem;
+    }
+
+    input:focus, select:focus {
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
+    }
+
+    /* Analysis Cockpit Column */
+    .cockpit-col {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    /* Top KPI Cards */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 1rem;
+    }
+
+    .kpi-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.15rem;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .kpi-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent-cyan);
+    }
+
+    .kpi-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--kpi-accent, var(--accent-cyan));
+    }
+
+    .kpi-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .kpi-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .kpi-icon {
+      font-size: 1.1rem;
+    }
+
+    .kpi-value {
+      font-size: 1.65rem;
+      font-weight: 800;
+      font-family: var(--font-mono);
+      color: var(--text-main);
+      line-height: 1.2;
+      margin-bottom: 0.25rem;
+    }
+
+    .kpi-sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .kpi-sub .tag {
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.72rem;
+    }
+
+    .tag-green { background: rgba(16, 185, 129, 0.18); color: var(--accent-green); }
+    .tag-amber { background: rgba(245, 158, 11, 0.18); color: var(--accent-amber); }
+    .tag-red { background: rgba(244, 63, 94, 0.18); color: var(--accent-rose); }
+    .tag-blue { background: rgba(56, 189, 248, 0.18); color: var(--accent-cyan); }
+
+    /* Deal Verdict Card */
+    .verdict-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.35rem;
+      box-shadow: var(--card-shadow);
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .verdict-card {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .verdict-badge-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+      border-radius: 10px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      text-align: center;
+    }
+
+    .verdict-score-ring {
+      font-size: 2.2rem;
+      font-weight: 900;
+      font-family: var(--font-mono);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .verdict-status {
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .verdict-desc {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .verdict-desc h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .verdict-desc p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .underwriting-points {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.6rem;
+      margin-top: 0.5rem;
+    }
+
+    .point-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      color: var(--text-main);
+      background: var(--bg-card);
+      padding: 0.4rem 0.65rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+    }
+
+    /* Breakdown & Pro-Forma Sections */
+    .analysis-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.25rem;
+      box-shadow: var(--card-shadow);
+    }
+
+    .tabs {
+      display: flex;
+      gap: 0.5rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.6rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 0.45rem 0.9rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .tab-btn:hover {
+      color: var(--text-main);
+      background: var(--bg-card);
+    }
+
+    .tab-btn.active {
+      color: var(--accent-cyan);
+      background: rgba(56, 189, 248, 0.12);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Tables */
+    .pro-forma-table-wrapper {
+      overflow-x: auto;
+    }
+
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      text-align: right;
+    }
+
+    table.data-table th, table.data-table td {
+      padding: 0.65rem 0.85rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    table.data-table th {
+      background: var(--bg-card);
+      color: var(--text-muted);
+      font-weight: 700;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    table.data-table th:first-child, table.data-table td:first-child {
+      text-align: left;
+    }
+
+    table.data-table tbody tr:hover {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .val-positive { color: var(--accent-green); }
+    .val-negative { color: var(--accent-rose); }
+    .val-neutral { color: var(--text-main); }
+
+    /* Monthly Flow Bar */
+    .flow-bar-container {
+      margin: 1rem 0;
+    }
+
+    .flow-bar {
+      height: 24px;
+      display: flex;
+      border-radius: 6px;
+      overflow: hidden;
+      background: var(--bg-input);
+      border: 1px solid var(--border-color);
+    }
+
+    .flow-segment {
+      height: 100%;
+      transition: width 0.3s ease;
+      position: relative;
+    }
+
+    .flow-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0.6rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 3px;
+    }
+
+    /* Print Memo Styles */
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-size: 11pt;
+      }
+
+      .app-container {
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+      }
+
+      header.cockpit-header, .preset-toolbar, .header-actions, .tabs, .no-print {
+        display: none !important;
+      }
+
+      .main-grid {
+        display: block !important;
+      }
+
+      .inputs-col {
+        display: none !important;
+      }
+
+      .cockpit-col {
+        display: block !important;
+      }
+
+      .kpi-card, .verdict-card, .analysis-card {
+        border: 1px solid #ddd !important;
+        background: #fff !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        margin-bottom: 15px !important;
+        break-inside: avoid;
+      }
+
+      .kpi-value, .verdict-score-ring {
+        color: #000 !important;
+      }
+
+      .print-header {
+        display: block !important;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #000;
+      }
+
+      table.data-table th {
+        background: #eee !important;
+        color: #000 !important;
+      }
+
+      table.data-table td {
+        color: #000 !important;
+      }
+    }
+
+    .print-header {
+      display: none;
+    }
+
+    /* Footer */
+    footer.app-footer {
+      margin-top: auto;
+      padding: 1.5rem 0;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      border-top: 1px solid var(--border-color);
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Printable Header (Visible Only on Print) -->
+    <div class="print-header">
+      <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+        <div>
+          <h1 style="font-size: 1.8rem; margin:0;" id="printPropTitle">Real Estate Investment Deal Memo</h1>
+          <p style="margin:4px 0 0; color:#555;" id="printPropSubtitle">Underwritten via RE AI Real Estate Investment Cockpit</p>
+        </div>
+        <div style="text-align:right;">
+          <strong id="printDate">Date: 2026-11-21</strong><br>
+          <span style="font-size: 0.85rem; color:#666;">Strictly Confidential</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Executive Cockpit Header -->
+    <header class="cockpit-header">
+      <div class="brand-section">
+        <span class="brand-badge">PROPTECH // UNDERWRITER</span>
+        <div class="header-text">
+          <h1>
+            <span>RE AI Deal Analyzer Cockpit</span>
+          </h1>
+          <p>Institutional Cap Rate, Cash Flow, NOI & DSCR Underwriting Engine</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button id="themeToggleBtn" class="btn btn-secondary" title="Toggle Dark/Light Mode">
+          <span id="themeIcon">☀️</span> Light Mode
+        </button>
+        <button id="copySummaryBtn" class="btn btn-secondary" title="Copy Underwriting Summary to Clipboard">
+          📋 Copy Summary
+        </button>
+        <button id="printBtn" class="btn btn-primary" title="Export Printable PDF Deal Memo">
+          🖨️ Print / PDF Memo
+        </button>
+        <button id="resetBtn" class="btn btn-outline" title="Reset to Defaults">
+          ↺ Reset
+        </button>
+      </div>
+    </header>
+
+    <!-- Preset Properties Toolbar -->
+    <div class="preset-toolbar">
+      <span class="preset-label">Underwriting Presets:</span>
+      <button class="preset-btn active" data-preset="sfr">🏡 Single Family Rental ($320k)</button>
+      <button class="preset-btn" data-preset="quadplex">🏢 Quadplex Multi-Family ($680k)</button>
+      <button class="preset-btn" data-preset="brrrr">🔨 BRRRR Value-Add ($210k)</button>
+      <button class="preset-btn" data-preset="commercial">🏬 Commercial Strip Retail ($1.25M)</button>
+    </div>
+
+    <!-- Main Grid -->
+    <div class="main-grid">
+      <!-- Left Column: Inputs -->
+      <div class="inputs-col">
+        <!-- 1. Property Acquisition -->
+        <div class="input-card">
+          <div class="card-header">
+            <h2><span class="icon">📍</span> Property & Purchase</h2>
+            <span class="sub-val" id="summaryPriceTag">$320,000</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="propTitle">Property Name / Identifier</label>
+            <input type="text" id="propTitle" value="Oakridge Turnkey Duplex">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="purchasePrice">Purchase Price</label>
+              <div class="input-wrapper">
+                <span class="input-prefix">$</span>
+                <input type="number" id="purchasePrice" class="has-prefix" value="320000" step="5000" min="1000">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="afterRepairValue">After Repair Value (ARV)</label>
+              <div class="input-wrapper">
+                <span class="input-prefix">$</span>
+                <input type="number" id="afterRepairValue" class="has-prefix" value="340000" step="5000" min="0">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="initialRehab">Initial Rehab / Capex</label>
+              <div class="input-wrapper">
+                <span class="input-prefix">$</span>
+                <input type="number" id="initialRehab" class="has-prefix" value="8000" step="1000" min="0">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="closingCosts">Closing Costs</label>
+              <div class="input-wrapper">
+                <span class="input-prefix">$</span>
+                <input type="number" id="closingCosts" class="has-prefix" value="6500" step="500" min="0">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Financing & Mortgage Structure -->
+        <div class="input-card">
+          <div class="card-header">
+            <h2><span class="icon">🏦</span> Financing & Debt Sizing</h2>
+            <span class="sub-val" id="summaryLoanTag">Loan: $256,000</span>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="downPaymentPct">
+                Down Payment (%)
+                <span class="sub-val" id="downPaymentVal">$64,000</span>
+              </label>
+              <div class="input-wrapper">
+                <input type="number" id="downPaymentPct" class="has-suffix" value="20" step="1" min="0" max="100">
+                <span class="input-suffix">%</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="interestRate">Interest Rate (APR)</label>
+              <div class="input-wrapper">
+                <input type="number" id="interestRate" class="has-suffix" value="6.75" step="0.125" min="0" max="25">
+                <span class="input-suffix">%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="loanTermYears">Loan Amortization</label>
+              <div class="input-wrapper">
+                <input type="number" id="loanTermYears" class="has-suffix" value="30" step="5" min="1" max="40">
+                <span class="input-suffix">Yrs</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="loanType">Financing Structure</label>
+              <select id="loanType">
+                <option value="amortizing">Standard Amortizing</option>
+                <option value="interestOnly">Interest Only (5-Yr)</option>
+                <option value="allCash">All Cash (No Debt)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Rental Revenue -->
+        <div class="input-card">
+          <div class="card-header">
+            <h2><span class="icon">💵</span> Gross Revenue & Occupancy</h2>
+            <span class="sub-val" id="summaryGrossTag">$2,800/mo</span>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="grossMonthlyRent">Gross Scheduled Monthly Rent</label>
+              <div class="input-wrapper">
+                <span class="input-prefix">$</span>
+                <input type="number" id="grossMonthlyRent" class="has-prefix" value="2800" step="50" min="0">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="otherMonthlyIncome">Other Monthly Income (Storage/Laundry)</label>
+              <div class="input-wrapper">
+                <span class="input-prefix">$</span>
+                <input type="number" id="otherMonthlyIncome" class="has-prefix" value="75" step="25" min="0">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="vacancyRate">
+                Vacancy & Credit Loss
+                <span class="sub-val" id="vacancyCostVal">-$144/mo</span>
+              </label>
+              <div class="input-wrapper">
+                <input type="number" id="vacancyRate" class="has-suffix" value="5.0" step="0.5" min="0" max="50">
+                <span class="input-suffix">%</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="annualRentGrowth">Annual Rent Growth</label>
+              <div class="input-wrapper">
+                <input type="number" id="annualRentGrowth" class="has-suffix" value="3.0" step="0.5" min="0" max="20">
+                <span class="input-suffix">%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Operating Expenses (OpEx) -->
+        <div class="input-card">
+          <div class="card-header">
+            <h2><span class="icon">📉</span> Operating Expenses (OpEx)</h2>
+            <span class="sub-val" id="summaryOpexTag">$9,400/yr</span>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="annualTaxes">Annual Property Taxes</label>
+              <div class="input-wrapper">
+                <span class="input-prefix">$</span>
+                <input type="number" id="annualTaxes" class="has-prefix" value="3800" step="100" min="0">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="annualInsurance">Annual Property Insurance</label>
+              <div class="input-wrapper">
+                <span class="input-prefix">$</span>
+                <input type="number" id="annualInsurance" class="has-prefix" value="1400" step="50" min="0">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="maintenancePct">
+                Maintenance Reserve
+                <span class="sub-val" id="maintenanceVal">$140/mo</span>
+              </label>
+              <div class="input-wrapper">
+                <input type="number" id="maintenancePct" class="has-suffix" value="5.0" step="0.5" min="0" max="30">
+                <span class="input-suffix">%</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="managementPct">
+                Property Management Fee
+                <span class="sub-val" id="managementVal">$224/mo</span>
+              </label>
+              <div class="input-wrapper">
+                <input type="number" id="managementPct" class="has-suffix" value="8.0" step="0.5" min="0" max="30">
+                <span class="input-suffix">%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="monthlyHoa">Monthly HOA / Common Fees</label>
+              <div class="input-wrapper">
+                <span class="input-prefix">$</span>
+                <input type="number" id="monthlyHoa" class="has-prefix" value="0" step="25" min="0">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="monthlyUtilities">Monthly Landlord Utilities</label>
+              <div class="input-wrapper">
+                <span class="input-prefix">$</span>
+                <input type="number" id="monthlyUtilities" class="has-prefix" value="50" step="25" min="0">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Live Analysis Cockpit -->
+      <div class="cockpit-col">
+        <!-- Top 4 Core KPIs -->
+        <div class="kpi-grid">
+          <!-- Net Operating Income -->
+          <div class="kpi-card" style="--kpi-accent: var(--accent-cyan);">
+            <div class="kpi-header">
+              <span class="kpi-title">Net Operating Income (NOI)</span>
+              <span class="kpi-icon">📊</span>
+            </div>
+            <div class="kpi-value" id="kpiNoi">$23,382</div>
+            <div class="kpi-sub">
+              <span>Annual:</span>
+              <span class="tag tag-blue" id="kpiMonthlyNoi">$1,948 / mo</span>
+            </div>
+          </div>
+
+          <!-- Cap Rate -->
+          <div class="kpi-card" style="--kpi-accent: var(--accent-green);">
+            <div class="kpi-header">
+              <span class="kpi-title">Capitalization Rate</span>
+              <span class="kpi-icon">🎯</span>
+            </div>
+            <div class="kpi-value" id="kpiCapRate">7.31%</div>
+            <div class="kpi-sub">
+              <span>Class:</span>
+              <span class="tag tag-green" id="kpiCapTag">Strong Yield</span>
+            </div>
+          </div>
+
+          <!-- Cash Flow -->
+          <div class="kpi-card" style="--kpi-accent: var(--accent-amber);">
+            <div class="kpi-header">
+              <span class="kpi-title">Net Annual Cash Flow</span>
+              <span class="kpi-icon">💰</span>
+            </div>
+            <div class="kpi-value" id="kpiCashFlow">$3,454</div>
+            <div class="kpi-sub">
+              <span>Monthly:</span>
+              <span class="tag tag-amber" id="kpiMonthlyCashFlow">$288 / mo</span>
+            </div>
+          </div>
+
+          <!-- Cash-on-Cash Return -->
+          <div class="kpi-card" style="--kpi-accent: var(--accent-purple);">
+            <div class="kpi-header">
+              <span class="kpi-title">Cash-on-Cash (CoC)</span>
+              <span class="kpi-icon">⚡</span>
+            </div>
+            <div class="kpi-value" id="kpiCoc">4.40%</div>
+            <div class="kpi-sub">
+              <span>Total In:</span>
+              <span class="tag tag-blue" id="kpiTotalInvested">$78,500</span>
+            </div>
+          </div>
+
+          <!-- Debt Service Coverage Ratio (DSCR) -->
+          <div class="kpi-card" style="--kpi-accent: var(--accent-blue);">
+            <div class="kpi-header">
+              <span class="kpi-title">DSCR Coverage</span>
+              <span class="kpi-icon">🛡️</span>
+            </div>
+            <div class="kpi-value" id="kpiDscr">1.17x</div>
+            <div class="kpi-sub">
+              <span>Lender Gate:</span>
+              <span class="tag tag-amber" id="kpiDscrTag">Moderate (≥1.15x)</span>
+            </div>
+          </div>
+
+          <!-- Gross Rent Multiplier & 1% Rule -->
+          <div class="kpi-card" style="--kpi-accent: var(--accent-cyan);">
+            <div class="kpi-header">
+              <span class="kpi-title">1% Rule & GRM</span>
+              <span class="kpi-icon">📏</span>
+            </div>
+            <div class="kpi-value" id="kpiOnePct">0.88%</div>
+            <div class="kpi-sub">
+              <span>GRM:</span>
+              <span class="tag tag-blue" id="kpiGrm">9.52x</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Deal Verdict & AI Underwriting Card -->
+        <div class="verdict-card" id="verdictCard">
+          <div class="verdict-badge-box">
+            <div class="verdict-score-ring" id="verdictScoreRing">76</div>
+            <div class="verdict-status" id="verdictStatus">MODERATE DEAL</div>
+          </div>
+          <div class="verdict-desc">
+            <h3 id="verdictHeading">Sound Cash Flow with Conservative DSCR Safety Buffer</h3>
+            <p id="verdictSummary">
+              At a 7.31% Cap Rate and $288/mo positive cash flow, this asset provides dependable income. The DSCR of 1.17x meets conventional debt service standards, though vacancy spikes above 9% could tighten debt coverage.
+            </p>
+            <div class="underwriting-points">
+              <div class="point-item" id="breakEvenPoint">⚖️ Break-Even Occupancy: 86.4%</div>
+              <div class="point-item" id="downPaymentSummaryPoint">💼 Initial Equity: $64,000 (20%)</div>
+              <div class="point-item" id="debtExpensePoint">💳 Annual Debt Service: $19,928</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Inflow vs Outflow Cash Waterfall Bar -->
+        <div class="analysis-card">
+          <div class="card-header">
+            <h2><span class="icon">🌊</span> Monthly Cash Inflow vs. Debt & OpEx Waterfall</h2>
+            <span class="sub-val" id="waterfallGrossText">Effective Inflow: $2,731/mo</span>
+          </div>
+
+          <div class="flow-bar-container">
+            <div class="flow-bar">
+              <div class="flow-segment" id="barDebt" style="width: 60%; background: var(--accent-rose);" title="Mortgage Debt Service"></div>
+              <div class="flow-segment" id="barTaxes" style="width: 12%; background: var(--accent-amber);" title="Property Taxes"></div>
+              <div class="flow-segment" id="barOpex" style="width: 18%; background: var(--accent-purple);" title="Other Operating Expenses"></div>
+              <div class="flow-segment" id="barCashflow" style="width: 10%; background: var(--accent-green);" title="Net Pocket Cash Flow"></div>
+            </div>
+            <div class="flow-legend">
+              <div class="legend-item"><div class="legend-dot" style="background: var(--accent-rose);"></div> Debt Service P&I (<span id="legDebtVal">$1,661/mo</span>)</div>
+              <div class="legend-item"><div class="legend-dot" style="background: var(--accent-amber);"></div> Property Taxes (<span id="legTaxVal">$317/mo</span>)</div>
+              <div class="legend-item"><div class="legend-dot" style="background: var(--accent-purple);"></div> OpEx & Reserves (<span id="legOpexVal">$466/mo</span>)</div>
+              <div class="legend-item"><div class="legend-dot" style="background: var(--accent-green);"></div> Net Cash Flow (<span id="legCashVal">$288/mo</span>)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Detailed Breakdown & 10-Year Pro-Forma Tabs -->
+        <div class="analysis-card">
+          <div class="tabs">
+            <button class="tab-btn active" data-tab="tabProForma">📅 10-Year Pro-Forma Projection</button>
+            <button class="tab-btn" data-tab="tabStress">⚡ Stress Testing & Sensitivity</button>
+            <button class="tab-btn" data-tab="tabClosing">📑 Cash-to-Close Breakdown</button>
+          </div>
+
+          <!-- Tab 1: 10-Year Pro-Forma -->
+          <div class="tab-content active" id="tabProForma">
+            <div class="pro-forma-table-wrapper">
+              <table class="data-table" id="proFormaTable">
+                <thead>
+                  <tr>
+                    <th>Year</th>
+                    <th>Gross Rent</th>
+                    <th>OpEx</th>
+                    <th>NOI</th>
+                    <th>Debt Service</th>
+                    <th>Cash Flow</th>
+                    <th>Loan Balance</th>
+                    <th>Property Equity</th>
+                  </tr>
+                </thead>
+                <tbody id="proFormaBody">
+                  <!-- Populated dynamically via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Tab 2: Sensitivity Matrix -->
+          <div class="tab-content" id="tabStress">
+            <div class="pro-forma-table-wrapper">
+              <table class="data-table" id="stressTable">
+                <thead>
+                  <tr>
+                    <th>Market Scenario</th>
+                    <th>Monthly Rent</th>
+                    <th>Vacancy Rate</th>
+                    <th>Net OpEx</th>
+                    <th>NOI</th>
+                    <th>Annual Cash Flow</th>
+                    <th>CoC Return</th>
+                    <th>DSCR</th>
+                  </tr>
+                </thead>
+                <tbody id="stressBody">
+                  <!-- Populated dynamically via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Tab 3: Cash to Close -->
+          <div class="tab-content" id="tabClosing">
+            <div class="pro-forma-table-wrapper">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Capital Component</th>
+                    <th>Calculation / Basis</th>
+                    <th>Amount ($)</th>
+                    <th>% of Total Initial Cash</th>
+                  </tr>
+                </thead>
+                <tbody id="closingCostsBody">
+                  <!-- Populated dynamically via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>RE AI Real Estate Analyzer Cockpit • 100% Client-Side Engine • Zero External Dependencies • Built for Real Estate Underwriters & Private Lenders</p>
+    </footer>
+  </div>
+
+  <!-- JavaScript Engine -->
+  <script>
+    (function() {
+      'use strict';
+
+      // Presets catalog
+      const PRESETS = {
+        sfr: {
+          title: "Oakridge Single Family Turnkey",
+          price: 320000,
+          arv: 340000,
+          rehab: 8000,
+          closing: 6500,
+          downPct: 20,
+          rate: 6.75,
+          term: 30,
+          loanType: "amortizing",
+          rent: 2800,
+          otherIncome: 75,
+          vacancy: 5.0,
+          growth: 3.0,
+          taxes: 3800,
+          insurance: 1400,
+          maintPct: 5.0,
+          mgmtPct: 8.0,
+          hoa: 0,
+          utilities: 50
+        },
+        quadplex: {
+          title: "Highland Heights 4-Unit Quadplex",
+          price: 680000,
+          arv: 725000,
+          rehab: 25000,
+          closing: 14000,
+          downPct: 25,
+          rate: 7.125,
+          term: 30,
+          loanType: "amortizing",
+          rent: 6400,
+          otherIncome: 200,
+          vacancy: 6.0,
+          growth: 3.5,
+          taxes: 7800,
+          insurance: 2800,
+          maintPct: 7.0,
+          mgmtPct: 9.0,
+          hoa: 0,
+          utilities: 220
+        },
+        brrrr: {
+          title: "Cedar Park Distressed BRRRR Rehab",
+          price: 210000,
+          arv: 330000,
+          rehab: 48000,
+          closing: 5200,
+          downPct: 15,
+          rate: 7.5,
+          term: 30,
+          loanType: "amortizing",
+          rent: 2650,
+          otherIncome: 50,
+          vacancy: 5.0,
+          growth: 3.0,
+          taxes: 2900,
+          insurance: 1250,
+          maintPct: 5.0,
+          mgmtPct: 8.0,
+          hoa: 0,
+          utilities: 0
+        },
+        commercial: {
+          title: "Metro Plaza Strip Center (Triple Net)",
+          price: 1250000,
+          arv: 1350000,
+          rehab: 15000,
+          closing: 26000,
+          downPct: 30,
+          rate: 6.875,
+          term: 25,
+          loanType: "amortizing",
+          rent: 11200,
+          otherIncome: 650,
+          vacancy: 7.0,
+          growth: 2.5,
+          taxes: 14000,
+          insurance: 4800,
+          maintPct: 4.0,
+          mgmtPct: 6.0,
+          hoa: 150,
+          utilities: 100
+        }
+      };
+
+      // DOM Elements Cache
+      const els = {
+        propTitle: document.getElementById('propTitle'),
+        purchasePrice: document.getElementById('purchasePrice'),
+        afterRepairValue: document.getElementById('afterRepairValue'),
+        initialRehab: document.getElementById('initialRehab'),
+        closingCosts: document.getElementById('closingCosts'),
+        downPaymentPct: document.getElementById('downPaymentPct'),
+        interestRate: document.getElementById('interestRate'),
+        loanTermYears: document.getElementById('loanTermYears'),
+        loanType: document.getElementById('loanType'),
+        grossMonthlyRent: document.getElementById('grossMonthlyRent'),
+        otherMonthlyIncome: document.getElementById('otherMonthlyIncome'),
+        vacancyRate: document.getElementById('vacancyRate'),
+        annualRentGrowth: document.getElementById('annualRentGrowth'),
+        annualTaxes: document.getElementById('annualTaxes'),
+        annualInsurance: document.getElementById('annualInsurance'),
+        maintenancePct: document.getElementById('maintenancePct'),
+        managementPct: document.getElementById('managementPct'),
+        monthlyHoa: document.getElementById('monthlyHoa'),
+        monthlyUtilities: document.getElementById('monthlyUtilities'),
+
+        // Sub-values
+        downPaymentVal: document.getElementById('downPaymentVal'),
+        vacancyCostVal: document.getElementById('vacancyCostVal'),
+        maintenanceVal: document.getElementById('maintenanceVal'),
+        managementVal: document.getElementById('managementVal'),
+        summaryPriceTag: document.getElementById('summaryPriceTag'),
+        summaryLoanTag: document.getElementById('summaryLoanTag'),
+        summaryGrossTag: document.getElementById('summaryGrossTag'),
+        summaryOpexTag: document.getElementById('summaryOpexTag'),
+
+        // KPIs
+        kpiNoi: document.getElementById('kpiNoi'),
+        kpiMonthlyNoi: document.getElementById('kpiMonthlyNoi'),
+        kpiCapRate: document.getElementById('kpiCapRate'),
+        kpiCapTag: document.getElementById('kpiCapTag'),
+        kpiCashFlow: document.getElementById('kpiCashFlow'),
+        kpiMonthlyCashFlow: document.getElementById('kpiMonthlyCashFlow'),
+        kpiCoc: document.getElementById('kpiCoc'),
+        kpiTotalInvested: document.getElementById('kpiTotalInvested'),
+        kpiDscr: document.getElementById('kpiDscr'),
+        kpiDscrTag: document.getElementById('kpiDscrTag'),
+        kpiOnePct: document.getElementById('kpiOnePct'),
+        kpiGrm: document.getElementById('kpiGrm'),
+
+        // Verdict
+        verdictScoreRing: document.getElementById('verdictScoreRing'),
+        verdictStatus: document.getElementById('verdictStatus'),
+        verdictHeading: document.getElementById('verdictHeading'),
+        verdictSummary: document.getElementById('verdictSummary'),
+        breakEvenPoint: document.getElementById('breakEvenPoint'),
+        downPaymentSummaryPoint: document.getElementById('downPaymentSummaryPoint'),
+        debtExpensePoint: document.getElementById('debtExpensePoint'),
+
+        // Waterfall
+        waterfallGrossText: document.getElementById('waterfallGrossText'),
+        barDebt: document.getElementById('barDebt'),
+        barTaxes: document.getElementById('barTaxes'),
+        barOpex: document.getElementById('barOpex'),
+        barCashflow: document.getElementById('barCashflow'),
+        legDebtVal: document.getElementById('legDebtVal'),
+        legTaxVal: document.getElementById('legTaxVal'),
+        legOpexVal: document.getElementById('legOpexVal'),
+        legCashVal: document.getElementById('legCashVal'),
+
+        // Pro-Forma & Tables
+        proFormaBody: document.getElementById('proFormaBody'),
+        stressBody: document.getElementById('stressBody'),
+        closingCostsBody: document.getElementById('closingCostsBody'),
+
+        // Print elements
+        printPropTitle: document.getElementById('printPropTitle'),
+        printPropSubtitle: document.getElementById('printPropSubtitle'),
+        printDate: document.getElementById('printDate'),
+
+        // Controls
+        themeToggleBtn: document.getElementById('themeToggleBtn'),
+        themeIcon: document.getElementById('themeIcon'),
+        copySummaryBtn: document.getElementById('copySummaryBtn'),
+        printBtn: document.getElementById('printBtn'),
+        resetBtn: document.getElementById('resetBtn')
+      };
+
+      // Formatter Helpers
+      const formatCurrency = (n) => '$' + Math.round(n).toLocaleString('en-US');
+      const formatDecimalCurrency = (n) => '$' + Number(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      const formatPct = (n) => Number(n).toFixed(2) + '%';
+
+      // Core Mathematical Calculation Engine
+      function calculateDeal() {
+        const price = Math.max(0, parseFloat(els.purchasePrice.value) || 0);
+        const arv = Math.max(0, parseFloat(els.afterRepairValue.value) || 0);
+        const rehab = Math.max(0, parseFloat(els.initialRehab.value) || 0);
+        const closing = Math.max(0, parseFloat(els.closingCosts.value) || 0);
+        const downPct = Math.max(0, Math.min(100, parseFloat(els.downPaymentPct.value) || 0));
+        const rate = Math.max(0, parseFloat(els.interestRate.value) || 0);
+        const termYears = Math.max(1, parseFloat(els.loanTermYears.value) || 30);
+        const loanType = els.loanType.value;
+
+        const monthlyRent = Math.max(0, parseFloat(els.grossMonthlyRent.value) || 0);
+        const otherMonthly = Math.max(0, parseFloat(els.otherMonthlyIncome.value) || 0);
+        const vacancyPct = Math.max(0, Math.min(100, parseFloat(els.vacancyRate.value) || 0));
+        const rentGrowthPct = parseFloat(els.annualRentGrowth.value) || 0;
+
+        const taxes = Math.max(0, parseFloat(els.annualTaxes.value) || 0);
+        const insurance = Math.max(0, parseFloat(els.annualInsurance.value) || 0);
+        const maintPct = Math.max(0, parseFloat(els.maintenancePct.value) || 0);
+        const mgmtPct = Math.max(0, parseFloat(els.managementPct.value) || 0);
+        const hoaMonthly = Math.max(0, parseFloat(els.monthlyHoa.value) || 0);
+        const utilitiesMonthly = Math.max(0, parseFloat(els.monthlyUtilities.value) || 0);
+
+        // 1. Debt Sizing
+        const downPaymentAmount = price * (downPct / 100);
+        let loanAmount = Math.max(0, price - downPaymentAmount);
+        let monthlyPI = 0;
+
+        if (loanType === 'allCash') {
+          loanAmount = 0;
+          monthlyPI = 0;
+        } else if (loanType === 'interestOnly') {
+          monthlyPI = (loanAmount * (rate / 100)) / 12;
+        } else {
+          // Standard amortizing formula: M = P * [r(1+r)^n] / [(1+r)^n - 1]
+          if (loanAmount > 0 && rate > 0) {
+            const monthlyRate = (rate / 100) / 12;
+            const totalMonths = termYears * 12;
+            const factor = Math.pow(1 + monthlyRate, totalMonths);
+            monthlyPI = loanAmount * (monthlyRate * factor) / (factor - 1);
+          } else if (loanAmount > 0 && rate === 0) {
+            monthlyPI = loanAmount / (termYears * 12);
+          }
+        }
+
+        const annualDebtService = monthlyPI * 12;
+
+        // 2. Gross Operating Income (GOI)
+        const annualGrossRent = monthlyRent * 12;
+        const annualOtherIncome = otherMonthly * 12;
+        const annualVacancyLoss = annualGrossRent * (vacancyPct / 100);
+        const goi = (annualGrossRent - annualVacancyLoss) + annualOtherIncome;
+        const monthlyGoi = goi / 12;
+
+        // 3. Operating Expenses (OpEx)
+        const annualMaint = annualGrossRent * (maintPct / 100);
+        const annualMgmt = annualGrossRent * (mgmtPct / 100);
+        const annualHoa = hoaMonthly * 12;
+        const annualUtilities = utilitiesMonthly * 12;
+        const annualOpex = taxes + insurance + annualMaint + annualMgmt + annualHoa + annualUtilities;
+        const monthlyOpex = annualOpex / 12;
+
+        // 4. Net Operating Income (NOI)
+        const noi = goi - annualOpex;
+        const monthlyNoi = noi / 12;
+
+        // 5. Cap Rate (%)
+        const capRate = price > 0 ? (noi / price) * 100 : 0;
+
+        // 6. Cash Flow
+        const annualCashFlow = noi - annualDebtService;
+        const monthlyCashFlow = annualCashFlow / 12;
+
+        // 7. Initial Cash Invested & Cash-on-Cash Return
+        const totalCashInvested = (loanType === 'allCash' ? price : downPaymentAmount) + closing + rehab;
+        const cocReturn = totalCashInvested > 0 ? (annualCashFlow / totalCashInvested) * 100 : 0;
+
+        // 8. DSCR (Debt Service Coverage Ratio)
+        const dscr = annualDebtService > 0 ? noi / annualDebtService : 999;
+
+        // 9. Additional Metrics
+        const onePctRule = price > 0 ? (monthlyRent / price) * 100 : 0;
+        const grm = annualGrossRent > 0 ? price / annualGrossRent : 0;
+        const breakEvenOccupancy = annualGrossRent > 0 ? ((annualOpex + annualDebtService) / (annualGrossRent + annualOtherIncome)) * 100 : 0;
+
+        return {
+          price, arv, rehab, closing, downPct, rate, termYears, loanType,
+          monthlyRent, otherMonthly, vacancyPct, rentGrowthPct,
+          taxes, insurance, maintPct, mgmtPct, hoaMonthly, utilitiesMonthly,
+          downPaymentAmount, loanAmount, monthlyPI, annualDebtService,
+          annualGrossRent, annualOtherIncome, annualVacancyLoss, goi, monthlyGoi,
+          annualMaint, annualMgmt, annualHoa, annualUtilities, annualOpex, monthlyOpex,
+          noi, monthlyNoi, capRate, annualCashFlow, monthlyCashFlow,
+          totalCashInvested, cocReturn, dscr, onePctRule, grm, breakEvenOccupancy
+        };
+      }
+
+      // Update UI with calculated state
+      function updateUI() {
+        const d = calculateDeal();
+
+        // Update Sub-Labels in inputs
+        els.downPaymentVal.textContent = formatCurrency(d.downPaymentAmount);
+        els.vacancyCostVal.textContent = '-' + formatCurrency(d.annualVacancyLoss / 12) + '/mo';
+        els.maintenanceVal.textContent = formatCurrency(d.annualMaint / 12) + '/mo';
+        els.managementVal.textContent = formatCurrency(d.annualMgmt / 12) + '/mo';
+        els.summaryPriceTag.textContent = formatCurrency(d.price);
+        els.summaryLoanTag.textContent = d.loanType === 'allCash' ? 'All Cash Deal' : 'Loan: ' + formatCurrency(d.loanAmount);
+        els.summaryGrossTag.textContent = formatCurrency(d.monthlyRent + d.otherMonthly) + '/mo';
+        els.summaryOpexTag.textContent = formatCurrency(d.annualOpex) + '/yr';
+
+        // Update KPIs
+        els.kpiNoi.textContent = formatCurrency(d.noi);
+        els.kpiMonthlyNoi.textContent = formatCurrency(d.monthlyNoi) + ' / mo';
+
+        els.kpiCapRate.textContent = formatPct(d.capRate);
+        if (d.capRate >= 8) {
+          els.kpiCapTag.className = 'tag tag-green';
+          els.kpiCapTag.textContent = 'High Yield (≥8%)';
+        } else if (d.capRate >= 6) {
+          els.kpiCapTag.className = 'tag tag-blue';
+          els.kpiCapTag.textContent = 'Solid Cap (6-8%)';
+        } else if (d.capRate >= 4.5) {
+          els.kpiCapTag.className = 'tag tag-amber';
+          els.kpiCapTag.textContent = 'Core Market (4.5-6%)';
+        } else {
+          els.kpiCapTag.className = 'tag tag-red';
+          els.kpiCapTag.textContent = 'Low Yield (<4.5%)';
+        }
+
+        els.kpiCashFlow.textContent = formatCurrency(d.annualCashFlow);
+        els.kpiCashFlow.style.color = d.annualCashFlow >= 0 ? 'var(--text-main)' : 'var(--accent-rose)';
+        els.kpiMonthlyCashFlow.textContent = (d.monthlyCashFlow >= 0 ? '+' : '') + formatCurrency(d.monthlyCashFlow) + ' / mo';
+        els.kpiMonthlyCashFlow.className = d.monthlyCashFlow >= 0 ? 'tag tag-amber' : 'tag tag-red';
+
+        els.kpiCoc.textContent = formatPct(d.cocReturn);
+        els.kpiCoc.style.color = d.cocReturn >= 0 ? 'var(--text-main)' : 'var(--accent-rose)';
+        els.kpiTotalInvested.textContent = formatCurrency(d.totalCashInvested);
+
+        if (d.loanType === 'allCash') {
+          els.kpiDscr.textContent = 'N/A';
+          els.kpiDscrTag.className = 'tag tag-green';
+          els.kpiDscrTag.textContent = 'Zero Debt (100% Equity)';
+        } else {
+          els.kpiDscr.textContent = d.dscr.toFixed(2) + 'x';
+          if (d.dscr >= 1.30) {
+            els.kpiDscrTag.className = 'tag tag-green';
+            els.kpiDscrTag.textContent = 'Lender Preferred (≥1.30x)';
+          } else if (d.dscr >= 1.15) {
+            els.kpiDscrTag.className = 'tag tag-blue';
+            els.kpiDscrTag.textContent = 'Lender Viable (≥1.15x)';
+          } else if (d.dscr >= 1.0) {
+            els.kpiDscrTag.className = 'tag tag-amber';
+            els.kpiDscrTag.textContent = 'Tight Coverage (1.0-1.15x)';
+          } else {
+            els.kpiDscrTag.className = 'tag tag-red';
+            els.kpiDscrTag.textContent = 'Deficit (<1.0x DSCR)';
+          }
+        }
+
+        els.kpiOnePct.textContent = formatPct(d.onePctRule);
+        els.kpiGrm.textContent = d.grm.toFixed(2) + 'x';
+
+        // Deal Verdict Synthesis & Score (0 - 100)
+        let score = 50;
+        // Cap Rate component (+/- 25 pts)
+        score += Math.min(25, Math.max(-25, (d.capRate - 6.0) * 8));
+        // CoC component (+/- 20 pts)
+        score += Math.min(20, Math.max(-20, (d.cocReturn - 6.0) * 4));
+        // DSCR component (+/- 25 pts)
+        if (d.loanType === 'allCash') {
+          score += 15;
+        } else {
+          score += Math.min(25, Math.max(-25, (d.dscr - 1.20) * 50));
+        }
+        // Cash Flow sanity
+        if (d.annualCashFlow < 0) score -= 30;
+        score = Math.round(Math.min(99, Math.max(5, score)));
+
+        els.verdictScoreRing.textContent = score;
+
+        let verdictStatusText = "PASS / HIGH RISK";
+        let verdictColor = "var(--accent-rose)";
+        let heading = "Negative Cash Flow or Sub-Lender DSCR Warning";
+        let summary = `This opportunity exhibits significant downside risk. At an annual cash flow of ${formatCurrency(d.annualCashFlow)}, the property fails standard underwriting margin tests. Consider negotiating a lower purchase price or renegotiating debt terms.`;
+
+        if (score >= 82) {
+          verdictStatusText = "STRONG BUY // PRIME DEAL";
+          verdictColor = "var(--accent-green)";
+          heading = "Exceptional Cash Flow & Robust Debt Coverage Safety Margin";
+          summary = `Outstanding institutional-grade opportunity. Boasts a strong ${formatPct(d.capRate)} Cap Rate, ${formatPct(d.cocReturn)} Cash-on-Cash Return, and ${d.loanType === 'allCash' ? 'Zero Debt' : d.dscr.toFixed(2) + 'x DSCR'}. Well-insulated against vacancy swings.`;
+        } else if (score >= 68) {
+          verdictStatusText = "VIABLE BUY // SOLID ASSET";
+          verdictColor = "var(--accent-cyan)";
+          heading = "Dependable Underwriting Metrics Meeting Market Benchmarks";
+          summary = `Healthy investment deal generating ${formatCurrency(d.monthlyCashFlow)} net monthly cash flow. Meets standard lender underwriting guidelines with stable risk-adjusted return profile.`;
+        } else if (score >= 50) {
+          verdictStatusText = "MARGINAL // SPECULATIVE";
+          verdictColor = "var(--accent-amber)";
+          heading = "Thin Cash Flow Margins Sensitive to Vacancy & Capex Spikes";
+          summary = `Workable deal, but with limited cushion. Monthly cash flow of ${formatCurrency(d.monthlyCashFlow)} leaves minimal margin for unexpected roof, HVAC, or tenant eviction expenses.`;
+        }
+
+        els.verdictStatus.textContent = verdictStatusText;
+        els.verdictStatus.style.color = verdictColor;
+        els.verdictScoreRing.style.color = verdictColor;
+        els.verdictHeading.textContent = heading;
+        els.verdictSummary.textContent = summary;
+
+        els.breakEvenPoint.textContent = `⚖️ Break-Even Occupancy: ${formatPct(d.breakEvenOccupancy)}`;
+        els.downPaymentSummaryPoint.textContent = `💼 Initial Equity: ${formatCurrency(d.downPaymentAmount)} (${d.downPct}%)`;
+        els.debtExpensePoint.textContent = `💳 Annual Debt Service: ${formatCurrency(d.annualDebtService)}`;
+
+        // Waterfall Bar Updating
+        const totalOutflowMonthly = (d.annualDebtService + d.annualOpex) / 12;
+        const totalBase = Math.max(d.monthlyGoi, totalOutflowMonthly);
+
+        if (totalBase > 0) {
+          const debtShare = ((d.annualDebtService / 12) / totalBase) * 100;
+          const taxShare = ((d.taxes / 12) / totalBase) * 100;
+          const otherOpexShare = (((d.annualOpex - d.taxes) / 12) / totalBase) * 100;
+          const cashShare = Math.max(0, (Math.max(0, d.monthlyCashFlow) / totalBase) * 100);
+
+          els.barDebt.style.width = debtShare + '%';
+          els.barTaxes.style.width = taxShare + '%';
+          els.barOpex.style.width = otherOpexShare + '%';
+          els.barCashflow.style.width = cashShare + '%';
+        }
+
+        els.waterfallGrossText.textContent = `Effective Gross Inflow: ${formatCurrency(d.monthlyGoi)} / mo`;
+        els.legDebtVal.textContent = formatCurrency(d.monthlyPI) + '/mo';
+        els.legTaxVal.textContent = formatCurrency(d.taxes / 12) + '/mo';
+        els.legOpexVal.textContent = formatCurrency((d.annualOpex - d.taxes) / 12) + '/mo';
+        els.legCashVal.textContent = formatCurrency(d.monthlyCashFlow) + '/mo';
+
+        // Pro-Forma 10-Year Table
+        renderProFormaTable(d);
+
+        // Stress Testing Matrix
+        renderStressTable(d);
+
+        // Cash to Close Breakdown
+        renderClosingCostsTable(d);
+
+        // Print header metadata
+        els.printPropTitle.textContent = els.propTitle.value || 'Real Estate Investment Deal Memo';
+        els.printPropSubtitle.textContent = `Purchase Price: ${formatCurrency(d.price)} | Cap Rate: ${formatPct(d.capRate)} | Cash-on-Cash: ${formatPct(d.cocReturn)} | NOI: ${formatCurrency(d.noi)}`;
+        els.printDate.textContent = 'Generated: ' + new Date().toISOString().split('T')[0];
+      }
+
+      // Render 10-Year Pro-Forma
+      function renderProFormaTable(d) {
+        let html = '';
+        let currentGross = d.annualGrossRent;
+        let currentOther = d.annualOtherIncome;
+        let currentOpex = d.annualOpex;
+        let loanBalance = d.loanAmount;
+        let propertyValue = d.price;
+        const monthlyRate = (d.rate / 100) / 12;
+
+        for (let yr = 1; yr <= 10; yr++) {
+          if (yr > 1) {
+            currentGross *= (1 + (d.rentGrowthPct / 100));
+            currentOther *= (1 + (d.rentGrowthPct / 100));
+            currentOpex *= 1.025; // 2.5% inflation on expenses
+            propertyValue *= 1.03; // 3% property appreciation
+          }
+
+          const yrVacancy = currentGross * (d.vacancyPct / 100);
+          const yrGoi = (currentGross - yrVacancy) + currentOther;
+          const yrNoi = yrGoi - currentOpex;
+          const yrDebt = d.annualDebtService;
+          const yrCashFlow = yrNoi - yrDebt;
+
+          // Compute remaining loan balance after 12 months of P&I
+          if (d.loanType === 'amortizing' && loanBalance > 0) {
+            for (let m = 0; m < 12; m++) {
+              const interestMonth = loanBalance * monthlyRate;
+              const principalMonth = Math.min(loanBalance, d.monthlyPI - interestMonth);
+              loanBalance = Math.max(0, loanBalance - principalMonth);
+            }
+          } else if (d.loanType === 'allCash') {
+            loanBalance = 0;
+          }
+
+          const equity = Math.max(0, propertyValue - loanBalance);
+
+          html += `
+            <tr>
+              <td style="font-weight:700;">Year ${yr}</td>
+              <td>${formatCurrency(currentGross)}</td>
+              <td>${formatCurrency(currentOpex)}</td>
+              <td style="font-weight:600;">${formatCurrency(yrNoi)}</td>
+              <td>${formatCurrency(yrDebt)}</td>
+              <td class="${yrCashFlow >= 0 ? 'val-positive' : 'val-negative'}" style="font-weight:700;">${formatCurrency(yrCashFlow)}</td>
+              <td>${formatCurrency(loanBalance)}</td>
+              <td style="font-weight:700; color:var(--accent-cyan);">${formatCurrency(equity)}</td>
+            </tr>
+          `;
+        }
+        els.proFormaBody.innerHTML = html;
+      }
+
+      // Render Stress Matrix
+      function renderStressTable(d) {
+        const scenarios = [
+          { name: "Severe Recession (-15% Rent, 12% Vacancy, +10% OpEx)", rentMult: 0.85, vac: 12.0, opexMult: 1.10 },
+          { name: "Mild Downturn (-8% Rent, 8% Vacancy, +5% OpEx)", rentMult: 0.92, vac: 8.0, opexMult: 1.05 },
+          { name: "Base Underwriting Case (Current Inputs)", rentMult: 1.0, vac: d.vacancyPct, opexMult: 1.0 },
+          { name: "Optimistic Growth (+5% Rent, 4% Vacancy, Flat OpEx)", rentMult: 1.05, vac: 4.0, opexMult: 1.0 },
+          { name: "Bull Market (+12% Rent, 3% Vacancy, -5% OpEx)", rentMult: 1.12, vac: 3.0, opexMult: 0.95 }
+        ];
+
+        let html = '';
+        scenarios.forEach((sc, idx) => {
+          const scRent = d.annualGrossRent * sc.rentMult;
+          const scVacLoss = scRent * (sc.vac / 100);
+          const scGoi = (scRent - scVacLoss) + d.annualOtherIncome;
+          const scOpex = d.annualOpex * sc.opexMult;
+          const scNoi = scGoi - scOpex;
+          const scCashFlow = scNoi - d.annualDebtService;
+          const scCoc = d.totalCashInvested > 0 ? (scCashFlow / d.totalCashInvested) * 100 : 0;
+          const scDscr = d.annualDebtService > 0 ? scNoi / d.annualDebtService : 999;
+          const isBase = idx === 2;
+
+          html += `
+            <tr style="${isBase ? 'background: rgba(56, 189, 248, 0.08); font-weight:700;' : ''}">
+              <td style="text-align:left;">${isBase ? '⭐ ' : ''}${sc.name}</td>
+              <td>${formatCurrency(scRent / 12)}</td>
+              <td>${sc.vac.toFixed(1)}%</td>
+              <td>${formatCurrency(scOpex)}</td>
+              <td>${formatCurrency(scNoi)}</td>
+              <td class="${scCashFlow >= 0 ? 'val-positive' : 'val-negative'}">${formatCurrency(scCashFlow)}</td>
+              <td class="${scCoc >= 0 ? 'val-positive' : 'val-negative'}">${formatPct(scCoc)}</td>
+              <td>${d.loanType === 'allCash' ? 'N/A' : scDscr.toFixed(2) + 'x'}</td>
+            </tr>
+          `;
+        });
+        els.stressBody.innerHTML = html;
+      }
+
+      // Render Closing Costs
+      function renderClosingCostsTable(d) {
+        const rows = [
+          { name: "Down Payment", basis: `${d.downPct}% of Purchase Price`, amount: d.downPaymentAmount },
+          { name: "Estimated Loan & Title Closing Costs", basis: "Lender, Appraisal & Escrow Fees", amount: d.closing },
+          { name: "Initial Rehab & Capital Improvement Reserve", basis: "Deferred Maintenance & Make-Ready", amount: d.rehab }
+        ];
+
+        let html = '';
+        rows.forEach(r => {
+          const share = d.totalCashInvested > 0 ? (r.amount / d.totalCashInvested) * 100 : 0;
+          html += `
+            <tr>
+              <td>${r.name}</td>
+              <td style="color:var(--text-muted);">${r.basis}</td>
+              <td style="font-weight:600;">${formatCurrency(r.amount)}</td>
+              <td>${formatPct(share)}</td>
+            </tr>
+          `;
+        });
+
+        html += `
+          <tr style="font-weight:800; background:var(--bg-card); border-top:2px solid var(--border-color);">
+            <td>TOTAL INITIAL CASH REQUIRED</td>
+            <td>Out-of-Pocket Equity Basis</td>
+            <td style="color:var(--accent-cyan); font-size:1rem;">${formatCurrency(d.totalCashInvested)}</td>
+            <td>100.00%</td>
+          </tr>
+        `;
+        els.closingCostsBody.innerHTML = html;
+      }
+
+      // Load Preset
+      function loadPreset(key) {
+        const p = PRESETS[key];
+        if (!p) return;
+
+        els.propTitle.value = p.title;
+        els.purchasePrice.value = p.price;
+        els.afterRepairValue.value = p.arv;
+        els.initialRehab.value = p.rehab;
+        els.closingCosts.value = p.closing;
+        els.downPaymentPct.value = p.downPct;
+        els.interestRate.value = p.rate;
+        els.loanTermYears.value = p.term;
+        els.loanType.value = p.loanType;
+        els.grossMonthlyRent.value = p.rent;
+        els.otherMonthlyIncome.value = p.otherIncome;
+        els.vacancyRate.value = p.vacancy;
+        els.annualRentGrowth.value = p.growth;
+        els.annualTaxes.value = p.taxes;
+        els.annualInsurance.value = p.insurance;
+        els.maintenancePct.value = p.maintPct;
+        els.managementPct.value = p.mgmtPct;
+        els.monthlyHoa.value = p.hoa;
+        els.monthlyUtilities.value = p.utilities;
+
+        document.querySelectorAll('.preset-btn').forEach(b => {
+          b.classList.toggle('active', b.dataset.preset === key);
+        });
+
+        updateUI();
+      }
+
+      // Tab Switcher
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+          document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+          btn.classList.add('active');
+          const target = document.getElementById(btn.dataset.tab);
+          if (target) target.classList.add('active');
+        });
+      });
+
+      // Preset button listener
+      document.querySelectorAll('.preset-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          loadPreset(btn.dataset.preset);
+        });
+      });
+
+      // Input change listeners
+      const inputIds = [
+        'purchasePrice', 'afterRepairValue', 'initialRehab', 'closingCosts',
+        'downPaymentPct', 'interestRate', 'loanTermYears', 'loanType',
+        'grossMonthlyRent', 'otherMonthlyIncome', 'vacancyRate', 'annualRentGrowth',
+        'annualTaxes', 'annualInsurance', 'maintenancePct', 'managementPct',
+        'monthlyHoa', 'monthlyUtilities', 'propTitle'
+      ];
+
+      inputIds.forEach(id => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.addEventListener('input', updateUI);
+          element.addEventListener('change', updateUI);
+        }
+      });
+
+      // Theme toggle
+      els.themeToggleBtn.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        els.themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+        els.themeToggleBtn.innerHTML = `${els.themeIcon.outerHTML} ${newTheme === 'dark' ? 'Light Mode' : 'Dark Mode'}`;
+      });
+
+      // Print action
+      els.printBtn.addEventListener('click', () => {
+        window.print();
+      });
+
+      // Reset action
+      els.resetBtn.addEventListener('click', () => {
+        loadPreset('sfr');
+      });
+
+      // Copy Summary to Clipboard
+      els.copySummaryBtn.addEventListener('click', () => {
+        const d = calculateDeal();
+        const text = `=== RE AI INVESTMENT DEAL MEMO ===
+Property: ${els.propTitle.value}
+Purchase Price: ${formatCurrency(d.price)} | Loan Amount: ${formatCurrency(d.loanAmount)}
+Gross Scheduled Rent: ${formatCurrency(d.monthlyRent)}/mo ($${Math.round(d.annualGrossRent).toLocaleString()}/yr)
+Net Operating Income (NOI): ${formatCurrency(d.noi)}/yr ($${Math.round(d.monthlyNoi).toLocaleString()}/mo)
+Cap Rate: ${formatPct(d.capRate)}
+Annual Cash Flow: ${formatCurrency(d.annualCashFlow)} (${formatCurrency(d.monthlyCashFlow)}/mo)
+Cash-on-Cash Return: ${formatPct(d.cocReturn)}
+Total Cash Invested: ${formatCurrency(d.totalCashInvested)}
+Debt Service Coverage (DSCR): ${d.loanType === 'allCash' ? 'N/A (All Cash)' : d.dscr.toFixed(2) + 'x'}
+Verdict: ${els.verdictStatus.textContent} (Underwriting Score: ${els.verdictScoreRing.textContent}/100)
+Generated by RE AI Deal Analyzer Cockpit`;
+
+        navigator.clipboard.writeText(text).then(() => {
+          const original = els.copySummaryBtn.innerHTML;
+          els.copySummaryBtn.innerHTML = '✅ Copied!';
+          setTimeout(() => els.copySummaryBtn.innerHTML = original, 2000);
+        }).catch(() => {
+          alert(text);
+        });
+      });
+
+      // Initial execution
+      updateUI();
+    })();
+  </script>
+</body>
+</html>
