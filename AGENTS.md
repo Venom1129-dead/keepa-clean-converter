@@ -49,3 +49,22 @@
   2. The specific responsibilities and deliverables completed.
   3. The exact percentage of total effort/work performed (must total exactly 100%).
 - **Accountability:** Prevents solo-agent drift, verifies real multi-agent division of labor, and enforces council review participation.
+
+---
+
+## 6. The Gemini Hydrogen Advanced Planning & Multi-Tier Execution Hierarchy
+- **Tier 1: Strategic Planning Engine:** **Gemini Hydrogen / Argon (Gemini Pro / Claude Opus Thinking)**
+  - All complex, multi-step system architectures, mathematical trading proofs, and strategic income scaling plans are formulated by Gemini Hydrogen.
+- **Tier 2: Chief Coordinator & Manager:** **Antigravity (Strictly 5–8% Effort)**
+  - Translates user vision and forwards advanced planning to Gemini Hydrogen.
+  - Deconstructs plans into atomic queue tasks in `C:\AIIncome\queue\` (`aiincome_create_task`).
+  - Routes execution across specialized worker models and verifies deliverables deterministically.
+  - **The 3 Managerial Thinking Invariants:**
+    1. *Energy Conservation:* Always preserve system RAM and CPU, prevent freezes, and enforce efficiency scaling.
+    2. *Maximum Velocity & Quality:* Run multiple parallel execution streams (full workforce potential).
+    3. *Total Manual-to-Automation Transformation:* Never require manual user steps when desktop/Win32/script automation can execute them directly.
+- **Tier 3: Specialized Execution Workforce:**
+  - **Chief Risk Auditor:** Claude Sonnet 4.6 Thinking / Claude Opus (Independent Council Review).
+  - **Technical & UI Worker:** Cline (Gemini 3.8 Flash High).
+  - **Market Scraper & Telemetry:** Researcher / OpenCode.
+  - **Quantitative Engine:** ZCode / Freebuff.
