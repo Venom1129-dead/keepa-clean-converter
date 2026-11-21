@@ -1,0 +1,402 @@
+[
+  {
+    "index": 1,
+    "id": "badge_01_git_push_force",
+    "filename": "badge_01_git_push_force.svg",
+    "title": "Git Push Force",
+    "category": "Developer Lore",
+    "text": "GIT FORCE"
+  },
+  {
+    "index": 2,
+    "id": "badge_02_sudo_su",
+    "filename": "badge_02_sudo_su.svg",
+    "title": "Sudo Su Root",
+    "category": "Developer Lore",
+    "text": "SUDO SU"
+  },
+  {
+    "index": 3,
+    "id": "badge_03_exit_zero",
+    "filename": "badge_03_exit_zero.svg",
+    "title": "Exit Code Zero",
+    "category": "Developer Lore",
+    "text": "EXIT 0"
+  },
+  {
+    "index": 4,
+    "id": "badge_04_localhost_3000",
+    "filename": "badge_04_localhost_3000.svg",
+    "title": "Localhost 3000",
+    "category": "Developer Lore",
+    "text": "127.0.0.1"
+  },
+  {
+    "index": 5,
+    "id": "badge_05_stack_overflow",
+    "filename": "badge_05_stack_overflow.svg",
+    "title": "Stack Overflow",
+    "category": "Developer Lore",
+    "text": "STACK OVER"
+  },
+  {
+    "index": 6,
+    "id": "badge_06_infinite_loop",
+    "filename": "badge_06_infinite_loop.svg",
+    "title": "Infinite Loop",
+    "category": "Developer Lore",
+    "text": "WHILE TRUE"
+  },
+  {
+    "index": 7,
+    "id": "badge_07_syntax_error",
+    "filename": "badge_07_syntax_error.svg",
+    "title": "Syntax Error",
+    "category": "Developer Lore",
+    "text": "SYNTAX ERR"
+  },
+  {
+    "index": 8,
+    "id": "badge_08_rm_rf_root",
+    "filename": "badge_08_rm_rf_root.svg",
+    "title": "RM RF Slash",
+    "category": "Developer Lore",
+    "text": "RM -RF /*"
+  },
+  {
+    "index": 9,
+    "id": "badge_09_segfault_core",
+    "filename": "badge_09_segfault_core.svg",
+    "title": "Segmentation Fault",
+    "category": "Developer Lore",
+    "text": "SEGFAULT"
+  },
+  {
+    "index": 10,
+    "id": "badge_10_merge_conflict",
+    "filename": "badge_10_merge_conflict.svg",
+    "title": "Merge Conflict",
+    "category": "Developer Lore",
+    "text": "HEAD >>>"
+  },
+  {
+    "index": 11,
+    "id": "badge_11_binary_coffee",
+    "filename": "badge_11_binary_coffee.svg",
+    "title": "Binary Fuel",
+    "category": "Developer Lore",
+    "text": "01000011"
+  },
+  {
+    "index": 12,
+    "id": "badge_12_404_not_found",
+    "filename": "badge_12_404_not_found.svg",
+    "title": "404 Not Found",
+    "category": "Developer Lore",
+    "text": "ERR 404"
+  },
+  {
+    "index": 13,
+    "id": "badge_13_neural_interface",
+    "filename": "badge_13_neural_interface.svg",
+    "title": "Neural Interface",
+    "category": "Cyberpunk Tech",
+    "text": "NEURAL LINK"
+  },
+  {
+    "index": 14,
+    "id": "badge_14_quantum_core",
+    "filename": "badge_14_quantum_core.svg",
+    "title": "Quantum Core",
+    "category": "Cyberpunk Tech",
+    "text": "Q-CORE 9"
+  },
+  {
+    "index": 15,
+    "id": "badge_15_cyber_matrix",
+    "filename": "badge_15_cyber_matrix.svg",
+    "title": "Cyber Matrix",
+    "category": "Cyberpunk Tech",
+    "text": "MATRIX PROTO"
+  },
+  {
+    "index": 16,
+    "id": "badge_16_glitch_protocol",
+    "filename": "badge_16_glitch_protocol.svg",
+    "title": "Glitch Protocol",
+    "category": "Cyberpunk Tech",
+    "text": "SYSTEM GLITCH"
+  },
+  {
+    "index": 17,
+    "id": "badge_17_bio_circuit",
+    "filename": "badge_17_bio_circuit.svg",
+    "title": "Bio-Synthetics",
+    "category": "Cyberpunk Tech",
+    "text": "BIO-CHIP"
+  },
+  {
+    "index": 18,
+    "id": "badge_18_sub_orbital",
+    "filename": "badge_18_sub_orbital.svg",
+    "title": "Sub-Orbital Uplink",
+    "category": "Cyberpunk Tech",
+    "text": "UPLINK 500"
+  },
+  {
+    "index": 19,
+    "id": "badge_19_neon_shinigami",
+    "filename": "badge_19_neon_shinigami.svg",
+    "title": "Cyber Shinigami",
+    "category": "Cyberpunk Tech",
+    "text": "SHINIGAMI"
+  },
+  {
+    "index": 20,
+    "id": "badge_20_kinetic_booster",
+    "filename": "badge_20_kinetic_booster.svg",
+    "title": "Kinetic Booster",
+    "category": "Cyberpunk Tech",
+    "text": "BOOST 88"
+  },
+  {
+    "index": 21,
+    "id": "badge_21_plasma_vent",
+    "filename": "badge_21_plasma_vent.svg",
+    "title": "Plasma Vent Reactor",
+    "category": "Cyberpunk Tech",
+    "text": "PLASMA CORE"
+  },
+  {
+    "index": 22,
+    "id": "badge_22_augmented_vision",
+    "filename": "badge_22_augmented_vision.svg",
+    "title": "Augmented Vision",
+    "category": "Cyberpunk Tech",
+    "text": "HUD OPTIC"
+  },
+  {
+    "index": 23,
+    "id": "badge_23_holo_driver",
+    "filename": "badge_23_holo_driver.svg",
+    "title": "Hologram Driver",
+    "category": "Cyberpunk Tech",
+    "text": "HOLO EMIT"
+  },
+  {
+    "index": 24,
+    "id": "badge_24_night_city_syndicate",
+    "filename": "badge_24_night_city_syndicate.svg",
+    "title": "Sector 07 Syndicate",
+    "category": "Cyberpunk Tech",
+    "text": "SECTOR 07"
+  },
+  {
+    "index": 25,
+    "id": "badge_25_synthetic_dream",
+    "filename": "badge_25_synthetic_dream.svg",
+    "title": "Synthetic Dream",
+    "category": "Cyberpunk Tech",
+    "text": "DREAM STATE"
+  },
+  {
+    "index": 26,
+    "id": "badge_26_silicon_wafer",
+    "filename": "badge_26_silicon_wafer.svg",
+    "title": "Silicon 3nm Wafer",
+    "category": "Hardware & Silicon",
+    "text": "3NM WAFER"
+  },
+  {
+    "index": 27,
+    "id": "badge_27_overclock_ghz",
+    "filename": "badge_27_overclock_ghz.svg",
+    "title": "Overclock 6.0 GHz",
+    "category": "Hardware & Silicon",
+    "text": "6.0 GHZ"
+  },
+  {
+    "index": 28,
+    "id": "badge_28_nanotech_lattice",
+    "filename": "badge_28_nanotech_lattice.svg",
+    "title": "Nanotech Lattice",
+    "category": "Hardware & Silicon",
+    "text": "NANO LATTICE"
+  },
+  {
+    "index": 29,
+    "id": "badge_29_optical_bus",
+    "filename": "badge_29_optical_bus.svg",
+    "title": "Photonic Optical Bus",
+    "category": "Hardware & Silicon",
+    "text": "OPTIC BUS"
+  },
+  {
+    "index": 30,
+    "id": "badge_30_pcb_tracer",
+    "filename": "badge_30_pcb_tracer.svg",
+    "title": "Gold PCB Tracer",
+    "category": "Hardware & Silicon",
+    "text": "BUS LINE"
+  },
+  {
+    "index": 31,
+    "id": "badge_31_fpga_logic",
+    "filename": "badge_31_fpga_logic.svg",
+    "title": "FPGA Gate Array",
+    "category": "Hardware & Silicon",
+    "text": "GATE ARRAY"
+  },
+  {
+    "index": 32,
+    "id": "badge_32_cryo_cooler",
+    "filename": "badge_32_cryo_cooler.svg",
+    "title": "Cryogenic Sub-Zero",
+    "category": "Hardware & Silicon",
+    "text": "CRYO -196C"
+  },
+  {
+    "index": 33,
+    "id": "badge_33_vram_buffer",
+    "filename": "badge_33_vram_buffer.svg",
+    "title": "GDDR7 High Bandwidth",
+    "category": "Hardware & Silicon",
+    "text": "GDDR7 HBM"
+  },
+  {
+    "index": 34,
+    "id": "badge_34_solid_state",
+    "filename": "badge_34_solid_state.svg",
+    "title": "Solid State Storage",
+    "category": "Hardware & Silicon",
+    "text": "NVME GEN5"
+  },
+  {
+    "index": 35,
+    "id": "badge_35_bus_frequency",
+    "filename": "badge_35_bus_frequency.svg",
+    "title": "Clock Multiplier",
+    "category": "Hardware & Silicon",
+    "text": "CLK MULTI"
+  },
+  {
+    "index": 36,
+    "id": "badge_36_power_phase",
+    "filename": "badge_36_power_phase.svg",
+    "title": "VRM Power Phase",
+    "category": "Hardware & Silicon",
+    "text": "16+2 PHASE"
+  },
+  {
+    "index": 37,
+    "id": "badge_37_thermal_sink",
+    "filename": "badge_37_thermal_sink.svg",
+    "title": "Vapor Chamber Sink",
+    "category": "Hardware & Silicon",
+    "text": "VAPOR CHMBR"
+  },
+  {
+    "index": 38,
+    "id": "badge_38_cmos_battery",
+    "filename": "badge_38_cmos_battery.svg",
+    "title": "CMOS RTC Keeper",
+    "category": "Hardware & Silicon",
+    "text": "RTC 3.3V"
+  },
+  {
+    "index": 39,
+    "id": "badge_39_zero_day",
+    "filename": "badge_39_zero_day.svg",
+    "title": "Zero Day Exploit",
+    "category": "Hacker & Crypto",
+    "text": "ZERO DAY"
+  },
+  {
+    "index": 40,
+    "id": "badge_40_cipher_lock",
+    "filename": "badge_40_cipher_lock.svg",
+    "title": "RSA 4096 Bit",
+    "category": "Hacker & Crypto",
+    "text": "RSA 4096"
+  },
+  {
+    "index": 41,
+    "id": "badge_41_firewall_shield",
+    "filename": "badge_41_firewall_shield.svg",
+    "title": "Firewall Defense",
+    "category": "Hacker & Crypto",
+    "text": "FIREWALL"
+  },
+  {
+    "index": 42,
+    "id": "badge_42_terminal_ghost",
+    "filename": "badge_42_terminal_ghost.svg",
+    "title": "Terminal Ghost In Shell",
+    "category": "Hacker & Crypto",
+    "text": "GHOST DAEMON"
+  },
+  {
+    "index": 43,
+    "id": "badge_43_packet_sniffer",
+    "filename": "badge_43_packet_sniffer.svg",
+    "title": "Promiscuous Packet",
+    "category": "Hacker & Crypto",
+    "text": "PROMISCUOUS"
+  },
+  {
+    "index": 44,
+    "id": "badge_44_hash_collision",
+    "filename": "badge_44_hash_collision.svg",
+    "title": "SHA-256 Collision",
+    "category": "Hacker & Crypto",
+    "text": "SHA-256"
+  },
+  {
+    "index": 45,
+    "id": "badge_45_dark_web_relay",
+    "filename": "badge_45_dark_web_relay.svg",
+    "title": "Onion Router Relay",
+    "category": "Hacker & Crypto",
+    "text": "TOR RELAY"
+  },
+  {
+    "index": 46,
+    "id": "badge_46_honeypot_trap",
+    "filename": "badge_46_honeypot_trap.svg",
+    "title": "Active Honeypot Trap",
+    "category": "Hacker & Crypto",
+    "text": "HONEYPOT"
+  },
+  {
+    "index": 47,
+    "id": "badge_47_brute_force",
+    "filename": "badge_47_brute_force.svg",
+    "title": "Brute Force Engine",
+    "category": "Hacker & Crypto",
+    "text": "BRUTE KEYS"
+  },
+  {
+    "index": 48,
+    "id": "badge_48_man_in_middle",
+    "filename": "badge_48_man_in_middle.svg",
+    "title": "Interception Probe",
+    "category": "Hacker & Crypto",
+    "text": "MITM PROBE"
+  },
+  {
+    "index": 49,
+    "id": "badge_49_privilege_escalation",
+    "filename": "badge_49_privilege_escalation.svg",
+    "title": "Privilege Escalation",
+    "category": "Hacker & Crypto",
+    "text": "ROOT ESC"
+  },
+  {
+    "index": 50,
+    "id": "badge_50_dead_drop",
+    "filename": "badge_50_dead_drop.svg",
+    "title": "Digital Dead Drop",
+    "category": "Hacker & Crypto",
+    "text": "DEAD DROP"
+  }
+]

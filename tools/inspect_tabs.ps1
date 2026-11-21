@@ -1,4 +1,4 @@
-$logFile = "C:\Users\myven\Downloads\antigravity ai income\00_Brain\proofs\tab_cleanup_log.txt"
+$logFile = "$env:USERPROFILE\Downloads\antigravity ai income\00_Brain\proofs\tab_cleanup_log.txt"
 "Starting Tab Inspection at $(Get-Date)" | Out-File $logFile
 
 Add-Type -AssemblyName UIAutomationClient

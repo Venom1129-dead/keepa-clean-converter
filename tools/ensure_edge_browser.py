@@ -17,8 +17,8 @@ import urllib.request
 import subprocess
 
 RELAY_URL = "http://127.0.0.1:19988"
-BROWSE_BIN = r"C:\Users\myven\.local\bin\browse.exe"
-PROOF_DIR = r"c:\Users\myven\Downloads\antigravity ai income\00_Brain\proofs"
+BROWSE_BIN = os.path.join(os.path.expanduser("~"), ".local", "bin", "browse.exe")
+PROOF_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "00_Brain", "proofs")
 os.makedirs(PROOF_DIR, exist_ok=True)
 
 def is_edge_running():

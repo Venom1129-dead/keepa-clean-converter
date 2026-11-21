@@ -1,28 +1,39 @@
-# HANDOFF.md — Live Baton & Multi-Agent Relay
+# HANDOFF.md — Live Multi-Agent Relay Board
 
-## 1. System Status & Role Lock
-- **CURRENT_TASK:** Asset Pipeline Monetization & Multi-Asset Deployment
-- **OPERATING_MODE:** Antigravity (ORCHESTRATION & SPEC) -> Cline (WORKER EXECUTION) -> Claude (VERIFIER AUDIT)
-- **INFRASTRUCTURE:** Git (v2.44.0), gh (v2.46.0), Node v22, Python 3.13, Edge Playwright CDP Bridge
-- **REPOSITORY:** https://github.com/Venom1129-dead/keepa-clean-converter (Pushed up to `82d13ed`)
+## 1. System Status & Active Task Lock
+- **ACTIVE_FOCUS:** `05_Trading_AI` — Empirical Strategy Mining & Quantitative Backtesting Engine
+- **PORTABILITY:** 100% Relative Paths Enforced (`tools/storage_audit.py` verified)
+- **STORAGE HYGIENE:** `.gitignore` active, automated cache/data pruner enabled
+- **MULTI-AGENT ROSTER:**
+  - **Antigravity:** Architecture, planning, skill authoring, master orchestration.
+  - **ZCode (Zed Engine):** Low-latency indicator math, rapid kernel implementation (`tools/launch_zcode.bat`).
+  - **Cline:** Core strategy adapters, test runners, local data pipelines (`tools/launch_cline.bat`).
+  - **Claude Desktop:** Brutal risk auditor, statistical p-value verification, kill-switch (`tools/launch_claude.bat`).
+  - **OpenCode:** Web crowdsourced strategy miner, news & catalyst sentiment harvester (`tools/launch_opencode.bat`).
 
 ---
 
-## 2. Completed Digital Income Assets Portfolio
-| Asset ID | Product Name | Target Price | Status | Artifacts / Links |
+## 2. Completed Digital Income Assets Portfolio (10/10 Live & Verified)
+| Asset ID | Product Name | Target Price | Status | Live Links & Artifacts |
 |---|---|---|---|---|
-| **MVP_01** | Keepa CSV Clean Excel Converter | $14 | `VERIFIED_COMPLETE` | [Live Production Site](https://venom1129-dead.github.io/keepa-clean-converter/) • [Launch Assets](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/04_Launch_Queue/keepa_launch_assets.md) |
-| **MVP_02** | Shopify Supplier CSV Normalizer | $19 | `VERIFIED_COMPLETE` | [Live Production Site](https://venom1129-dead.github.io/shopify-csv-normalizer/) • [Launch Assets](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/04_Launch_Queue/shopify_normalizer_launch_assets.md) |
-| **MVP_03** | Notion 12-Week Sprint & Ops OS | $9 | `VERIFIED_COMPLETE` | [Template Export Bundle](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/03_Active_MVP_03/export/Notion_12_Week_Sprint_OS.md) • [Launch Assets](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/04_Launch_Queue/notion_sprint_launch_assets.md) |
-| **MVP_04** | Technical SEO & Schema Extension | $12 | `VERIFIED_COMPLETE` | [Extension Package (.zip)](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/03_Active_MVP_04/Technical_SEO_Schema_Inspector_v1.0.0.zip) • [Verifier Tests](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/03_Active_MVP_04/verifier/test_audit.py) • [Launch Assets](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/04_Launch_Queue/seo_extension_launch_assets.md) |
-| **MVP_05** | Freelancer Connects-ROI & Win-Rate Cockpit | $9 | `VERIFIED_COMPLETE` | [Live Production Site](https://venom1129-dead.github.io/connects-roi-cockpit/) • [GitHub Repo](https://github.com/Venom1129-dead/connects-roi-cockpit) • [Launch Assets](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/04_Launch_Queue/connects_tracker_launch_assets.md) |
-| **MVP_06** | Local AI VRAM & Quantization Calculator | $9 | `VERIFIED_COMPLETE` | [Live Production Site](https://venom1129-dead.github.io/local-ai-vram-calculator/) • [GitHub Repo](https://github.com/Venom1129-dead/local-ai-vram-calculator) • [Launch Assets](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/04_Launch_Queue/vram_calculator_launch_assets.md) |
-| **MVP_07** | DCA Position Sizer & Profit-Taking Ladder | $9 | `VERIFIED_COMPLETE` | [Live Production Site](https://venom1129-dead.github.io/dca-profit-calculator/) • [GitHub Repo](https://github.com/Venom1129-dead/dca-profit-calculator) • [Launch Assets](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/04_Launch_Queue/dca_calculator_launch_assets.md) |
-| **MVP_08** | "How To Do Things Faster" Ebook & Vault | $9 | `VERIFIED_COMPLETE` | [Live Web Reader](https://venom1129-dead.github.io/how-to-do-things-faster/) • [Vault Package (.zip)](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/03_Active_MVP_08/How_To_Do_Things_Faster_With_AI_Vault.zip) • [Launch Assets](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/04_Launch_Queue/how_to_do_things_faster_ebook_launch_assets.md) |
+| **MVP_01** | Keepa CSV Clean Excel Converter | $14 | `VERIFIED_COMPLETE` | [Live App](https://venom1129-dead.github.io/keepa-clean-converter/) • `04_Launch_Queue/keepa_launch_assets.md` |
+| **MVP_02** | Shopify Supplier CSV Normalizer | $19 | `VERIFIED_COMPLETE` | [Live App](https://venom1129-dead.github.io/shopify-csv-normalizer/) • `04_Launch_Queue/shopify_normalizer_launch_assets.md` |
+| **MVP_03** | Notion 12-Week Sprint & Ops OS | $9 | `VERIFIED_COMPLETE` | `03_Active_MVP_03/export/Notion_12_Week_Sprint_OS.md` • `04_Launch_Queue/notion_sprint_launch_assets.md` |
+| **MVP_04** | Technical SEO & Schema Extension | $12 | `VERIFIED_COMPLETE` | `03_Active_MVP_04/Technical_SEO_Schema_Inspector_v1.0.0.zip` • `04_Launch_Queue/seo_extension_launch_assets.md` |
+| **MVP_05** | Freelancer Connects-ROI Cockpit | $9 | `VERIFIED_COMPLETE` | [Live App](https://venom1129-dead.github.io/connects-roi-cockpit/) • `04_Launch_Queue/connects_tracker_launch_assets.md` |
+| **MVP_06** | Local AI VRAM & Quantization Calc | $9 | `VERIFIED_COMPLETE` | [Live App](https://venom1129-dead.github.io/local-ai-vram-calculator/) • `04_Launch_Queue/vram_calculator_launch_assets.md` |
+| **MVP_07** | DCA Position Sizer & Profit Ladder | $9 | `VERIFIED_COMPLETE` | [Live App](https://venom1129-dead.github.io/dca-profit-calculator/) • `04_Launch_Queue/dca_calculator_launch_assets.md` |
+| **MVP_08** | "How To Do Things Faster" Ebook | $9 | `VERIFIED_COMPLETE` | [Live Reader](https://venom1129-dead.github.io/how-to-do-things-faster/) • `03_Active_MVP_08/How_To_Do_Things_Faster_With_AI_Vault.zip` |
+| **MVP_09** | CyberDash 2099 Arcade Runner | $9 | `VERIFIED_COMPLETE` | [Live Game](https://venom1129-dead.github.io/cyberdash-game/) • `04_Launch_Queue/cyberdash_game_launch_assets.md` |
+| **MVP_10** | 50 Cyberpunk & Tech Badge SVG Pack | $9 | `VERIFIED_COMPLETE` | `03_Active_MVP_10/Cyberpunk_Tech_Badges_50_Pack.zip` • `04_Launch_Queue/svg_badges_launch_assets.md` |
 
 ---
 
-## 3. Next Micro-Steps
-1. Connect payout method tonight (Gumroad / PayPal) to enable instant digital checkouts.
-2. Publish all 8 ready-to-sell listings across diverse categories using pre-written copy in `04_Launch_Queue/`.
-3. Distribute across targeted communities (`r/solopreneur`, `r/CryptoCurrency`, `r/LocalLLaMA`, `r/Upwork`, `r/FulfillmentByAmazon`).
+## 3. Active Workstream: Trading AI Empirical Strategy Engine
+- **Core Directive:** "Internet has lots ideas, and we can test who has succeeded more... we don't need to predict, we just need to test all those together."
+- **Directory:** `05_Trading_AI/`
+- **Core Components Under Construction:**
+  1. `skills/`: Comprehensive Trading AI skill library (`SKILL.md` files).
+  2. `05_Trading_AI/engine/`: Vectorized & event-driven historical backtester with zero-lookahead bias.
+  3. `05_Trading_AI/strategies/`: Normalized crowd strategy registry (MA crossover, Mean Reversion, Breakout, RSI Divergence, VWAP Momentum, News Sentiment Catalyst).
+  4. `05_Trading_AI/verifier/`: Deterministic test suites checking backtest accuracy against known mathematical ground truths.

@@ -13,7 +13,7 @@ import sys
 import subprocess
 import json
 
-BROWSE_BIN = r"C:\Users\myven\.local\bin\browse.exe"
+BROWSE_BIN = os.path.join(os.path.expanduser("~"), ".local", "bin", "browse.exe")
 
 def cleanup_browser_tabs():
     print("[*] Cleaning up idle agent browser tabs...")
@@ -26,7 +26,7 @@ def cleanup_browser_tabs():
     
     # 2. Clean interactive Edge desktop tabs via UI Automation dispatch
     try:
-        bat_path = r"C:\Users\myven\run_close_tabs.bat"
+        bat_path = os.path.join(os.path.expanduser("~"), "run_close_tabs.bat")
         if os.path.exists(bat_path):
             subprocess.run(["schtasks", "/create", "/tn", "AgentCloseTabs", "/tr", bat_path, "/sc", "once", "/st", "23:59", "/it", "/f"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             subprocess.run(["schtasks", "/run", "/tn", "AgentCloseTabs"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)

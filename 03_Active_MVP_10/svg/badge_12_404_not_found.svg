@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="500" height="500">
+  <!-- Metadata: 404 Not Found | Developer Lore | ID: badge_12_404_not_found -->
+  <defs>
+    <style>
+      .badge-bg { fill: #070913; }
+      .badge-border { fill: none; stroke: #39ff14; stroke-width: 2.5; }
+      .badge-num { font-family: 'Rajdhani', 'Segoe UI', monospace; font-size: 5px; font-weight: 700; fill: #39ff14; letter-spacing: 1px; }
+      .badge-text { font-family: 'Orbitron', 'Segoe UI', sans-serif; font-size: 5.5px; font-weight: 800; fill: #ffffff; letter-spacing: 1px; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <!-- Outer Cut-Corner Octagon Frame -->
+  <polygon points="12,4 88,4 96,12 96,88 88,96 12,96 4,88 4,12" class="badge-bg" />
+  <polygon points="12,4 88,4 96,12 96,88 88,96 12,96 4,88 4,12" class="badge-border" />
+  
+  <!-- Corner Registration Markers -->
+  <line x1="8" y1="16" x2="16" y2="8" stroke="#00f0ff" stroke-width="1.5" />
+  <line x1="84" y1="8" x2="92" y2="16" stroke="#00f0ff" stroke-width="1.5" />
+  <line x1="92" y1="84" x2="84" y2="92" stroke="#00f0ff" stroke-width="1.5" />
+  <line x1="16" y1="92" x2="8" y2="84" stroke="#00f0ff" stroke-width="1.5" />
+
+  <!-- Technical Spec Label -->
+  <text x="12" y="11" class="badge-num">SYS//12</text>
+  <text x="88" y="11" class="badge-num" text-anchor="end">SEC//BADG</text>
+
+  <!-- Core Graphic Geometry -->
+  
+        <rect x="30" y="30" width="40" height="40" rx="4" fill="none" stroke="#39ff14" stroke-width="2.5" />
+        <rect x="38" y="38" width="24" height="24" fill="#00f0ff" opacity="0.15" />
+        <line x1="20" y1="38" x2="30" y2="38" stroke="#39ff14" stroke-width="2" />
+        <line x1="20" y1="50" x2="30" y2="50" stroke="#39ff14" stroke-width="2" />
+        <line x1="20" y1="62" x2="30" y2="62" stroke="#39ff14" stroke-width="2" />
+        <line x1="70" y1="38" x2="80" y2="38" stroke="#39ff14" stroke-width="2" />
+        <line x1="70" y1="50" x2="80" y2="50" stroke="#39ff14" stroke-width="2" />
+        <line x1="70" y1="62" x2="80" y2="62" stroke="#39ff14" stroke-width="2" />
+        <circle cx="50" cy="50" r="6" fill="#00f0ff" />
+        
+
+  <!-- Lower Tech Data Ribbon & Callout -->
+  <rect x="18" y="84" width="64" height="8" rx="2" fill="#08140c" stroke="#00f0ff" stroke-width="1" />
+  <text x="50" y="90" class="badge-text">ERR 404</text>
+</svg>

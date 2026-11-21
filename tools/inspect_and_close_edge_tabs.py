@@ -2,7 +2,7 @@ import sys
 import os
 import time
 
-log_file = r"C:\Users\myven\Downloads\antigravity ai income\00_Brain\proofs\tab_cleanup_log.txt"
+log_file = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "00_Brain", "proofs", "tab_cleanup_log.txt")
 
 def log(msg):
     with open(log_file, "a", encoding="utf-8") as f:

@@ -16,8 +16,8 @@ import subprocess
 
 EDGE_PATH = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 PORT = 9222
-DEBUG_PROFILE = r"C:\Users\myven\.edge-debug-profile"
-PROOF_DIR = r"c:\Users\myven\Downloads\antigravity ai income\00_Brain\proofs"
+DEBUG_PROFILE = os.path.join(os.path.expanduser("~"), ".edge-debug-profile")
+PROOF_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "00_Brain", "proofs")
 os.makedirs(DEBUG_PROFILE, exist_ok=True)
 os.makedirs(PROOF_DIR, exist_ok=True)
 

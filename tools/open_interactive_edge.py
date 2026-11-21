@@ -12,7 +12,7 @@ import time
 
 def open_url_on_screen(url):
     print(f"[*] Opening URL on user's interactive display: {url}")
-    bat_path = r"C:\Users\myven\open_interactive_url.bat"
+    bat_path = os.path.join(os.path.expanduser("~"), "open_interactive_url.bat")
     with open(bat_path, "w") as f:
         f.write(f'@echo off\nstart "" "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe" "{url}"\n')
     

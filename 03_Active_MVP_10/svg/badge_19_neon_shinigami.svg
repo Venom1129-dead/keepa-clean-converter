@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="500" height="500">
+  <!-- Metadata: Cyber Shinigami | Cyberpunk Tech | ID: badge_19_neon_shinigami -->
+  <defs>
+    <style>
+      .badge-bg { fill: #070913; }
+      .badge-border { fill: none; stroke: #ff007f; stroke-width: 2.5; }
+      .badge-num { font-family: 'Rajdhani', 'Segoe UI', monospace; font-size: 5px; font-weight: 700; fill: #ff007f; letter-spacing: 1px; }
+      .badge-text { font-family: 'Orbitron', 'Segoe UI', sans-serif; font-size: 5.5px; font-weight: 800; fill: #ffffff; letter-spacing: 1px; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <!-- Outer Cut-Corner Octagon Frame -->
+  <polygon points="12,4 88,4 96,12 96,88 88,96 12,96 4,88 4,12" class="badge-bg" />
+  <polygon points="12,4 88,4 96,12 96,88 88,96 12,96 4,88 4,12" class="badge-border" />
+  
+  <!-- Corner Registration Markers -->
+  <line x1="8" y1="16" x2="16" y2="8" stroke="#00f0ff" stroke-width="1.5" />
+  <line x1="84" y1="8" x2="92" y2="16" stroke="#00f0ff" stroke-width="1.5" />
+  <line x1="92" y1="84" x2="84" y2="92" stroke="#00f0ff" stroke-width="1.5" />
+  <line x1="16" y1="92" x2="8" y2="84" stroke="#00f0ff" stroke-width="1.5" />
+
+  <!-- Technical Spec Label -->
+  <text x="12" y="11" class="badge-num">SYS//19</text>
+  <text x="88" y="11" class="badge-num" text-anchor="end">SEC//BADG</text>
+
+  <!-- Core Graphic Geometry -->
+  
+        <path d="M50 20 L76 30 L76 54 C76 68 50 80 50 80 C50 80 24 68 24 54 L24 30 Z" fill="none" stroke="#ff007f" stroke-width="2.5" />
+        <path d="M50 28 L68 36 L68 52 C68 62 50 71 50 71 C50 71 32 62 32 52 L32 36 Z" fill="#00f0ff" opacity="0.2" stroke="#00f0ff" stroke-width="1.5" />
+        <circle cx="50" cy="48" r="7" fill="#ff007f" />
+        <line x1="50" y1="55" x2="50" y2="64" stroke="#ff007f" stroke-width="2.5" />
+        
+
+  <!-- Lower Tech Data Ribbon & Callout -->
+  <rect x="18" y="84" width="64" height="8" rx="2" fill="#120a17" stroke="#00f0ff" stroke-width="1" />
+  <text x="50" y="90" class="badge-text">SHINIGAMI</text>
+</svg>
