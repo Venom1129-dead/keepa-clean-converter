@@ -1,5 +1,5 @@
 @echo off
 set "PATH=%LOCALAPPDATA%\Programs\Git\cmd;%LOCALAPPDATA%\Programs\gh;%PATH%"
 git add -A
-git commit -m "Implement Trading AI empirical testing suite, 9 SKILL.md specs, and universal portability system"
+git commit -m "Stage MVP 14 activity pack, MVP 15 health vault, and multi-platform publishing guide"
 git push origin main

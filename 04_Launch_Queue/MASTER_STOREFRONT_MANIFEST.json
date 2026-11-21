@@ -112,6 +112,22 @@
       "live_url": "https://venom1129-dead.github.io/pc-privacy-audit/",
       "price_tiers": { "free_tier": 0.0, "partner_revenue_share": "AFFILIATE" },
       "launch_assets": "04_Launch_Queue/pc_privacy_audit_launch_assets.md"
+    },
+    {
+      "id": "MVP_14",
+      "name": "KidTech & Chibi Creative Activity Book Pack",
+      "category": "Coloring, Drawing & Activity Books (KDP/Etsy)",
+      "live_url": "03_Active_MVP_14/index.html",
+      "price_tiers": { "free_tier": 0.0, "digital_pack": 6.99, "kdp_paperback": 8.99 },
+      "launch_assets": "03_Active_MVP_14/KidTech_Activity_Book_Pack_PrintReady.zip"
+    },
+    {
+      "id": "MVP_15",
+      "name": "The Peak Performance Protocol: Health & Daily Uses Vault",
+      "category": "Health, Bio-Optimization & Daily Habits",
+      "live_url": "03_Active_MVP_15/index.html",
+      "price_tiers": { "free_tier": 0.0, "vault_license": 9.0 },
+      "launch_assets": "03_Active_MVP_15/Peak_Performance_Health_Daily_Uses_Vault.zip"
     }
   ]
 }

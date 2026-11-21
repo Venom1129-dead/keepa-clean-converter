@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 1100" width="8.5in" height="11in">
+    <!-- Picture Book: Cosmic Space Station Discovery - Picture Book -->
+    
+                <rect x="50" y="50" width="750" height="950" rx="20" fill="none" stroke="#222" stroke-width="4" stroke-dasharray="10 10"/>
+                <text x="425" y="110" font-family="sans-serif" font-size="30" font-weight="bold" text-anchor="middle" fill="#111">THE SECRET ORBIT STATION</text>
+                <text x="425" y="145" font-family="sans-serif" font-size="16" text-anchor="middle" fill="#666">Chapter 1: Captain Nova spots the ancient solar beacon orbiting Saturn.</text>
+                
+                <circle cx="250" cy="360" r="110" fill="none" stroke="#000" stroke-width="6"/>
+                <ellipse cx="250" cy="360" rx="200" ry="40" fill="none" stroke="#000" stroke-width="6"/>
+                
+                <rect x="470" y="320" width="160" height="80" rx="20" fill="none" stroke="#000" stroke-width="5"/>
+                <circle cx="550" cy="360" r="25" fill="none" stroke="#000" stroke-width="4"/>
+                <rect x="390" y="335" width="70" height="50" rx="5" fill="none" stroke="#000" stroke-width="4"/>
+                <line x1="425" y1="335" x2="425" y2="385" stroke="#000" stroke-width="2"/>
+                <rect x="640" y="335" width="70" height="50" rx="5" fill="none" stroke="#000" stroke-width="4"/>
+                <line x1="675" y1="335" x2="675" y2="385" stroke="#000" stroke-width="2"/>
+                
+                <polygon points="425,580 470,720 380,720" fill="none" stroke="#000" stroke-width="6"/>
+                <circle cx="425" cy="650" r="20" fill="none" stroke="#000" stroke-width="4"/>
+                <polygon points="380,680 340,730 380,720" fill="none" stroke="#000" stroke-width="4"/>
+                <polygon points="470,680 510,730 470,720" fill="none" stroke="#000" stroke-width="4"/>
+                
+                <rect x="80" y="780" width="690" height="180" rx="10" fill="#f8f9fa" stroke="#444" stroke-width="2"/>
+                <text x="110" y="820" font-family="serif" font-size="20" font-weight="bold" fill="#222">Story Dialogue:</text>
+                <text x="110" y="855" font-family="serif" font-size="18" fill="#444">"Signal verified, Ground Control," Nova whispered as the solar panels hummed.</text>
+                <text x="110" y="885" font-family="serif" font-size="18" fill="#444">"The ancient coordinates match the star map exactly. Preparing to dock..."</text>
+                <text x="110" y="930" font-family="sans-serif" font-size="15" font-style="italic" fill="#777">[Color the scene and write Nova's reply in your adventure notebook]</text>
+            
+</svg>

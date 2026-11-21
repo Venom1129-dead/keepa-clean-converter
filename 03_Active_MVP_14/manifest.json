@@ -1,0 +1,55 @@
+{
+  "product_name": "KidTech & Chibi Creative Activity Book Pack",
+  "version": "1.0.0",
+  "total_pages": 6,
+  "formats": [
+    "SVG",
+    "Printable HTML",
+    "300 DPI PDF Ready"
+  ],
+  "commercial_license": "Included (Amazon KDP, Etsy, Gumroad)",
+  "pages": [
+    {
+      "id": "page_01_cyber_cat",
+      "title": "Chibi Cyber-Cat & Hologram Fish",
+      "type": "Coloring Book",
+      "theme": "Anime & Cute Tech",
+      "filename": "page_01_cyber_cat.svg"
+    },
+    {
+      "id": "page_02_astro_puppy",
+      "title": "Astro-Puppy Space Explorer",
+      "type": "Coloring Book",
+      "theme": "Anime & Space",
+      "filename": "page_02_astro_puppy.svg"
+    },
+    {
+      "id": "page_03_draw_robot",
+      "title": "Learn To Draw: Friendly Helper Robot",
+      "type": "Drawing Book",
+      "theme": "Tutorial & Skill Building",
+      "filename": "page_03_draw_robot.svg"
+    },
+    {
+      "id": "page_04_handwriting_tech",
+      "title": "Alphabet & Tech Words Handwriting Practice",
+      "type": "Hand Writing Book",
+      "theme": "Education & Motor Skills",
+      "filename": "page_04_handwriting_tech.svg"
+    },
+    {
+      "id": "page_05_picture_adventure",
+      "title": "Picture Book: Cosmic Space Station Discovery",
+      "type": "Picture Book",
+      "theme": "Story & Visual Narrative",
+      "filename": "page_05_picture_adventure.svg"
+    },
+    {
+      "id": "page_06_holiday_party",
+      "title": "Celebration Birthday & Holiday Party",
+      "type": "Coloring Book",
+      "theme": "Events & Celebrations",
+      "filename": "page_06_holiday_party.svg"
+    }
+  ]
+}

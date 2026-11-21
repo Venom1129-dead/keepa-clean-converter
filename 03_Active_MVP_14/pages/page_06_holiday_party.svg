@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 1100" width="8.5in" height="11in">
+    <!-- Celebration Birthday & Holiday Party - Coloring Book -->
+    
+                <rect x="50" y="50" width="750" height="950" rx="20" fill="none" stroke="#222" stroke-width="4" stroke-dasharray="10 10"/>
+                <text x="425" y="110" font-family="sans-serif" font-size="32" font-weight="bold" text-anchor="middle" fill="#111">HOLIDAY & BIRTHDAY PARTY</text>
+                <text x="425" y="145" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#666">Celebrate birthdays and holidays with cake, balloons, and gifts!</text>
+                
+                <path d="M 320 700 L 530 700 L 500 730 L 350 730 Z" fill="none" stroke="#000" stroke-width="5"/>
+                <rect x="250" y="560" width="350" height="140" rx="20" fill="none" stroke="#000" stroke-width="6"/>
+                <rect x="300" y="440" width="250" height="120" rx="15" fill="none" stroke="#000" stroke-width="6"/>
+                <path d="M 250 590 Q 280 630 310 590 Q 340 630 370 590 Q 400 630 430 590 Q 460 630 490 590 Q 520 630 550 590 Q 580 630 600 590" fill="none" stroke="#000" stroke-width="4"/>
+                <path d="M 300 470 Q 340 510 380 470 Q 420 510 460 470 Q 500 510 550 470" fill="none" stroke="#000" stroke-width="4"/>
+                <rect x="360" y="370" width="16" height="70" fill="none" stroke="#000" stroke-width="4"/>
+                <path d="M 368 370 Q 360 340 368 320 Q 376 340 368 370 Z" fill="none" stroke="#000" stroke-width="3"/>
+                <rect x="417" y="360" width="16" height="80" fill="none" stroke="#000" stroke-width="4"/>
+                <path d="M 425 360 Q 417 330 425 310 Q 433 330 425 360 Z" fill="none" stroke="#000" stroke-width="3"/>
+                <rect x="474" y="370" width="16" height="70" fill="none" stroke="#000" stroke-width="4"/>
+                <path d="M 482 370 Q 474 340 482 320 Q 490 340 482 370 Z" fill="none" stroke="#000" stroke-width="3"/>
+                <ellipse cx="180" cy="280" rx="60" ry="80" fill="none" stroke="#000" stroke-width="5"/>
+                <polygon points="175,360 185,360 180,375" fill="#000"/>
+                <path d="M 180 375 Q 170 420 200 480" fill="none" stroke="#000" stroke-width="3"/>
+                <ellipse cx="670" cy="270" rx="60" ry="80" fill="none" stroke="#000" stroke-width="5"/>
+                <polygon points="665,350 675,350 670,365" fill="#000"/>
+                <path d="M 670 365 Q 690 410 660 480" fill="none" stroke="#000" stroke-width="3"/>
+            
+</svg>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 1100" width="8.5in" height="11in">
+    <!-- Astro-Puppy Space Explorer - Coloring Book -->
+    
+                <rect x="50" y="50" width="750" height="950" rx="20" fill="none" stroke="#222" stroke-width="4" stroke-dasharray="10 10"/>
+                <text x="425" y="110" font-family="sans-serif" font-size="32" font-weight="bold" text-anchor="middle" fill="#111">ASTRO-PUPPY SPACE HERO</text>
+                <text x="425" y="145" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#666">Blast off into space! Color the helmet, stars, and rockets.</text>
+                
+                <circle cx="425" cy="380" r="170" fill="none" stroke="#000" stroke-width="6"/>
+                <ellipse cx="280" cy="360" rx="50" ry="100" fill="none" stroke="#000" stroke-width="6"/>
+                <ellipse cx="570" cy="360" rx="50" ry="100" fill="none" stroke="#000" stroke-width="6"/>
+                <circle cx="425" cy="390" r="110" fill="none" stroke="#000" stroke-width="5"/>
+                <circle cx="380" cy="360" r="25" fill="#000"/>
+                <circle cx="372" cy="352" r="8" fill="#fff"/>
+                <circle cx="470" cy="360" r="25" fill="#000"/>
+                <circle cx="462" cy="352" r="8" fill="#fff"/>
+                <ellipse cx="425" cy="420" rx="45" ry="35" fill="none" stroke="#000" stroke-width="4"/>
+                <ellipse cx="425" cy="410" rx="20" ry="12" fill="#000"/>
+                <rect x="320" y="520" width="210" height="220" rx="40" fill="none" stroke="#000" stroke-width="6"/>
+                <circle cx="425" cy="620" r="40" fill="none" stroke="#000" stroke-width="5"/>
+                <rect x="240" y="540" width="70" height="150" rx="15" fill="none" stroke="#000" stroke-width="5"/>
+                <rect x="540" y="540" width="70" height="150" rx="15" fill="none" stroke="#000" stroke-width="5"/>
+                <path d="M 255 690 Q 275 760 275 790 Q 295 740 295 690" fill="none" stroke="#000" stroke-width="4"/>
+                <path d="M 555 690 Q 575 760 575 790 Q 595 740 595 690" fill="none" stroke="#000" stroke-width="4"/>
+                <polygon points="150,220 160,250 190,250 165,270 175,300 150,280 125,300 135,270 110,250 140,250" fill="none" stroke="#000" stroke-width="3"/>
+                <polygon points="700,200 708,225 730,225 712,240 720,265 700,250 680,265 688,240 670,225 692,225" fill="none" stroke="#000" stroke-width="3"/>
+            
+</svg>
