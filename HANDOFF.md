@@ -18,10 +18,11 @@
 | **MVP_05** | Freelancer Connects-ROI & Win-Rate Cockpit | $9 | `VERIFIED_COMPLETE` | [Live Production Site](https://venom1129-dead.github.io/connects-roi-cockpit/) • [GitHub Repo](https://github.com/Venom1129-dead/connects-roi-cockpit) • [Launch Assets](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/04_Launch_Queue/connects_tracker_launch_assets.md) |
 | **MVP_06** | Local AI VRAM & Quantization Calculator | $9 | `VERIFIED_COMPLETE` | [Live Production Site](https://venom1129-dead.github.io/local-ai-vram-calculator/) • [GitHub Repo](https://github.com/Venom1129-dead/local-ai-vram-calculator) • [Launch Assets](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/04_Launch_Queue/vram_calculator_launch_assets.md) |
 | **MVP_07** | DCA Position Sizer & Profit-Taking Ladder | $9 | `VERIFIED_COMPLETE` | [Live Production Site](https://venom1129-dead.github.io/dca-profit-calculator/) • [GitHub Repo](https://github.com/Venom1129-dead/dca-profit-calculator) • [Launch Assets](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/04_Launch_Queue/dca_calculator_launch_assets.md) |
+| **MVP_08** | "How To Do Things Faster" Ebook & Vault | $9 | `VERIFIED_COMPLETE` | [Live Web Reader](https://venom1129-dead.github.io/how-to-do-things-faster/) • [Vault Package (.zip)](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/03_Active_MVP_08/How_To_Do_Things_Faster_With_AI_Vault.zip) • [Launch Assets](file:///c:/Users/myven/Downloads/antigravity%20ai%20income/04_Launch_Queue/how_to_do_things_faster_ebook_launch_assets.md) |
 
 ---
 
 ## 3. Next Micro-Steps
 1. Connect payout method tonight (Gumroad / PayPal) to enable instant digital checkouts.
-2. Publish all 7 ready-to-sell listings using pre-written copy in `04_Launch_Queue/`.
-3. Distribute live tools across target communities (`r/CryptoCurrency`, `r/LocalLLaMA`, `r/Upwork`, `r/FulfillmentByAmazon`, `r/shopify`).
+2. Publish all 8 ready-to-sell listings across diverse categories using pre-written copy in `04_Launch_Queue/`.
+3. Distribute across targeted communities (`r/solopreneur`, `r/CryptoCurrency`, `r/LocalLLaMA`, `r/Upwork`, `r/FulfillmentByAmazon`).
