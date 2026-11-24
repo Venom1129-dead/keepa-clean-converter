@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "task_id": "selftest-0001",
+  "role": "reviewer",
+  "command_id": "reviewer.verify_converter",
+  "argv": [
+    "python",
+    "03_Active_MVP/verifier/test_converter.py"
+  ],
+  "status": "done",
+  "exit_code": 0,
+  "stdout": "=== RUNNING VERIFIER SANITY CHECKS ===\n[*] Testing Keepa Epoch 7000000 -> 2024-04-23\n[+] Epoch math PASS!\n[*] Testing price format: 1999 -> $19.99\n[+] Price formatting PASS!\n=== ALL SANITY TESTS PASSED ===\n",
+  "stderr": "",
+  "stdout_truncated": false,
+  "stderr_truncated": false,
+  "started_at": "2026-11-24T12:24:47Z",
+  "finished_at": "2026-11-24T12:24:47Z",
+  "duration_ms": 9,
+  "github_run_id": "45393229631",
+  "github_run_attempt": "1",
+  "commit_sha": "3765e6832d0d20f4ac6b407cb217bd5574ad6271"
+}

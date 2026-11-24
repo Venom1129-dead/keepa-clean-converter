@@ -3,16 +3,16 @@
   "id": "selftest-0001",
   "role": "reviewer",
   "command_id": "reviewer.verify_converter",
-  "status": "running",
+  "status": "done",
   "result_path": "cloud_queue/results/selftest-0001.json",
   "requested_by": "local-orchestrator",
   "note": "E2E smoke test: deterministic read-only verifier",
   "created_at": "2026-11-24T18:40:00Z",
-  "updated_at": "2026-11-24T12:24:46Z",
+  "updated_at": "2026-11-24T12:24:47Z",
   "claimed_at": "2026-11-24T12:24:46Z",
   "claimed_by": "45393229631",
-  "finished_at": null,
-  "attempts": 0,
+  "finished_at": "2026-11-24T12:24:47Z",
+  "attempts": 1,
   "history": [
     {
       "at": "2026-11-24T18:40:00Z",
@@ -22,6 +22,11 @@
     {
       "at": "2026-11-24T12:24:46Z",
       "event": "claimed",
+      "by": "45393229631"
+    },
+    {
+      "at": "2026-11-24T12:24:47Z",
+      "event": "done",
       "by": "45393229631"
     }
   ]
