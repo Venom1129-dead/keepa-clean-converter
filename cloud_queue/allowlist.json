@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "reviewer.verify_converter": {
+      "role": "reviewer",
+      "argv": [
+        "python",
+        "03_Active_MVP/verifier/test_converter.py"
+      ],
+      "cwd": ".",
+      "timeout_seconds": 120,
+      "writes": [],
+      "expected_exit_codes": [
+        0
+      ]
+    },
+    "reviewer.verify_merch_intel": {
+      "role": "reviewer",
+      "argv": [
+        "python",
+        "01_Research/verifier/test_community_merch_intel.py"
+      ],
+      "cwd": ".",
+      "timeout_seconds": 120,
+      "writes": [],
+      "expected_exit_codes": [
+        0
+      ]
+    },
+    "worker.generate_mvp18_svgs": {
+      "role": "worker",
+      "argv": [
+        "python",
+        "tools/generate_mvp18_svgs.py"
+      ],
+      "cwd": ".",
+      "timeout_seconds": 300,
+      "writes": [
+        "03_Active_MVP_18/svg/*.svg"
+      ],
+      "expected_exit_codes": [
+        0
+      ]
+    }
+  }
+}
