@@ -1,0 +1,45 @@
+name: Autonomous Cloud Research & Curriculum Agent
+
+on:
+  schedule:
+    - cron: '4,19,34,49 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cloud-research-loop
+  cancel-in-progress: false
+
+jobs:
+  cloud-research-loop:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Execute Autonomous Cloud Research Agent
+        run: |
+          for attempt in 1 2 3; do
+            if python tools/cloud_research_agent.py; then
+              echo "Agent succeeded on attempt ${attempt}"
+              exit 0
+            fi
+            echo "Agent attempt ${attempt} failed; retrying in 15s..."
+            sleep 15
+          done
+          echo "Agent failed all 3 attempts"
+          exit 1
+      - name: Commit and Push Updated Research Stream
+        run: |
+          set -e
+          git config user.email "cloud-agent@users.noreply.github.com"
+          git config user.name "AutonomousCloudAgent[bot]"
+          git add 01_Research/CLOUD_RESEARCH_STREAM.json
+          git commit -m "chore: autonomous cloud research checkpoint" || true
+          git push origin HEAD:main
